@@ -1,4 +1,4 @@
-import './App.scss'
+import './App.scss';
 
 function App() {
   console.log('APP');
@@ -6,10 +6,10 @@ function App() {
   return (
     <div className="App">
       <header></header>
-			<main>Hello</main>
-			<footer></footer>
+      <main><p className='tata'>Hello</p> </main>
+      <footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
