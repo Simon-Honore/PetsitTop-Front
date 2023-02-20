@@ -1,12 +1,13 @@
+import Header from '../../components/Header/Header';
 import './App.scss';
 
 function App() {
-  console.log('APP');
+  const logged = false;
 
   return (
     <div className="App">
-      <header></header>
-      <main><p className='tata'>Hello</p> </main>
+      <Header isLogged={logged} />
+      <main></main>
       <footer />
     </div>
   );
