@@ -1,3 +1,6 @@
-@mixin test {
-	font-size: 8rem;
+@mixin btn {
+	padding: 0.5rem;
+	border: 1px solid $color-btn;
+	border-radius: 0.5rem;
+	font-weight: bold;
 }

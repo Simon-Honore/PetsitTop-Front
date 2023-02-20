@@ -1,0 +1,32 @@
+.header {
+	background-color: $bgHeaderFooter;
+
+	&__main {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem;
+
+		&__title {
+			font-size: 1.3rem;
+			font-weight: bold;
+		}
+
+		// &__icon {
+		// 	width: 2rem;
+		// }
+	}
+
+	&__button--petsitter {
+		@include btn;
+		margin-right: 0.5rem;
+		display: none;
+	}
+
+	&__button--login {
+		@include btn;
+		background-color: $color-btn;
+		color: white;
+	}
+}
