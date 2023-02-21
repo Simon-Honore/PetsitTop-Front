@@ -7,8 +7,7 @@ function Header({ isLogged }) {
   console.log('LOGGED >>', isLogged);
   const [showMenu, setShowMenu] = useState(false);
 
-
-  const handleClick= () => {
+  const handleClick = () => {
     setShowMenu(!showMenu);
     console.log(`after click ${showMenu}`);
   };
@@ -19,7 +18,7 @@ function Header({ isLogged }) {
         <h1 className="header__main__title">PetSitterFriendly</h1>
         {isLogged
           ? (
-            <FaUserCircle size="2rem" className="header__main__icon" onClick={handleClick}/>
+            <FaUserCircle size="2rem" className="header__main__icon" onClick={handleClick} />
           )
           : (
             <div className="header__button">
