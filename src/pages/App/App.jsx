@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header isLogged={logged} />
-      <main></main>
+      <main />
       <footer />
     </div>
   );
