@@ -19,7 +19,7 @@ function Header({ isLogged }) {
         <h1 className="header__main__title">PetSitterFriendly</h1>
         {isLogged
           ? (
-            <FaUserCircle className="header__main__icon" onClick={handleClick}/>
+            <FaUserCircle size="2rem" className="header__main__icon" onClick={handleClick}/>
           )
           : (
             <div className="header__button">

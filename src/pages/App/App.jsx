@@ -2,7 +2,7 @@ import Header from '../../components/Header/Header';
 import './App.scss';
 
 function App() {
-  const logged = false;
+  const logged = true;
 
   return (
     <div className="App">
