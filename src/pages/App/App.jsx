@@ -1,3 +1,4 @@
+import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import './App.scss';
 
@@ -8,7 +9,7 @@ function App() {
     <div className="App">
       <Header isLogged={logged} />
       <main />
-      <footer />
+      <Footer />
     </div>
   );
 }

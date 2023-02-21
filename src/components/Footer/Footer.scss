@@ -1,0 +1,14 @@
+.footer {
+	background-color: $bgHeaderFooter;
+	// height: 5rem;
+	padding: 1rem;
+
+	&__nav {
+		display: flex;
+		justify-content: space-around;
+
+		&__item {
+			margin-bottom: 0.5rem;
+		}
+	}
+}
