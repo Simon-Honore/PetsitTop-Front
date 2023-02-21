@@ -1,0 +1,14 @@
+.nav {
+
+    &__link {
+
+        &__item {
+            line-height: 2.5rem;
+            padding-left: 2rem;
+            color: $fontcolor-dark;
+            font-weight: bold;
+            border-top: 1px solid $fontcolor-light;
+            background-color: $bgMedium;
+        }
+    }
+}

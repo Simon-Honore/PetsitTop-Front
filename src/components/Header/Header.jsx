@@ -1,17 +1,25 @@
 import './Header.scss';
 import { FaUserCircle } from 'react-icons/fa';
+import { useState } from 'react';
 import Menu from '../Menu/Menu';
 
 function Header({ isLogged }) {
   console.log('LOGGED >>', isLogged);
+  const [showMenu, setShowMenu] = useState(false);
+
+
+  const handleClick= () => {
+    setShowMenu(!showMenu);
+    console.log(`after click ${showMenu}`);
+  };
+
   return (
     <div className="header">
       <div className="header__main">
         <h1 className="header__main__title">PetSitterFriendly</h1>
         {isLogged
           ? (
-            <FaUserCircle className="header__main__icon" />
-            // TODO voir viewbox
+            <FaUserCircle className="header__main__icon" onClick={handleClick}/>
           )
           : (
             <div className="header__button">
@@ -20,7 +28,7 @@ function Header({ isLogged }) {
             </div>
           )}
       </div>
-      { isLogged && <Menu />}
+      { showMenu && <Menu />}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import './Menu.scss';
 
-function Menu() {
+function Menu({ showMenu }) {
   return (
     <nav className="nav">
       <ul className="nav__link">
