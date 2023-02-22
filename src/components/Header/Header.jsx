@@ -1,6 +1,7 @@
 import './Header.scss';
 import { FaUserCircle } from 'react-icons/fa';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Menu from '../Menu/Menu';
 
 function Header({ isLogged }) {
@@ -15,7 +16,9 @@ function Header({ isLogged }) {
   return (
     <div className="header">
       <div className="header__main">
-        <h1 className="header__main__title">PetSitterFriendly</h1>
+        <h1 className="header__main__title">
+          <Link to="/">PetSitterFriendly</Link>
+        </h1>
         {isLogged
           ? (
             <FaUserCircle size="2rem" className="header__main__icon" onClick={handleClick} />
