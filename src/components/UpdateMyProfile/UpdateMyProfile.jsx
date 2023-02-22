@@ -1,6 +1,6 @@
-import './IdentificationForm.scss';
+import './UpdateMyProfile.scss';
 
-function IdentificationForm() {
+function UpdateMyProfile() {
   return (
     <div className="profile">
       <form className="profile__settings">
@@ -39,14 +39,14 @@ function IdentificationForm() {
         <fieldset className="profile__settings__input">
           <legend>Type(s) de profil(s)</legend>
           <div className="profile__settings__input__checkbox">
-            <input type="checkbox" name="" id="petOwner" />
+            <input type="checkbox" name="petOwner" id="petOwner" />
             <label htmlFor="petOwner">
               Petowner : J&#39;ai des animaux à faire garder
             </label>
           </div>
           <p>et / ou</p>
           <div className="profile__settings__input__checkbox">
-            <input type="checkbox" name="" id="petSitter" />
+            <input type="checkbox" name="petSitter" id="petSitter" />
             <label htmlFor="petSitter">
               Petsitter : je souhaite garder des animaux
             </label>
@@ -63,4 +63,4 @@ function IdentificationForm() {
   );
 }
 
-export default IdentificationForm;
+export default UpdateMyProfile;

@@ -3,14 +3,13 @@ import { FaUserCircle, FaTrashAlt } from 'react-icons/fa';
 import { BsPencilSquare } from 'react-icons/bs';
 
 import Header from '../../components/Header/Header';
-import IdentificationForm from '../../components/IdentificationForm/IdentificationForm';
+import UpdateMyProfile from '../../components/IdentificationForm/IdentificationForm';
 import './MyProfile.scss';
 
 function MyProfile() {
-
   return (
     <div className="MyProfile">
-      <IdentificationForm />
+      <UpdateMyProfile />
 
       <hr />
 
