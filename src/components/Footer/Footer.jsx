@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Footer.scss';
 
 function Footer() {
@@ -5,15 +6,15 @@ function Footer() {
     <footer className="footer">
       <nav className="footer__nav">
         <ul className="footer__nav__list">
-          <li className="footer__nav__item">PetsitterFriendly</li>
-          <li className="footer__nav__item">Se connecter</li>
-          <li className="footer__nav__item">Devenir Petsitter</li>
+          <Link to="/#" className="footer__nav__item">PetsitterFriendly</Link>
+          <Link to="/identification" className="footer__nav__item">Se connecter</Link>
+          <Link to="/identification" className="footer__nav__item">Devenir Petsitter</Link>
         </ul>
 
         <ul className="footer__nav__list">
-          <li className="footer__nav__item">Mentions légales</li>
-          <li className="footer__nav__item">CGU</li>
-          <li className="footer__nav__item">Equipe</li>
+          <Link to="/#" className="footer__nav__item">Mentions légales</Link>
+          <Link to="/#" className="footer__nav__item">CGU</Link>
+          <Link to="/#" className="footer__nav__item">Equipe</Link>
         </ul>
       </nav>
     </footer>

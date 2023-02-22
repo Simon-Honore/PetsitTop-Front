@@ -1,6 +1,6 @@
 .footer {
+	margin-top: auto;
 	background-color: $bgHeaderFooter;
-	// height: 5rem;
 	padding: 1rem;
 
 	&__nav {
@@ -8,7 +8,8 @@
 		justify-content: space-around;
 
 		&__item {
-			margin-bottom: 0.5rem;
+			line-height: 1.5rem;
+			display: block;
 		}
 	}
 }
