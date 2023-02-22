@@ -1,4 +1,5 @@
 import Header from '../../components/Header/Header';
+import MyProfile from '../MyProfile/MyProfile';
 import './App.scss';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <Header isLogged={logged} />
+      <MyProfile />
       <main />
       <footer />
     </div>
