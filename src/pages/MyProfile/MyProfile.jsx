@@ -3,7 +3,7 @@ import { FaUserCircle, FaTrashAlt } from 'react-icons/fa';
 import { BsPencilSquare } from 'react-icons/bs';
 
 import Header from '../../components/Header/Header';
-import UpdateMyProfile from '../../components/IdentificationForm/IdentificationForm';
+import UpdateMyProfile from '../../components/UpdateMyProfile/UpdateMyProfile';
 import './MyProfile.scss';
 
 function MyProfile() {
