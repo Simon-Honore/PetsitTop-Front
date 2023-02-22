@@ -9,9 +9,12 @@ function FormCreateAccount() {
   };
 
   return (
-    <section className="test">
-      <h3>Je créer mon compte</h3>
-      <form>
+    <section className="createAccount">
+      <h3 className="createAccount__title">
+        Je créer mon compte
+      </h3>
+
+      <form className="createAccount__form">
         <div>
           <label>Adresse email</label>
           <input type="email" placeholder="email" />

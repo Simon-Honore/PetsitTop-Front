@@ -1,11 +1,11 @@
-import FormConnect from './FormLogin/FormLogin';
 import FormCreateAccount from './FormCreateAccount/FormCreateAccount';
+import FormLogin from './FormLogin/FormLogin';
 import './Identification.scss';
 
 function Identification() {
   return (
     <main className="identification">
-      <FormConnect />
+      <FormLogin />
 
       <div className="identification__separator">
         <hr />
