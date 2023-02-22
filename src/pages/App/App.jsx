@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 import MyProfile from '../MyProfile/MyProfile';
 import Identification from '../Identification/Identification';
 import './App.scss';
+import Home from '../Home/Home';
 
 function App() {
   const logged = true;
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <Header isLogged={logged} />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/identification" element={<Identification />} />
         <Route path="/mon_profil" element={<MyProfile />} />
       </Routes>
