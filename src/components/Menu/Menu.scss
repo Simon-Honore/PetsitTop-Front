@@ -1,14 +1,15 @@
 .nav {
+	&__link {
+		line-height: 2.5rem;
+		padding-left: 2rem;
+		color: $fontcolor-dark;
+		font-weight: bold;
+		border-top: 1px solid $fontcolor-light;
+		background-color: $bgMedium;
+		display: block;
 
-    &__link {
-
-        &__item {
-            line-height: 2.5rem;
-            padding-left: 2rem;
-            color: $fontcolor-dark;
-            font-weight: bold;
-            border-top: 1px solid $fontcolor-light;
-            background-color: $bgMedium;
-        }
-    }
+		&--active {
+			color: $bgHeaderFooter;
+		}
+	}
 }

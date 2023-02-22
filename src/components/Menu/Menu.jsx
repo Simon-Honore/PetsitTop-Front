@@ -1,14 +1,16 @@
+import { NavLink } from 'react-router-dom';
+import cn from 'classnames';
 import './Menu.scss';
 
-function Menu({ showMenu }) {
+function Menu() {
+  const classNameLink = ({ isActive }) => cn('nav__link', { 'nav__link--active': isActive });
+
   return (
     <nav className="nav">
-      <ul className="nav__link">
-        <li className="nav__link__item">Mon profil</li>
-        <li className="nav__link__item">Créer une annonce</li>
-        <li className="nav__link__item">Mes annonces</li>
-        <li className="nav__link__item">Voir toutes les annonces</li>
-      </ul>
+      <NavLink to="/mon_profil" className={classNameLink}>Mon profil</NavLink>
+      <NavLink to="/#" className={classNameLink}>Créer une annonce</NavLink>
+      <NavLink to="/#" className={classNameLink}>Mes annonces</NavLink>
+      <NavLink to="/#" className={classNameLink}>Voir toutes les annonces</NavLink>
     </nav>
   );
 }
