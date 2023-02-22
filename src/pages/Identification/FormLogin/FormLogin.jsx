@@ -1,3 +1,4 @@
+import Field from '../../../components/Field/Field';
 import './FormLogin.scss';
 
 function FormLogin() {
@@ -8,19 +9,21 @@ function FormLogin() {
       </h3>
 
       <form className="login__form">
-        <div>
-          <label>Adresse email</label>
-          <input type="email" placeholder="email" />
-        </div>
+        <Field
+          label="Adresse email*"
+          type="email"
+          name="email"
+          placeholder="email"
+        />
 
-        <div>
-          <label>Mot de passe</label>
-          <input type="password" placeholder="mot de passe" />
-        </div>
+        <Field
+          label="Mot de passe*"
+          type="password"
+          name="password"
+          placeholder="mot de passe"
+        />
 
-        <div>
-          <button type="submit">JE ME CONNECTE</button>
-        </div>
+        <button type="submit">JE ME CONNECTE</button>
       </form>
     </section>
   );
