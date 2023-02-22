@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import MyProfile from '../MyProfile/MyProfile';
@@ -10,8 +11,10 @@ function App() {
   return (
     <div className="App">
       <Header isLogged={logged} />
-      <MyProfile />
-      <Identification />
+      <Routes>
+        <Route path="/identification" element={<Identification />} />
+        <Route path="/mon_profil" element={<MyProfile />} />
+      </Routes>
       <Footer />
     </div>
   );
