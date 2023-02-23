@@ -9,8 +9,15 @@ function Field({
   type,
   name,
   value,
+  onChange,
+  form,
 }) {
-  const inputId = `field-${name}`;
+  function handleChange(event) {
+    onChange(event.target.value, name);
+    console.log(value);
+  }
+
+  const inputId = `field-${form}-${name}`;
 
   return (
     <div className={cn('field', { 'field--has-content': value.length > 0 })}>
@@ -28,6 +35,7 @@ function Field({
         className="field__input"
         placeholder={placeholder}
         name={name}
+        onChange={handleChange}
       />
 
     </div>

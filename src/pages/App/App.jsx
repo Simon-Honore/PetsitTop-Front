@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import MyProfile from '../MyProfile/MyProfile';
@@ -7,7 +8,8 @@ import './App.scss';
 import Home from '../Home/Home';
 
 function App() {
-  const logged = true;
+  // const logged = true;
+  const logged = useSelector((state) => state.user.logged);
 
   return (
     <div className="App">
