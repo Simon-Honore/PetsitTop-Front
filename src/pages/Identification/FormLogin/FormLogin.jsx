@@ -1,4 +1,7 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import Header from '../../../components/Header/Header';
 
 import Field from '../../../components/Field/Field';
 import { changeFieldLogin } from '../../../store/reducers/user';
@@ -6,6 +9,7 @@ import { login } from '../../../store/selectors/user';
 import './FormLogin.scss';
 
 function FormLogin() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const email = useSelector((state) => state.user.email);
@@ -23,6 +27,13 @@ function FormLogin() {
     event.preventDefault();
     dispatch(login());
   }
+
+  useEffect(() => {
+    if (isLogged) {
+      navigate('/');
+    }
+  });
+
   return (
     <section className="login">
       <h3 className="login__title">
