@@ -17,6 +17,15 @@
         &__item {
             border: $border-div;
             padding: 1rem;
+
+            &__top {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            &__info {
+                display: flex;
+            }
         }
     }
 }

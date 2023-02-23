@@ -10,7 +10,6 @@ function Header({ isLogged }) {
 
   const handleClick = () => {
     setShowMenu(!showMenu);
-    console.log(`after click ${showMenu}`);
   };
 
   return (
