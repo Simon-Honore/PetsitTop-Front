@@ -2,10 +2,8 @@ import seedData from '../../data/seed/one-user.json';
 import { saveUserInfos } from '../reducers/user';
 
 export function findUser(data) {
-  const userConfirm = seedData.find((obj) => {
-    obj.email === data.email;
-    obj.password === data.email;
-  });
+  const userConfirm = seedData.find((obj) => obj.email === data.email
+    && obj.password === data.password);
   return userConfirm;
 }
 
@@ -17,5 +15,9 @@ export const login = () => (dispatch, getState) => {
 
   const userConfirm = findUser(data);
 
-  dispatch(saveUserInfos(userConfirm));
+  if (userConfirm) {
+    dispatch(saveUserInfos(userConfirm));
+  } else {
+    console.log('ERROR LOGIN');
+  }
 };
