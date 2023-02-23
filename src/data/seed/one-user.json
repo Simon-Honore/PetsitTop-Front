@@ -1,0 +1,40 @@
+{
+	"id": 3,
+	"first_name": "Cassandre",
+	"last_name": "Renault",
+	"email": "Anas86@gmail.com",
+	"password": "1234",
+	"postal_code": "45610",
+	"city": "Aubervilliers",
+	"presentation": ".....",
+	"availability": true,
+	"availability_details": "......",
+	"created_at": "2023-02-21T15:13:44.501Z",
+	"updated_at": null,
+	"pet_types": ["rongueur", "reptile", "poisson"],
+	"role_names": ["petsitter"],
+	"pets": [
+		{
+			"id": 10,
+			"name": "Arsinoé",
+			"presentation": "...",
+			"pet_type": "autre"
+		}
+	],
+	"ads": [
+		{
+			"id": 2,
+			"title": "Rerum animi quaerat corporis eveniet sint sequi temporibus placeat.",
+			"content": ".....",
+			"city": "Nanterre",
+			"postal_code": "49410"
+		},
+		{
+			"id": 4,
+			"title": "Hic a \nconsequatur omnis.",
+			"content": "S.....",
+			"city": "Cergy",
+			"postal_code": "47520"
+		}
+	]
+}
