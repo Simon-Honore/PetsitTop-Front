@@ -12,18 +12,18 @@ function FormLogin() {
         <Field
           label="Adresse email*"
           type="email"
-          name="email"
+          name="login-email"
           placeholder="email"
         />
 
         <Field
           label="Mot de passe*"
           type="password"
-          name="password"
+          name="login-password"
           placeholder="mot de passe"
         />
 
-        <button type="submit">JE ME CONNECTE</button>
+        <button className="login__btn" type="submit">JE ME CONNECTE</button>
       </form>
     </section>
   );

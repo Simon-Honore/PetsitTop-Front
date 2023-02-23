@@ -16,7 +16,7 @@ function Field({
     <div className={cn('field', { 'field--has-content': value.length > 0 })}>
       <label
         htmlFor={inputId}
-        className="field-label"
+        className="field__label"
       >
         {label}
       </label>
@@ -25,7 +25,7 @@ function Field({
         value={value}
         id={inputId}
         type={type}
-        className="field-input"
+        className="field__input"
         placeholder={placeholder}
         name={name}
       />

@@ -6,4 +6,12 @@
 		font-weight: bold;
 		margin-bottom: 0.5rem;
 	}
+
+	&__btn {
+		@include btn;
+		background-color: $color-btn;
+		color: white;
+		margin-top: 0.8rem;
+		width: 100%;
+	}
 }

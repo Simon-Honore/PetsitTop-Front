@@ -6,4 +6,34 @@
 		font-weight: bold;
 		margin-bottom: 0.5rem;
 	}
+
+	&__btn {
+		@include btn;
+		background-color: $color-btn;
+		color: white;
+		margin-top: 0.8rem;
+		width: 100%;
+
+		&--continue {
+			background-color: white;
+			color: $color-btn;
+		}
+	}
+
+	&__fieldset {
+		margin: 1rem 0;
+
+		&__legend {
+			font-weight: bold;
+			margin-bottom: 0.5rem;
+		}
+
+		&__separator {
+			margin: 0.5rem 0;
+		}
+	}
+	&__policy {
+		font-size: 0.8rem;
+		line-height: 1.5rem;
+	}
 }
