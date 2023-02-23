@@ -9,10 +9,16 @@ import { useState } from 'react';
 
 function MyProfile() {
   const [showUpdatePet, setShowUpdatePet] = useState(false);
+  const [addPet, setAddPet] = useState(false);
 
   const openUpdateForm = () => {
     setShowUpdatePet(!showUpdatePet);
     console.log('clicked');
+  };
+
+  const switchState = (state, setState) => {
+    setState(!state);
+    console.log('it works');
   };
 
   return (
@@ -24,15 +30,48 @@ function MyProfile() {
       <div className="profile__pets">
         <div className="profile__pets__header">
           <h1 className="profile__pets__header__title">Mes animaux</h1>
-          <button type="button">
+          <button type="button" onClick={() => { switchState(addPet, setAddPet); }}>
             <FiPlus />
             Ajouter
           </button>
         </div>
+        { addPet
+          ? (
+            <div className="conditionnal">
+              <h1>J'ajoute mon animal</h1>
+
+              <form>
+                <div>
+                  <label htmlFor="">Nom de mon animal : *</label>
+                  <input type="text" name="" id="" />
+                </div>
+
+                <div>
+                  <label htmlFor="">Type d'animal : *</label>
+                  <select name="" id="">
+                    <option value="chien">Chien</option>
+                    <option value="chat">Chat</option>
+                    <option value="NAC">NAC</option>
+                    <option value="poisson">Poisson</option>
+                    <option value="reptile">Reptile</option>
+                    <option value="oiseau">Oiseau</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="">Présentation de mon animal : *</label>
+                  <textarea name="" id="" cols="30" rows="10" />
+                </div>
+
+                <button type="submit">Valider</button>
+              </form>
+              <button type="button">Annuler</button>
+            </div>
+          ) : ''}
 
         { showUpdatePet
           ? (
-            <div className='conditionnal'>
+            <div className="conditionnal">
               <h1>Mettre à jour mon animal</h1>
 
               <form>
