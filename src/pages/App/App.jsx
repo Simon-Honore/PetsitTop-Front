@@ -5,6 +5,7 @@ import MyProfile from '../MyProfile/MyProfile';
 import Identification from '../Identification/Identification';
 import './App.scss';
 import Home from '../Home/Home';
+import SearchResults from '../SearchResults/SearchResults';
 
 function App() {
   const logged = true;
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/identification" element={<Identification />} />
         <Route path="/mon_profil" element={<MyProfile />} />
+        <Route path="/resultats" element={<SearchResults />} />
       </Routes>
       <Footer />
     </div>
