@@ -11,7 +11,7 @@ const petSitters = [
     code_postal: 59700,
     ville: 'Marcq-en-Baroeul',
     description: 'bonjour, je suis disponible pour garder vos chats en votre absence, je peux me déplacer si couverture des frais de déplacement',
-    animaux_acceptes: ['chat', 'chien', 'NAC', 'reptile', 'oiseau', 'poisson']
+    animaux_acceptes: ['chat', 'chien', 'NAC', 'reptile', 'oiseau', 'poisson'],
   },
   {
     id: 2,
