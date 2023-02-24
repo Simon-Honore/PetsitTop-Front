@@ -12,6 +12,10 @@ function Header({ isLogged }) {
     setShowMenu(!showMenu);
   };
 
+  const handleClickMenuItem = () => {
+    setShowMenu(false);
+  };
+
   return (
     <div className="header">
       <div className="header__main">
@@ -25,11 +29,13 @@ function Header({ isLogged }) {
           : (
             <div className="header__button">
               <button type="button" className="header__button--petsitter">Devenir Petsitter</button>
-              <button type="button" className="header__button--login">se connecter</button>
+              <Link to="/identification">
+                <button type="button" className="header__button--login">se connecter</button>
+              </Link>
             </div>
           )}
       </div>
-      { showMenu && <Menu />}
+      { showMenu && <Menu handleClick={handleClickMenuItem} />}
     </div>
   );
 }
