@@ -1,0 +1,13 @@
+.choice-separator {
+	margin: 1rem 0;
+	position: relative;
+
+	&__content {
+		position: absolute;
+		top: -0.5rem;
+		width: 3rem;
+		left: calc(50% - 1.5rem);
+		padding: 0 1rem;
+		background-color: white;
+	}
+}

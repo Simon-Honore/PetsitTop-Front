@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+import { string, func } from 'prop-types';
 import cn from 'classnames';
 import './Field.scss';
 
@@ -48,6 +48,8 @@ Field.propTypes = {
   type: string,
   name: string.isRequired,
   placeholder: string.isRequired,
+  onChange: func.isRequired,
+  form: string.isRequired,
 };
 
 Field.defaultProps = {

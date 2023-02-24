@@ -1,3 +1,4 @@
+import { string, number, arrayOf } from 'prop-types';
 import { MdPlace } from 'react-icons/md';
 import './PetsitterCard.scss';
 
@@ -8,6 +9,7 @@ function PetsitterCard({
     <div className="petsitter__card">
       <div className="petsitter__card__header">
         <h1 className="petsitter__card__title">
+          {/* la fonction array.from permet d'obtenir la lettre à l'index 0 (ex : Dupont -> D.) */ }
           {`${prenom} ${Array.from(nom)[0]}.`}
         </h1>
         <p className="petsitter__card__location">
@@ -16,15 +18,23 @@ function PetsitterCard({
         </p>
       </div>
       <p>{description}</p>
-      <p> Je peux garder vos :</p>
-      {/* {console.log(animauxAcceptes)} */}
+      <ul> Je peux garder vos :</ul>
       {animauxAcceptes.map((animal) => (
-        <p>
+        <li>
           {animal}
-        </p>
+        </li>
       ))}
     </div>
   );
 }
 
 export default PetsitterCard;
+
+PetsitterCard.propTypes = {
+  nom: string.isRequired,
+  prenom: string.isRequired,
+  ville: string.isRequired,
+  codePostal: number.isRequired,
+  description: string.isRequired,
+  animauxAcceptes: arrayOf(string).isRequired,
+};

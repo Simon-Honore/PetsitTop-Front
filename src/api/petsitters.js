@@ -9,5 +9,6 @@ export const searchPetsitters = () => async (dispatch, getState) => {
   const { data } = await axiosInstance.get(`/users?department=${departement}&pet_type=${petType}`);
   console.log(data);
 
+  // for saved response in state
   dispatch(saveResearch(data));
 };

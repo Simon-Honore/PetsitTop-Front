@@ -1,12 +1,13 @@
-import './InputSelectTypePet.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeFieldPetType } from '../../store/reducers/petsitters';
 
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 
+// import local
+import './InputSelectTypePet.scss';
+import { changeFieldPetType } from '../../store/reducers/petsitters';
 
 function InputSelectTypePet() {
   const dataType = ['chien', 'chat', 'lapin', 'rongeur', 'oiseau', 'poisson', 'reptile', 'autre'];
@@ -19,7 +20,7 @@ function InputSelectTypePet() {
     dispatch(changeFieldPetType(event.target.value));
     console.log(petType);
   };
-  
+
   return (
     <FormControl fullWidth sx={{ marginBottom: '1rem' }}>
       <InputLabel id="select-petType">Type d&#39;animal</InputLabel>

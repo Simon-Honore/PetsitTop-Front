@@ -1,6 +1,9 @@
 import seedData from '../../data/seed/one-user.json';
 import { saveUserInfos } from '../reducers/user';
 
+// Test page while waiting API is ok
+
+// to find an User by email and password
 export function findUser(data) {
   const userConfirm = seedData.find((obj) => obj.email === data.email
     && obj.password === data.password);
