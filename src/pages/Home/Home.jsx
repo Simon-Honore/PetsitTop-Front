@@ -1,10 +1,18 @@
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { searchPetsitters } from '../../api/petsitters';
 
 import InputSelectDepartment from '../../components/InputSelectDepartment/InputSelectDepartment';
 import InputSelectTypePet from '../../components/InputSelectTypePet/InputSelectTypePet';
 import './Home.scss';
 
 function Home() {
+  const dispatch = useDispatch();
+  const handleSubmitSearch = (event) => {
+    event.preventDefault();
+    dispatch(searchPetsitters());
+  };
+
   return (
     <main className="main-home">
       <p className="main-home__description">
@@ -16,12 +24,14 @@ function Home() {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, obcaecati.
         </h3>
 
-        <form className="search-petsitters__form">
+        <form className="search-petsitters__form" onSubmit={handleSubmitSearch}>
           <InputSelectDepartment />
 
           <InputSelectTypePet className="search-petsitters__form__type" />
 
-          <button type="submit" className="search-petsitters__form__btn__submit"><Link to="/resultats">Rechercher</Link></button>
+          <button type="submit" className="search-petsitters__form__btn__submit">
+            Rechercher
+          </button>
 
         </form>
         <p className="search-petsitters__form__separator">ou</p>

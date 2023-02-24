@@ -1,23 +1,25 @@
-import { useState } from 'react';
+import './InputSelectTypePet.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeFieldPetType } from '../../store/reducers/petsitters';
 
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 
-import './InputSelectTypePet.scss';
 
 function InputSelectTypePet() {
   const dataType = ['chien', 'chat', 'lapin', 'rongeur', 'oiseau', 'poisson', 'reptile', 'autre'];
 
-  // state of pet type value
-  const [petType, setPetType] = useState('');
+  const dispatch = useDispatch();
 
+  const petType = useSelector((state) => state.petsitters.petType);
   // on select of pet type, change this value
   const handleChangePetType = (event) => {
-    setPetType(event.target.value);
+    dispatch(changeFieldPetType(event.target.value));
+    console.log(petType);
   };
-
+  
   return (
     <FormControl fullWidth sx={{ marginBottom: '1rem' }}>
       <InputLabel id="select-petType">Type d&#39;animal</InputLabel>
