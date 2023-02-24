@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { searchPetsitters } from '../../api/petsitters';
 
 import InputSelectDepartment from '../../components/InputSelectDepartment/InputSelectDepartment';
@@ -7,10 +7,13 @@ import InputSelectTypePet from '../../components/InputSelectTypePet/InputSelectT
 import './Home.scss';
 
 function Home() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const handleSubmitSearch = (event) => {
     event.preventDefault();
     dispatch(searchPetsitters());
+    navigate('/resultats');
   };
 
   return (

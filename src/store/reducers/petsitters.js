@@ -22,6 +22,7 @@ const petsittersReducer = createReducer(initialState, (builder) => {
     })
     .addCase(saveResearch, (state, action) => {
       state.results = action.payload;
+      console.log('result >>', state.results);
     });
 });
 
