@@ -21,7 +21,7 @@ function Home() {
 
           <InputSelectTypePet className="search-petsitters__form__type" />
 
-          <button type="submit" className="search-petsitters__form__btn__submit">Rechercher</button>
+          <button type="submit" className="search-petsitters__form__btn__submit"><Link to="/resultats">Rechercher</Link></button>
 
         </form>
         <p className="search-petsitters__form__separator">ou</p>
