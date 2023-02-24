@@ -12,7 +12,6 @@ function PetsitterCard({
         </h1>
         <p className="petsitter__card__location">
           <MdPlace />
-          {' '}
           {`${ville} - ${codePostal}`}
         </p>
       </div>
@@ -21,9 +20,7 @@ function PetsitterCard({
       {/* {console.log(animauxAcceptes)} */}
       {animauxAcceptes.map((animal) => (
         <p>
-          {' '}
           {animal}
-          {' '}
         </p>
       ))}
     </div>
