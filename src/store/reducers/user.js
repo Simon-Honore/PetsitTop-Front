@@ -14,7 +14,6 @@ const userReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(changeFieldLogin, (state, action) => {
       state[action.payload.key] = action.payload.value;
-      console.log('email >', state.email, 'password >', state.password);
     })
     .addCase(saveUserInfos, (state, action) => {
       Object.assign(state, action.payload);

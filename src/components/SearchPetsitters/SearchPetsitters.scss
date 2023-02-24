@@ -1,0 +1,22 @@
+.search-petsitters {
+	text-align: center;
+	padding: 1.5rem;
+
+	&__title {
+		font-size: 1.1rem;
+		font-weight: bold;
+		margin-bottom: 1rem;
+	}
+
+	&__form {
+		&__separator {
+			margin-block: 1rem;
+		}
+
+		&__btn__submit {
+			@include btn;
+			background-color: $color-btn;
+			color: white;
+		}
+	}
+}

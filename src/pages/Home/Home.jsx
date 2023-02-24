@@ -1,66 +1,33 @@
-import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import { searchPetsitters } from '../../api/petsitters';
+import { Link } from 'react-router-dom';
+import ChoiceSeparator from '../../components/ChoiceSeparator/ChoiceSeparator';
 
-import InputSelectDepartment from '../../components/InputSelectDepartment/InputSelectDepartment';
-import InputSelectTypePet from '../../components/InputSelectTypePet/InputSelectTypePet';
+// import local
+import SearchPetsitters from '../../components/SearchPetsitters/SearchPetsitters';
+import BecomePetsitter from './BecomePetsitter/BecomePetsitter';
 import './Home.scss';
 
 function Home() {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  const handleSubmitSearch = (event) => {
-    event.preventDefault();
-    dispatch(searchPetsitters());
-    navigate('/resultats');
-  };
-
   return (
-    <main className="main-home">
-      <p className="main-home__description">
+    <main className="home">
+      <p className="home__description">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore autem quisa , natus velit quod optio iure dicta architecto expedita
       </p>
 
-      <section className="search-petsitters">
-        <h3 className="search-petsitters__title">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, obcaecati.
-        </h3>
+      <SearchPetsitters />
 
-        <form className="search-petsitters__form" onSubmit={handleSubmitSearch}>
-          <InputSelectDepartment />
+      <div className="home__separator">
+        <ChoiceSeparator />
+      </div>
 
-          <InputSelectTypePet className="search-petsitters__form__type" />
+      <button type="button" className="home__btn">
+        <Link
+          to="/#"
+        >
+          Créer une annonce
+        </Link>
+      </button>
 
-          <button type="submit" className="search-petsitters__form__btn__submit">
-            Rechercher
-          </button>
-
-        </form>
-        <p className="search-petsitters__form__separator">ou</p>
-
-        <button type="button" className="search-petsitters__form__btn__link">
-          <Link
-            to="/#"
-          >
-            Créer une annonce
-          </Link>
-        </button>
-      </section>
-
-      <section className="become-petsitter">
-        <h3 className="become-petsitter__title">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, obcaecati.
-        </h3>
-
-        <button type="button" className="become-petsitter__btn">
-          <Link
-            to="/indentification"
-          >
-            Devener Petsitter
-          </Link>
-        </button>
-      </section>
+      <BecomePetsitter />
     </main>
   );
 }

@@ -2,7 +2,9 @@ import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { logout } from '../../store/reducers/user';
+
+// import local
+import { logout } from '../../../store/reducers/user';
 
 import './Menu.scss';
 

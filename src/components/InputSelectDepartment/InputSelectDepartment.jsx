@@ -4,15 +4,13 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
-import { changeFieldDepartement } from '../../store/reducers/petsitters';
 
+// import local
+import { changeFieldDepartement } from '../../store/reducers/petsitters';
 import dataDepartment from '../../data/departements-region.json';
 import './InputSelectDepartment.scss';
 
 function InputSelectDepartment() {
-  // state of department value
-  // const [department, setDepartment] = useState('');
-
   const dispatch = useDispatch();
 
   const departement = useSelector((state) => state.petsitters.departement);

@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import Header from '../../../components/Header/Header';
 
+// import local
 import Field from '../../../components/Field/Field';
 import { changeFieldLogin } from '../../../store/reducers/user';
 import { login } from '../../../store/selectors/user';
@@ -28,6 +28,7 @@ function FormLogin() {
     dispatch(login());
   }
 
+  // if we are connected, we are redirect to home page
   useEffect(() => {
     if (isLogged) {
       navigate('/');

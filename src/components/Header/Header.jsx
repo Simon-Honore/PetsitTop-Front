@@ -1,8 +1,11 @@
-import './Header.scss';
 import { FaUserCircle } from 'react-icons/fa';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Menu from '../Menu/Menu';
+import { bool } from 'prop-types';
+
+// import local
+import Menu from './Menu/Menu';
+import './Header.scss';
 
 function Header({ isLogged }) {
   console.log('LOGGED >>', isLogged);
@@ -41,3 +44,7 @@ function Header({ isLogged }) {
 }
 
 export default Header;
+
+Header.propTypes = {
+  isLogged: bool.isRequired,
+};

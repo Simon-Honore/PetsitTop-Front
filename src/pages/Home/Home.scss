@@ -1,4 +1,7 @@
-.main-home {
+.home {
+	display: flex;
+	flex-direction: column;
+
 	&__description {
 		font-size: 1.2rem;
 		font-weight: bold;
@@ -6,58 +9,16 @@
 		text-align: center;
 		background-color: #eee;
 	}
-}
 
-.search-petsitters {
-	text-align: center;
-	padding: 1.5rem;
-
-	&__title {
-		font-size: 1.1rem;
-		font-weight: bold;
-		margin-bottom: 1rem;
-	}
-
-	&__form {
-		&__separator {
-			margin-block: 1rem;
-		}
-
-		&__btn__submit {
-			@include btn;
-			background-color: $color-btn;
-			color: white;
-		}
-
-		&__btn__link {
-			@include btn;
-			background-color: $fontcolor-light;
-			color: $color-btn;
-			width: 10rem;
-		}
-	}
-}
-
-.become-petsitter {
-	padding: 1.5rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	height: 15rem;
-	background-image: url('../../assets/chien-basenji-intelligent-sympathique-donnant-sa-patte-close-up-isolated-on-white.jpg');
-	background-size: cover;
-	background-position: center;
-
-	&__title {
-		font-size: 1.1rem;
-		font-weight: bold;
-		width: 50%;
+	&__separator {
+		padding: 0 25%;
 	}
 
 	&__btn {
 		@include btn;
-		background-color: $color-btn;
-		color: white;
+		background-color: $fontcolor-light;
+		color: $color-btn;
 		width: 10rem;
+		margin: 1rem auto 1.5rem;
 	}
 }

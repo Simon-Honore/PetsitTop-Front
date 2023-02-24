@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Footer from '../../components/Footer/Footer';
-import Header from '../../components/Header/Header';
-import MyProfile from '../MyProfile/MyProfile';
-import Identification from '../Identification/Identification';
-import './App.scss';
-import Home from '../Home/Home';
-import SearchResults from '../SearchResults/SearchResults';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import MyProfile from './pages/MyProfile/MyProfile';
+import Identification from './pages/Identification/Identification';
+import './styles/App.scss';
+import Home from './pages/Home/Home';
+import SearchResults from './pages/SearchResults/SearchResults';
 
 function App() {
   // const logged = true;

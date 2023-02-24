@@ -1,3 +1,4 @@
+import ChoiceSeparator from '../../components/ChoiceSeparator/ChoiceSeparator';
 import FormCreateAccount from './FormCreateAccount/FormCreateAccount';
 import FormLogin from './FormLogin/FormLogin';
 import './Identification.scss';
@@ -7,10 +8,7 @@ function Identification() {
     <main className="identification">
       <FormLogin />
 
-      <div className="identification__separator">
-        <hr />
-        <p className="identification__separator__content">ou</p>
-      </div>
+      <ChoiceSeparator />
 
       <FormCreateAccount />
     </main>
