@@ -1,6 +1,6 @@
 import InputSelectDepartment from '../../components/InputSelectDepartment/InputSelectDepartment';
 import InputSelectTypePet from '../../components/InputSelectTypePet/InputSelectTypePet';
-import PetsitterCard from './PetsitterCard';
+import PetsitterCard from './PetsitterCard/PetsitterCard';
 import './SearchResults.scss';
 
 const petSitters = [

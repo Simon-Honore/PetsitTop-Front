@@ -1,8 +1,8 @@
-import { MdPlace } from "react-icons/md"
+import { MdPlace } from 'react-icons/md';
 import './PetsitterCard.scss';
 
 function PetsitterCard({
-  nom, prenom, ville, codePostal, description, animauxAcceptes
+  nom, prenom, ville, codePostal, description, animauxAcceptes,
 }) {
   return (
     <div className="petsitter__card">
@@ -11,15 +11,21 @@ function PetsitterCard({
           {`${prenom} ${Array.from(nom)[0]}.`}
         </h1>
         <p className="petsitter__card__location">
-          <MdPlace/> {`${ville} - ${codePostal}`}
+          <MdPlace />
+          {' '}
+          {`${ville} - ${codePostal}`}
         </p>
       </div>
       <p>{description}</p>
       <p> Je peux garder vos :</p>
       {/* {console.log(animauxAcceptes)} */}
-      {animauxAcceptes.map((animal) => 
-      <p> {animal} </p>
-      )}
+      {animauxAcceptes.map((animal) => (
+        <p>
+          {' '}
+          {animal}
+          {' '}
+        </p>
+      ))}
     </div>
   );
 }
