@@ -7,6 +7,7 @@ import Identification from './pages/Identification/Identification';
 import './styles/App.scss';
 import Home from './pages/Home/Home';
 import SearchResults from './pages/SearchResults/SearchResults';
+import PublicProfile from './pages/PublicProfile/PublicProfile';
 
 function App() {
   // const logged = true;
@@ -20,6 +21,7 @@ function App() {
         <Route path="/identification" element={<Identification />} />
         <Route path="/mon_profil" element={<MyProfile />} />
         <Route path="/resultats" element={<SearchResults />} />
+        <Route path="/profil/:id" element={<PublicProfile />} />
       </Routes>
       <Footer />
     </div>

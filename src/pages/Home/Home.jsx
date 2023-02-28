@@ -10,7 +10,8 @@ function Home() {
   return (
     <main className="home">
       <p className="home__description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore autem quisa , natus velit quod optio iure dicta architecto expedita
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Inventore autem quisa , natus velit quod optio iure dicta architecto expedita
       </p>
 
       <SearchPetsitters />
