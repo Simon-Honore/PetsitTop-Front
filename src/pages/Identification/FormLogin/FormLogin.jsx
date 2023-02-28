@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 // import local
 import Field from '../../../components/Field/Field';
 import { changeFieldLogin } from '../../../store/reducers/user';
-import { login } from '../../../store/selectors/user';
+import { login } from '../../../api/auth';
 import './FormLogin.scss';
 
 function FormLogin() {
