@@ -34,9 +34,9 @@ function AdCard({
           </div>
         </header>
 
-        <main className="adCard__description__main">
+        <p className="adCard__description__content">
           {content}
-        </main>
+        </p>
       </section>
 
       <section className="adCard__btnContainer">
