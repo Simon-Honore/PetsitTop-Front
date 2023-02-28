@@ -1,0 +1,32 @@
+[
+	{
+		"id": 7,
+		"title": "Maxime nesciunt sunt placeat nobis.",
+		"content": "Tempora natus asperiores. Perspiciatis illo distinctio. Alias debitis error accusantium nihil nostrum recusandae itaque officia molestiae. Fugit quis pariatur doloribus inventore vero officia culpa quidem. Adipisci quos voluptatem ad porro eligendi quo vel voluptas. Quae soluta corrupti voluptates alias officia.        \nExplicabo consequatur repellat harum. Voluptas ut rerum eveniet eos similique pariatur. Nemo enim sapiente quaerat eius. Cumque ea non iste porro fugit fugit officia vero.\nAssumenda qui optio nesciunt maxime quas perspiciatis aperiam veritatis dolorum. Laudantium nisi eveniet pariatur reiciendis eaque sapiente quasi. Suscipit pariatur recusandae. Velit aut animi iste placeat dicta recusandae necessitatibus ullam. Consequatur consectetur dolor explicabo culpa reiciendis aut reiciendis nisi.",
+		"city": "Le Mans",
+		"postal_code": "49820",
+		"user_id": 7,
+		"created_at": "2023-02-23T17:32:39.673Z",
+		"updated_at": null
+	},
+	{
+		"id": 8,
+		"title": "Debitis placeat corporis iusto a cumque excepturi necessitatibus.",
+		"content": "Distinctio animi id occaecati commodi. Sunt vitae accusantium optio delectus. Quia necessitatibus a numquam sunt dolorem temporibus. Ullam possimus id voluptatem eveniet \nducimus. Quos asperiores omnis beatae. Nesciunt ratione ex voluptas.\nAssumenda accusantium fuga natus voluptatibus. Possimus nisi rem reiciendis veniam cupiditate. Adipisci dolore voluptatibus deserunt perferendis modi in. Officia veniam consequuntur eum consequuntur praesentium consectetur repudiandae quis voluptates. Sint officiis quos minus harum. Dolorem ipsa vero nostrum sunt doloremque suscipit.\nVero iusto ullam nobis facere maiores commodi quidem. Ullam laboriosam sapiente ipsa aperiam. Reiciendis assumenda necessitatibus deleniti sequi esse. Maxime aspernatur ad.",
+		"city": "Le Tampon",
+		"postal_code": "40910",
+		"user_id": 7,
+		"created_at": "2023-02-23T17:32:39.673Z",
+		"updated_at": null
+	},
+	{
+		"id": 10,
+		"title": "Sit consequatur id nesciunt dolores doloremque voluptatem.",
+		"content": "Voluptate fugit sunt eius reiciendis nulla rerum id optio cumque. Aut ut dolor quas ut laboriosam praesentium vel. Modi incidunt sint asperiores corporis. Cumque deserunt earum provident omnis laboriosam asperiores. Delectus fugiat quibusdam reiciendis voluptatibus rerum maiores tenetur quos consectetur. Veritatis aut blanditiis nihil.\nOptio placeat provident repellat. Sunt omnis magni doloribus fuga ex quas. Porro voluptate possimus laborum est hic.\nId molestiae laboriosam ut assumenda. Illum enim laudantium autem impedit unde exercitationem at dolor ea. Laboriosam eaque itaque minus recusandae accusamus reiciendis natus quo. Facere velit quia. Veritatis laudantium eaque incidunt. Voluptatem esse corrupti quis qui quia consectetur.",
+		"city": "Marseille",
+		"postal_code": "42180",
+		"user_id": 7,
+		"created_at": "2023-02-23T17:32:39.673Z",
+		"updated_at": null
+	}
+]
