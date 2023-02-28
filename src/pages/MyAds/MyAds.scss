@@ -1,14 +1,16 @@
-.ads {
+.myAds {
 	&__header {
 		margin: 1rem;
+		display: flex;
+		justify-content: space-between;
 
 		&__title {
 			font-size: 1.8rem;
 			font-weight: bold;
 		}
 
-		&__filter {
-			padding: 1rem 2rem;
+		&__add {
+			margin-right: 0.5rem;
 		}
 	}
 
