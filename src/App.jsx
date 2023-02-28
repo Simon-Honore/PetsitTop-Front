@@ -9,6 +9,7 @@ import Home from './pages/Home/Home';
 import SearchResults from './pages/SearchResults/SearchResults';
 import Ads from './pages/Ads/Ads';
 import './styles/App.scss';
+import MyAds from './pages/MyAds/MyAds';
 
 function App() {
   // const logged = true;
@@ -23,6 +24,7 @@ function App() {
         <Route path="/mon_profil" element={<MyProfile />} />
         <Route path="/resultats" element={<SearchResults />} />
         <Route path="/annonces" element={<Ads />} />
+        <Route path="/mes-annonces" element={<MyAds />} />
       </Routes>
       <Footer />
     </div>

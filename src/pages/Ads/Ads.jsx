@@ -18,12 +18,13 @@ function Ads() {
         <div className="ads__header__filter">
           <InputSelectDepartment />
         </div>
-        <p className="ads__header__count">
-          {count > 1
-            ? `${count} annonces diponibles`
-            : `${count} annonce diponible` }
-        </p>
       </header>
+
+      <p className="ads__count">
+        {count > 1
+          ? `${count} annonces diponibles`
+          : `${count} annonce diponible` }
+      </p>
       {adsData.map((ad) => (
         <AdCard
           key={ad.id}
