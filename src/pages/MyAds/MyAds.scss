@@ -1,0 +1,22 @@
+.myAds {
+	&__header {
+		margin: 1rem;
+		display: flex;
+		justify-content: space-between;
+
+		&__title {
+			font-size: 1.8rem;
+			font-weight: bold;
+		}
+
+		&__add {
+			margin-right: 0.5rem;
+		}
+	}
+
+	&__count {
+		font-size: 1.2rem;
+		font-weight: bold;
+		margin-left: 1rem;
+	}
+}

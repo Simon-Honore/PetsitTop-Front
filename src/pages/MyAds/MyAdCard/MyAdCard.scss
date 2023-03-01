@@ -1,0 +1,52 @@
+.myAdCard {
+	margin: 1rem 0.5rem;
+	padding: 0.5rem;
+	border: 2px solid #ccc;
+
+	&__header {
+		margin-bottom: 1rem;
+		display: flex;
+		gap: 1rem;
+
+		&__description {
+			&__title {
+				font-size: 1.2rem;
+				font-weight: bold;
+				margin-bottom: 0.3rem;
+			}
+
+			&__name {
+				font-size: 1.1rem;
+				font-style: italic;
+				margin-bottom: 0.3rem;
+			}
+
+			&__localisation {
+				display: flex;
+				align-items: flex-end;
+				margin-bottom: 0.5rem;
+			}
+
+			&__date {
+				font-size: 0.8rem;
+				font-style: italic;
+				color: #a5a5a5;
+
+				& span {
+					font-size: 0.9rem;
+				}
+			}
+		}
+
+		&__btns {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+	}
+
+	&__content {
+		text-align: justify;
+		font-style: oblique;
+	}
+}

@@ -1,8 +1,9 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 // import local
 import { searchPetsitters } from '../../api/petsitters';
+import { changeFieldDepartement } from '../../store/reducers/petsitters';
 import InputSelectDepartment from '../InputSelectDepartment/InputSelectDepartment';
 import InputSelectTypePet from '../InputSelectTypePet/InputSelectTypePet';
 import './SearchPetsitters.scss';
@@ -10,6 +11,12 @@ import './SearchPetsitters.scss';
 function SearchPetsitters() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const departement = useSelector((state) => state.petsitters.departement);
+
+  function handleChangeDepartement(value) {
+    dispatch(changeFieldDepartement(value));
+  }
 
   // on submit, we make an API request to find the petsitters using the form
   // and navigate to the results page
@@ -25,7 +32,10 @@ function SearchPetsitters() {
       </h3>
 
       <form className="search-petsitters__form" onSubmit={handleSubmitSearch}>
-        <InputSelectDepartment />
+        <InputSelectDepartment
+          onChange={handleChangeDepartement}
+          value={departement}
+        />
 
         <InputSelectTypePet className="search-petsitters__form__type" />
 

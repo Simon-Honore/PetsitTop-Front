@@ -1,0 +1,11 @@
+.formAd {
+	margin: 1rem 0;
+
+	&__btn {
+		@include btn;
+		background-color: $color-btn;
+		color: white;
+		width: 100%;
+		margin: 0.5rem 0;
+	}
+}
