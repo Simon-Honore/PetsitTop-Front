@@ -10,6 +10,7 @@ import SearchResults from './pages/SearchResults/SearchResults';
 import Ads from './pages/Ads/Ads';
 import './styles/App.scss';
 import MyAds from './pages/MyAds/MyAds';
+import CreateAd from './pages/CreateAd/CreateAd';
 
 function App() {
   // const logged = true;
@@ -25,6 +26,7 @@ function App() {
         <Route path="/resultats" element={<SearchResults />} />
         <Route path="/annonces" element={<Ads />} />
         <Route path="/mes-annonces" element={<MyAds />} />
+        <Route path="/creer-une-annonce" element={<CreateAd />} />
       </Routes>
       <Footer />
     </div>
