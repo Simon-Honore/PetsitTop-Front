@@ -1,26 +1,26 @@
-// import seedData from '../../data/seed/one-user.json';
-// import { saveUserInfos } from '../reducers/user';
+import seedData from '../../data/seed/one-user.json';
+import { saveUserInfos } from '../reducers/user';
 
-// // Test page while waiting API is ok
+// Test page while waiting API is ok
 
-// // to find an User by email and password
-// export function findUser(data) {
-//   const userConfirm = seedData.find((obj) => obj.email === data.email
-//     && obj.password === data.password);
-//   return userConfirm;
-// }
+// to find an User by email and password
+export function findUser(data) {
+  const userConfirm = seedData.find((obj) => obj.email === data.email
+    && obj.password === data.password);
+  return userConfirm;
+}
 
-// export const login = () => (dispatch, getState) => {
-//   const state = getState();
-//   const { email, password } = state.user;
+export const login = () => (dispatch, getState) => {
+  const state = getState();
+  const { email, password } = state.user;
 
-//   const data = { email, password };
+  const data = { email, password };
 
-//   const userConfirm = findUser(data);
+  const userConfirm = findUser(data);
 
-//   if (userConfirm) {
-//     dispatch(saveUserInfos(userConfirm));
-//   } else {
-//     console.log('ERROR LOGIN');
-//   }
-// };
+  if (userConfirm) {
+    dispatch(saveUserInfos(userConfirm));
+  } else {
+    console.log('ERROR LOGIN');
+  }
+};
