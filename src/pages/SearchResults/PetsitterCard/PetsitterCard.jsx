@@ -1,9 +1,10 @@
 import { string, number, arrayOf } from 'prop-types';
 import { MdPlace } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 import './PetsitterCard.scss';
 
 function PetsitterCard({
-  nom, prenom, ville, codePostal, description, animauxAcceptes,
+  id, nom, prenom, ville, codePostal, description, animauxAcceptes,
 }) {
   return (
     <div className="petsitter__card">
@@ -24,6 +25,29 @@ function PetsitterCard({
           {animal}
         </li>
       ))}
+      <div className="petsitter__card__buttons">
+        <Link 
+          nom={nom} 
+          prenom={prenom} 
+          ville={ville} 
+          codePostal={codePostal} 
+          description={description} 
+          animauxAcceptes={animauxAcceptes}
+        to={`/profil/${id}`}>
+          <button
+            type="button"
+            className="petsitter__card__buttons__details"
+          >
+            voir le profil
+          </button>
+        </Link>
+        <button
+          type="button"
+          className="petsitter__card__buttons__contact"
+        >
+          contacter
+        </button>
+      </div>
     </div>
   );
 }
@@ -31,6 +55,7 @@ function PetsitterCard({
 export default PetsitterCard;
 
 PetsitterCard.propTypes = {
+  id: number.isRequired,
   nom: string.isRequired,
   prenom: string.isRequired,
   ville: string.isRequired,

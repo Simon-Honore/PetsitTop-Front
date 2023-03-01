@@ -10,8 +10,8 @@ function AddPet() {
                 </div>
 
                 <div>
-                  <label htmlFor="">Type d'animal : *</label>
-                  <select name="" id="">
+                  <label htmlFor="pet_type">Type d'animal : *</label>
+                  <select name="pet_type" id="pet_type">
                     <option value="chien">Chien</option>
                     <option value="chat">Chat</option>
                     <option value="NAC">NAC</option>

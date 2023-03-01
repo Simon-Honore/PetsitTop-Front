@@ -1,0 +1,16 @@
+.petsitting {
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    &__status {
+        display: flex;
+
+        &__icon {
+            margin-right: 0.5rem;
+        }
+    }
+}
