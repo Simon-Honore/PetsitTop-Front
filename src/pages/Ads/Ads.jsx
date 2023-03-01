@@ -1,10 +1,17 @@
 import './Ads.scss';
+import { useState } from 'react';
 import InputSelectDepartment from '../../components/InputSelectDepartment/InputSelectDepartment';
 import adsData from '../../data/seed/ads.json';
 import AdCard from './AdCard/AdCard';
 
 function Ads() {
   const count = adsData.length;
+
+  const [filterByDepartment, setFilterByDepartment] = useState();
+
+  function handleChangeDepartment(value) {
+    setFilterByDepartment(value);
+  }
 
   return (
     <main className="ads">
@@ -16,7 +23,10 @@ function Ads() {
           <button type="submit" className="ads__header__filter__btn">FILTRER</button>
         </form> */}
         <div className="ads__header__filter">
-          <InputSelectDepartment />
+          <InputSelectDepartment
+            onChange={handleChangeDepartment}
+            value={filterByDepartment}
+          />
         </div>
       </header>
 
