@@ -14,6 +14,7 @@ function Field({
 }) {
   function handleChange(event) {
     onChange(event.target.value, name);
+    console.log(value);
   }
 
   const inputId = `field-${form}-${name}`;

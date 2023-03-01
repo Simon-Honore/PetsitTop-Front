@@ -1,45 +1,14 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import RoleForm from '../../../components/RoleForm/RoleForm';
 import Field from '../../../components/Field/Field';
 import FieldCheckbox from '../../../components/FieldCheckbox/FieldCheckbox';
-import { changeFieldCreateAccount } from '../../../store/reducers/createAccount';
 import './FormCreateAccount.scss';
-import { createAccount } from '../../../api/createAccount';
 
 function FormCreateAccount() {
   const [continueCreating, setContinueCreating] = useState(false);
-  const dispatch = useDispatch();
 
-  const {
-    first_name,
-    last_name,
-    email,
-    password,
-    confirmPassword,
-    postal_code,
-    city,
-    availability,
-    availability_details,
-    role_petsitter,
-    role_petowner,
-  } = useSelector((state) => state.createAccount);
-
-  function handleClickContinue() {
+  const handleClickContinue = () => {
     setContinueCreating(true);
-  }
-
-  function handleChangeField(value, name) {
-    dispatch(changeFieldCreateAccount({
-      key: name,
-      value,
-    }));
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    dispatch(createAccount());
-  }
+  };
 
   return (
     <section className="createAccount">
@@ -47,15 +16,12 @@ function FormCreateAccount() {
         Je créer mon compte
       </h3>
 
-      <form className="createAccount__form" onSubmit={handleSubmit}>
+      <form className="createAccount__form">
         <Field
           label="Adresse email*"
           type="email"
-          name="email"
+          name="createAccount-email"
           placeholder="email"
-          form="createAccount"
-          onChange={handleChangeField}
-          value={email}
         />
 
         {/* on click, see the rest of the form  */}
@@ -74,95 +40,65 @@ function FormCreateAccount() {
               <Field
                 label="Mot de passe*"
                 type="password"
-                name="password"
+                name="createAccount-password"
                 placeholder="mot de passe"
-                form="createAccount"
-                onChange={handleChangeField}
-                value={password}
               />
 
               <Field
                 label="Confirmation mot de passe*"
                 type="password"
-                name="confirmPassword"
+                name="createAccount-password-confirm"
                 placeholder="mot de passe"
-                form="createAccount"
-                onChange={handleChangeField}
-                value={confirmPassword}
               />
 
               <Field
                 label="Prénom*"
-                name="first_name"
+                name="createAccount-firstName"
                 placeholder="prénom"
-                form="createAccount"
-                onChange={handleChangeField}
-                value={first_name}
               />
 
               <Field
                 label="Nom*"
-                name="last_name"
+                name="createAccount-lastName"
                 placeholder="nom"
-                form="createAccount"
-                onChange={handleChangeField}
-                value={last_name}
               />
 
               <Field
                 label="Code postal*"
-                name="postal_code"
+                name="createAccount-zipCode"
                 placeholder="code postal"
-                form="createAccount"
-                value={postal_code}
-                onChange={handleChangeField}
               />
 
               <Field
                 label="Ville*"
-                name="city"
-                placeholder="city"
-                form="createAccount"
-                value={city}
-                onChange={handleChangeField}
+                name="createAccount-city"
+                placeholder="ville"
               />
 
               <fieldset className="createAccount__fieldset">
                 <legend className="createAccount__fieldset__legend">Type(s) de profil(s)*</legend>
                 <FieldCheckbox
                   label="Petowner : J'ai des animaux à faire garder"
-                  name="role_petowner"
-                  value={role_petowner}
-                  onChange={handleChangeField}
+                  name="createAccount-role--petowner"
                 />
 
                 <p className="createAccount__fieldset__separator">et / ou</p>
 
                 <FieldCheckbox
                   label="Petsitter : je souhaite garder des animaux"
-                  name="role_petsitter"
-                  value={role_petsitter}
-                  onChange={handleChangeField}
+                  name="createAccount-role--petsitter"
                 />
               </fieldset>
-
-              {role_petsitter
-                && (
-                <RoleForm
-                  onChange={handleChangeField}
-                  availability={availability}
-                />
-                )}
 
               <div className="createAccount__policy">
                 <FieldCheckbox
                   label="mentions RGPD*"
-                  name="rgpd"
+                  name="createAccount-rgpd"
                 />
 
                 <FieldCheckbox
                   label="J'accepte les CGU*"
-                  name="cgu"
+                  name="createAccount-cgu"
                 />
               </div>
 
