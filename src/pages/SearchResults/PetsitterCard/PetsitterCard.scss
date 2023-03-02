@@ -13,24 +13,4 @@
         font-weight: bold;
 
     }
-
-    &__buttons {
-        text-align: center;
-
-        &__details {
-            @include btn;
-		    background-color: $color-btn;
-		    color: white;
-		    width: 9rem;
-            margin-right: 1rem
-        }
-
-        &__contact {
-            @include btn;
-		    background-color: $fontcolor-light;
-		    color: $color-btn;
-		    width: 9rem;
-		    margin: 1rem auto 1.5rem;
-        }
-    }
 }

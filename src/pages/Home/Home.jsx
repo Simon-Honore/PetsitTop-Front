@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ChoiceSeparator from '../../components/ChoiceSeparator/ChoiceSeparator';
 
@@ -7,11 +8,12 @@ import BecomePetsitter from './BecomePetsitter/BecomePetsitter';
 import './Home.scss';
 
 function Home() {
+  const isLogged = useSelector((state) => state.user.logged);
+
   return (
     <main className="home">
       <p className="home__description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Inventore autem quisa , natus velit quod optio iure dicta architecto expedita
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore autem quisa , natus velit quod optio iure dicta architecto expedita
       </p>
 
       <SearchPetsitters />
@@ -22,13 +24,13 @@ function Home() {
 
       <button type="button" className="home__btn">
         <Link
-          to="/#"
+          to={isLogged ? '/creer-une-annonce' : '/identification'}
         >
           Créer une annonce
         </Link>
       </button>
 
-      <BecomePetsitter />
+      <BecomePetsitter isLogged={isLogged} />
     </main>
   );
 }

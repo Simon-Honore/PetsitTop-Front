@@ -21,19 +21,22 @@ function PetsitterCard({
       <p>{description}</p>
       <ul> Je peux garder vos :</ul>
       {animauxAcceptes.map((animal) => (
-        <li>
+        <li key={animal.id}>
           {animal}
         </li>
       ))}
+
       <div className="petsitter__card__buttons">
-        <Link 
-          nom={nom} 
-          prenom={prenom} 
-          ville={ville} 
-          codePostal={codePostal} 
-          description={description} 
-          animauxAcceptes={animauxAcceptes}
-        to={`/profil/${id}`}>
+        <Link
+          key={id}
+          nom={nom}
+          prenom={prenom}
+          ville={ville}
+          code_postal={codePostal}
+          description={description}
+          animaux_acceptes={animauxAcceptes}
+          to={`/profil/${id}`}
+        >
           <button
             type="button"
             className="petsitter__card__buttons__details"
@@ -55,7 +58,6 @@ function PetsitterCard({
 export default PetsitterCard;
 
 PetsitterCard.propTypes = {
-  id: number.isRequired,
   nom: string.isRequired,
   prenom: string.isRequired,
   ville: string.isRequired,
