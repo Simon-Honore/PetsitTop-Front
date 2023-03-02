@@ -7,6 +7,7 @@ import MyProfile from './pages/MyProfile/MyProfile';
 import Identification from './pages/Identification/Identification';
 import Home from './pages/Home/Home';
 import SearchResults from './pages/SearchResults/SearchResults';
+import PublicProfile from './pages/PublicProfile/PublicProfile';
 import Ads from './pages/Ads/Ads';
 import './styles/App.scss';
 import MyAds from './pages/MyAds/MyAds';
@@ -24,6 +25,7 @@ function App() {
         <Route path="/identification" element={<Identification />} />
         <Route path="/mon_profil" element={<MyProfile />} />
         <Route path="/resultats" element={<SearchResults />} />
+        <Route path="/profil/:id" element={<PublicProfile />} />
         <Route path="/annonces" element={<Ads />} />
         <Route path="/mes-annonces" element={<MyAds />} />
         <Route path="/creer-une-annonce" element={<CreateAd />} />

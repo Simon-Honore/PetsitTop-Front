@@ -15,6 +15,7 @@ function SearchResults() {
       {searchData.map((petsitter) => (
         <PetsitterCard
           key={petsitter.id}
+          id={petsitter.id}
           prenom={petsitter.first_name}
           nom={petsitter.last_name}
           ville={petsitter.city}
