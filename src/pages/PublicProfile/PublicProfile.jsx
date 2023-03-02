@@ -45,16 +45,16 @@ function PublicProfile({
             <Link to="mailto:test@gmail.com">
               <button
                 type="button"
-                className='profile__user__right__button'
+                className="profile__user__right__button"
               >
-                <RiMailFill/>
+                <RiMailFill />
                 Contactez-moi
               </button>
             </Link>
 
             <div className="profile__user__right__tags">
-            {petowner && <FaPaw size="40" />}
-            {petsitter && <MdChildFriendly size="40" />}
+              {petowner && <FaPaw size="40" />}
+              {petsitter && <MdChildFriendly size="40" />}
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@ function PublicProfile({
         <h1 className="pets__title">Mes animaux</h1>
 
         <PetCard
-          className="pets__ite"
+          className="pets__item"
           name="Médor"
           pet_type="Chien"
           description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi dicta eveniet quos, optio veritatis officia quam tempore pariatur magnam. Laudantium sequi quasi eum laboriosam mollitia, eos amet esse dolores accusamus."
