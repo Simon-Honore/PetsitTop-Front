@@ -1,9 +1,9 @@
 import { string, func, bool } from 'prop-types';
 import cn from 'classnames';
-import './FieldCheckbox.scss';
+import './FieldCheckboxPetType.scss';
 
 // == Composant
-function FieldCheckbox({
+function FieldCheckboxPetType({
   label,
   name,
   value,
@@ -12,7 +12,9 @@ function FieldCheckbox({
   const inputId = `field-${name}`;
 
   function handleChange(event) {
-    onChange(event.target.checked, name);
+    if (event.target.checked) {
+      onChange(event.target.value, name);
+    }
   }
 
   return (
@@ -36,15 +38,15 @@ function FieldCheckbox({
   );
 }
 
-FieldCheckbox.propTypes = {
+FieldCheckboxPetType.propTypes = {
   label: string.isRequired,
   value: bool,
   name: string.isRequired,
   onChange: func.isRequired,
 };
 
-FieldCheckbox.defaultProps = {
+FieldCheckboxPetType.defaultProps = {
   value: false,
 };
 
-export default FieldCheckbox;
+export default FieldCheckboxPetType;
