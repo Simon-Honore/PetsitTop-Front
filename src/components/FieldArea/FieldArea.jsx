@@ -38,9 +38,8 @@ function FieldArea({
         name={name}
         onChange={handleChange}
         maxLength={limit}
-      >
-        {value}
-      </textarea>
+        value={value}
+      />
 
       <p className={classNameCount}>
         <span>{count}</span>

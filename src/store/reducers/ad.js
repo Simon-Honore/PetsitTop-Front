@@ -5,7 +5,6 @@ export const initialState = {
   content: '',
   postal_code: '',
   city: '',
-  userId: null,
 };
 
 export const changeFieldAd = createAction('user/changeFieldAd');

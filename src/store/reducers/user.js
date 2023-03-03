@@ -5,6 +5,7 @@ export const initialState = {
   email: '',
   password: '',
   userId: null,
+  accessToken: null,
 };
 
 export const changeFieldLogin = createAction('user/changeFieldLogin');
@@ -24,6 +25,7 @@ const userReducer = createReducer(initialState, (builder) => {
       state.email = '';
       state.password = '';
       state.userId = null;
+      state.accessToken = null;
     });
 });
 

@@ -8,7 +8,6 @@ import Menu from './Menu/Menu';
 import './Header.scss';
 
 function Header({ isLogged }) {
-  console.log('LOGGED >>', isLogged);
   const [showMenu, setShowMenu] = useState(false);
 
   const handleClick = () => {
