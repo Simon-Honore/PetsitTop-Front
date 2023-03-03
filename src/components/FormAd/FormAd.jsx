@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { func } from 'prop-types';
 
 import Field from '../Field/Field';
 import FieldArea from '../FieldArea/FieldArea';
 import { changeFieldAd } from '../../store/reducers/ad';
 import './FormAd.scss';
 
-function FormAd() {
+function FormAd({ onSubmit }) {
   const dispatch = useDispatch();
 
   const {
@@ -22,8 +23,13 @@ function FormAd() {
     }));
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    onSubmit();
+  }
+
   return (
-    <form className="formAd">
+    <form className="formAd" onSubmit={handleSubmit}>
       <Field
         label="Titre*"
         name="title"
@@ -69,3 +75,7 @@ function FormAd() {
 }
 
 export default FormAd;
+
+FormAd.propTypes = {
+  onSubmit: func.isRequired,
+};
