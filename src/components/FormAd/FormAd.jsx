@@ -3,7 +3,7 @@ import { func } from 'prop-types';
 
 import Field from '../Field/Field';
 import FieldArea from '../FieldArea/FieldArea';
-import { changeFieldAd } from '../../store/reducers/ad';
+import { changeFieldAd } from '../../store/reducers/ads';
 import './FormAd.scss';
 
 function FormAd({ onSubmit }) {
@@ -14,7 +14,7 @@ function FormAd({ onSubmit }) {
     content,
     city,
     postal_code,
-  } = useSelector((state) => state.ad);
+  } = useSelector((state) => state.ads);
 
   function handleChangeField(value, name) {
     dispatch(changeFieldAd({

@@ -1,4 +1,5 @@
-import { axiosInstance } from '.';
+import { axiosInstance } from './index';
+import { setAllAdsList } from '../store/reducers/ads';
 
 export const createAd = () => async (dispatch, getState) => {
   const state = getState();
@@ -9,16 +10,7 @@ export const createAd = () => async (dispatch, getState) => {
     city,
   } = state.ad;
 
-  console.log(
-    title,
-    content,
-    postal_code,
-    city,
-  );
-
   const { userId } = state.user;
-
-  console.log(`/user/${userId}/ads`);
 
   const { data } = await axiosInstance.post(`/user/${userId}/ads`, {
     title,
@@ -26,6 +18,10 @@ export const createAd = () => async (dispatch, getState) => {
     postal_code,
     city,
   });
+};
 
-  console.log(data);
+export const fetchAllAds = () => async (dispatch) => {
+  const { data } = await axiosInstance.get('/ads');
+
+  dispatch(setAllAdsList(data));
 };
