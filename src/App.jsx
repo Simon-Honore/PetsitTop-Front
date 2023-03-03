@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
@@ -12,14 +13,35 @@ import Ads from './pages/Ads/Ads';
 import './styles/App.scss';
 import MyAds from './pages/MyAds/MyAds';
 import CreateAd from './pages/CreateAd/CreateAd';
+import { changeFieldLogin } from './store/reducers/user';
 
 function App() {
-  // const logged = true;
-  const logged = useSelector((state) => state.user.logged);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const isLoggedInLocalStorage = !!localStorage.getItem('isLogged');
+    console.log('useEffect > ', isLoggedInLocalStorage);
+    if (isLoggedInLocalStorage === true) {
+      dispatch(changeFieldLogin({
+        key: 'logged',
+        value: !!localStorage.getItem('isLogged'),
+      }));
+      dispatch(changeFieldLogin({
+        key: 'accessToken',
+        value: localStorage.getItem('accessToken'),
+      }));
+      dispatch(changeFieldLogin({
+        key: 'userId',
+        value: localStorage.getItem('userId'),
+      }));
+    }
+  }, []);
+
+  const isLogged = useSelector((state) => state.user.logged);
 
   return (
     <div className="App">
-      <Header isLogged={logged} />
+      <Header isLogged={isLogged} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/identification" element={<Identification />} />

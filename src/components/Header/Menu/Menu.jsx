@@ -14,6 +14,7 @@ function Menu({ handleClick }) {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
+    localStorage.clear();
     dispatch(logout());
   };
 
