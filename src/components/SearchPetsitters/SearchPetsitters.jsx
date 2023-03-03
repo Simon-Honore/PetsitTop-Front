@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 // import local
 import { searchPetsitters } from '../../api/petsitters';
-import { changeFieldDepartement } from '../../store/reducers/petsitters';
+import { changeFieldDepartement, changeFieldPetType } from '../../store/reducers/petsitters';
+
 import InputSelectDepartment from '../InputSelectDepartment/InputSelectDepartment';
 import InputSelectTypePet from '../InputSelectTypePet/InputSelectTypePet';
 import './SearchPetsitters.scss';
@@ -11,11 +12,17 @@ import './SearchPetsitters.scss';
 function SearchPetsitters() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const dataType = ['chien', 'chat', 'lapin', 'rongeur', 'oiseau', 'poisson', 'reptile', 'autre'];
+  const query = useParams();
 
-  const departement = useSelector((state) => state.petsitters.departement);
+  const { departement, petType } = useSelector((state) => state.petsitters);
 
   function handleChangeDepartement(value) {
     dispatch(changeFieldDepartement(value));
+  }
+
+  function handleChangePetType(value) {
+    dispatch(changeFieldPetType(value));
   }
 
   // on submit, we make an API request to find the petsitters using the form
@@ -23,8 +30,13 @@ function SearchPetsitters() {
   const handleSubmitSearch = (event) => {
     event.preventDefault();
     dispatch(searchPetsitters());
-    navigate('/resultats');
+    navigate({
+      pathname: '/resultats',
+      search: `?departement=${departement}&pet_type=${petType}`,
+    });
+    console.log(query.name);
   };
+
   return (
     <section className="search-petsitters">
       <h3 className="search-petsitters__title">
@@ -37,11 +49,18 @@ function SearchPetsitters() {
           value={departement}
         />
 
-        <InputSelectTypePet className="search-petsitters__form__type" />
+        <InputSelectTypePet
+          className="search-petsitters__form__type"
+          value={petType}
+          onChange={handleChangePetType}
+          petTypes={dataType}
+        />
 
+        {/* <Link to="/resultats?departement=48&animal=chien"> */}
         <button type="submit" className="search-petsitters__form__btn__submit">
           Rechercher
         </button>
+        {/* </Link> */}
 
       </form>
     </section>

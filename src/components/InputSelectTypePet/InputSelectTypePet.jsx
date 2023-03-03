@@ -7,18 +7,19 @@ import InputLabel from '@mui/material/InputLabel';
 
 // import local
 import './InputSelectTypePet.scss';
-import { changeFieldPetType } from '../../store/reducers/petsitters';
 
-function InputSelectTypePet() {
-  const dataType = ['chien', 'chat', 'lapin', 'rongeur', 'oiseau', 'poisson', 'reptile', 'autre'];
+function InputSelectTypePet({ value, onChange, petTypes }) {
+  // const dataType = ['chien', 'chat', 'lapin', 'rongeur', 'oiseau', 'poisson', 'reptile', 'autre'];
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const petType = useSelector((state) => state.petsitters.petType);
+  // const petType = useSelector((state) => state.petsitters.petType);
   // on select of pet type, change this value
-  const handleChangePetType = (event) => {
-    dispatch(changeFieldPetType(event.target.value));
-    console.log(petType);
+  // const handleChangePetType = (event) => {
+  //   dispatch(changeFieldPetType(event.target.value));
+  // };
+  const handleChange = (event) => {
+    onChange(event.target.value);
   };
 
   return (
@@ -27,10 +28,10 @@ function InputSelectTypePet() {
       <Select
         label="Type d'animal"
         labelId="select-petType"
-        value={petType}
-        onChange={handleChangePetType}
+        value={value}
+        onChange={handleChange}
       >
-        {dataType.map((item) => (
+        {petTypes.map((item) => (
           <MenuItem
             key={item}
             value={item}
