@@ -20,7 +20,6 @@ function App() {
 
   useEffect(() => {
     const isLoggedInLocalStorage = !!localStorage.getItem('isLogged');
-    console.log('useEffect > ', isLoggedInLocalStorage);
     if (isLoggedInLocalStorage === true) {
       dispatch(changeFieldLogin({
         key: 'logged',
