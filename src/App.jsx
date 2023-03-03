@@ -10,10 +10,12 @@ import Home from './pages/Home/Home';
 import SearchResults from './pages/SearchResults/SearchResults';
 import PublicProfile from './pages/PublicProfile/PublicProfile';
 import Ads from './pages/Ads/Ads';
-import './styles/App.scss';
 import MyAds from './pages/MyAds/MyAds';
 import CreateAd from './pages/CreateAd/CreateAd';
 import { changeFieldLogin } from './store/reducers/user';
+import NotFound from './pages/NotFound/NotFound';
+
+import './styles/App.scss';
 
 function App() {
   const dispatch = useDispatch();
@@ -56,6 +58,7 @@ function App() {
         </>
         )}
 
+        <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
