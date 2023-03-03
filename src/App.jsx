@@ -45,12 +45,18 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/identification" element={<Identification />} />
-        <Route path="/mon_profil" element={<MyProfile />} />
         <Route path="/resultats" element={<SearchResults />} />
-        <Route path="/profil/:id" element={<PublicProfile />} />
-        <Route path="/annonces" element={<Ads />} />
-        <Route path="/mes-annonces" element={<MyAds />} />
-        <Route path="/creer-une-annonce" element={<CreateAd />} />
+
+        {isLogged && (
+        <>
+          <Route path="/mon_profil" element={<MyProfile />} />
+          <Route path="/profil/:id" element={<PublicProfile />} />
+          <Route path="/annonces" element={<Ads />} />
+          <Route path="/mes-annonces" element={<MyAds />} />
+          <Route path="/creer-une-annonce" element={<CreateAd />} />
+        </>
+        )}
+
       </Routes>
       <Footer />
     </div>
