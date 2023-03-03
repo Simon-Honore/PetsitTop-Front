@@ -1,14 +1,16 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 
 export const initialState = {
+  allAdsList: [],
   title: '',
   content: '',
   postal_code: '',
   city: '',
 };
 
-export const changeFieldAd = createAction('user/changeFieldAd');
-export const saveAdInfos = createAction('user/saveAdInfos');
+export const changeFieldAd = createAction('ads/changeFieldAd');
+export const saveAdInfos = createAction('ads/saveAdInfos');
+export const setAllAdsList = createAction('ads/setAllAdsList');
 
 const adReducer = createReducer(initialState, (builder) => {
   builder
@@ -17,6 +19,9 @@ const adReducer = createReducer(initialState, (builder) => {
     })
     .addCase(saveAdInfos, (state, action) => {
       Object.assign(state, action.payload);
+    })
+    .addCase(setAllAdsList, (state, action) => {
+      state.allAdsList = action.payload;
     });
 });
 

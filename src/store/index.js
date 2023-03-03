@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import adReducer from './reducers/ad';
+import adReducer from './reducers/ads';
 import createAccountReducer from './reducers/createAccount';
 import petsittersReducer from './reducers/petsitters';
 import userReducer from './reducers/user';
@@ -9,7 +9,7 @@ const store = configureStore({
     user: userReducer,
     petsitters: petsittersReducer,
     createAccount: createAccountReducer,
-    ad: adReducer,
+    ads: adReducer,
   },
 });
 

@@ -1,11 +1,22 @@
-import './Ads.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAllAds } from '../../api/ads';
+
 import InputSelectDepartment from '../../components/InputSelectDepartment/InputSelectDepartment';
 import adsData from '../../data/seed/ads.json';
 import AdCard from './AdCard/AdCard';
+import './Ads.scss';
 
 function Ads() {
-  const count = adsData.length;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAllAds());
+  }, []);
+
+  const allAdsList = useSelector((state) => state.ads.allAdsList);
+
+  const count = allAdsList.length;
 
   const [filterByDepartment, setFilterByDepartment] = useState();
 
@@ -35,7 +46,7 @@ function Ads() {
           ? `${count} annonces diponibles`
           : `${count} annonce diponible` }
       </p>
-      {adsData.map((ad) => (
+      {allAdsList.map((ad) => (
         <AdCard
           key={ad.id}
           {...ad}
