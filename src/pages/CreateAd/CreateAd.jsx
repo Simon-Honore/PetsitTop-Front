@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { createAd } from '../../api/ad';
+import { createAd } from '../../api/ads';
 import FormAd from '../../components/FormAd/FormAd';
 import './CreateAd.scss';
 
