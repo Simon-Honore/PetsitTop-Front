@@ -9,9 +9,11 @@ import Home from './pages/Home/Home';
 import SearchResults from './pages/SearchResults/SearchResults';
 import PublicProfile from './pages/PublicProfile/PublicProfile';
 import Ads from './pages/Ads/Ads';
-import './styles/App.scss';
 import MyAds from './pages/MyAds/MyAds';
 import CreateAd from './pages/CreateAd/CreateAd';
+import NotFound from './pages/NotFound/NotFound';
+
+import './styles/App.scss';
 
 function App() {
   // const logged = true;
@@ -29,6 +31,7 @@ function App() {
         <Route path="/annonces" element={<Ads />} />
         <Route path="/mes-annonces" element={<MyAds />} />
         <Route path="/creer-une-annonce" element={<CreateAd />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
