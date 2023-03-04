@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import {
+  Link, useNavigate, useParams, useSearchParams,
+} from 'react-router-dom';
 
 // import local
 import { searchPetsitters } from '../../api/petsitters';
@@ -13,7 +15,6 @@ function SearchPetsitters() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const dataType = ['chien', 'chat', 'lapin', 'rongeur', 'oiseau', 'poisson', 'reptile', 'autre'];
-  const query = useParams();
 
   const { departement, petType } = useSelector((state) => state.petsitters);
 
@@ -34,7 +35,6 @@ function SearchPetsitters() {
       pathname: '/resultats',
       search: `?departement=${departement}&pet_type=${petType}`,
     });
-    console.log(query.name);
   };
 
   return (
