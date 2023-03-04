@@ -1,11 +1,20 @@
+import { useEffect } from 'react';
 import { MdAddComment, MdLibraryAdd, MdOutlineAdd } from 'react-icons/md';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMyAds } from '../../api/ads';
 import CounterResults from '../../components/CounterResults/CounterResults';
-import myAdsData from '../../data/seed/ads-one-user.json';
 import MyAdCard from './MyAdCard/MyAdCard';
 import './MyAds.scss';
 
 function MyAds() {
-	
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getMyAds());
+  });
+
+  const myAdsData = useSelector((state) => state.user.ads);
+
   return (
     <main className="myAds">
       <header className="myAds__header">

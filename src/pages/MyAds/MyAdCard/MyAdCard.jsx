@@ -2,6 +2,8 @@ import { MdDeleteForever, MdEditNote, MdPlace } from 'react-icons/md';
 import { string, number } from 'prop-types';
 
 import './MyAdCard.scss';
+import { useDispatch } from 'react-redux';
+import { deleteOneAd } from '../../../api/ads';
 
 function MyAdCard({
   id,
@@ -11,7 +13,13 @@ function MyAdCard({
   postal_code,
   created_at,
 }) {
+  const dispatch = useDispatch();
+
   const date = new Date(created_at);
+
+  function handleClickDeleteAd() {
+    dispatch(deleteOneAd(id));
+  }
 
   return (
     <article className="myAdCard">
@@ -33,7 +41,7 @@ function MyAdCard({
 
         <section className="myAdCard__header__btns">
           <MdEditNote size="2.3rem" />
-          <MdDeleteForever size="2.4rem" />
+          <MdDeleteForever size="2.4rem" onClick={handleClickDeleteAd} />
         </section>
       </header>
 
