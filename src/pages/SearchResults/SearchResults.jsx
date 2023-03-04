@@ -13,26 +13,21 @@ function SearchResults() {
 
   const departement = searchParams.get('departement');
   const pet_type = searchParams.get('pet_type');
-  console.log('departement >>', departement);
-  console.log('pet_type >>', pet_type);
 
   useEffect(() => {
     dispatch(changeFieldDepartement(departement));
     dispatch(changeFieldPetType(pet_type));
     dispatch(searchPetsitters());
   }, [departement, pet_type]);
-  
 
-  const searchData = useSelector((state) => state.petsitters.results);
-  console.log('searchData >>', searchData)
-  
+  const searchData = useSelector((state) => state.petsitters.results);  
 
   return (
     <main className="main-home">
       {/* searchbar */}
       <SearchPetsitters />
 
-      <h1>
+      <h1 className="search-petsitters__results">
         {searchData.length > 1 ? `${searchData.length} petsitters trouvés.`: `${searchData.length} petsitter trouvé.`}
       </h1>
       {/* génère une carte pour chaque petsitter trouvé */}
