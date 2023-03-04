@@ -13,4 +13,27 @@
         font-weight: bold;
 
     }
+
+    &__description {
+        margin-bottom: 1rem;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1rem;
+        &__details {
+            @include btn;
+		    background-color: white;
+		    color:$color-btn ;
+		    width: 9rem;
+        }
+
+        &__contact {
+            @include btn;
+		    background-color: $color-btn;
+		    color: white;
+		    width: 9rem;
+        }
+    }
 }
