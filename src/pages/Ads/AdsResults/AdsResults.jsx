@@ -1,14 +1,14 @@
+import CounterResults from '../../../components/CounterResults/CounterResults';
 import AdCard from './AdCard/AdCard';
 import './AdsResults.scss';
 
 function AdsResults({ adsList }) {
   return (
     <>
-      <p className="adsResults__count">
-        {adsList.length > 1
-          ? `${adsList.length} annonces diponibles`
-          : `${adsList.length} annonce diponible` }
-      </p>
+      <CounterResults
+        arrayResult={adsList}
+        searchType="annonce"
+      />
       {adsList.map((ad) => (
         <AdCard
           key={ad.id}

@@ -1,10 +1,11 @@
 import { MdAddComment, MdLibraryAdd, MdOutlineAdd } from 'react-icons/md';
+import CounterResults from '../../components/CounterResults/CounterResults';
 import myAdsData from '../../data/seed/ads-one-user.json';
 import MyAdCard from './MyAdCard/MyAdCard';
 import './MyAds.scss';
 
 function MyAds() {
-  const count = myAdsData.length;
+	
   return (
     <main className="myAds">
       <header className="myAds__header">
@@ -18,11 +19,10 @@ function MyAds() {
         </div>
       </header>
 
-      <p className="myAds__count">
-        {count > 1
-          ? `${count} annonces diponibles`
-          : `${count} annonce diponible` }
-      </p>
+      <CounterResults
+        arrayResult={myAdsData}
+        searchType="annonce"
+      />
 
       {myAdsData.map((ad) => (
         <MyAdCard
