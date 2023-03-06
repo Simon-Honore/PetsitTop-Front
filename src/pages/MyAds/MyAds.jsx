@@ -11,11 +11,11 @@ function MyAds() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const myAdsData = useSelector((state) => state.user.ads);
+
   useEffect(() => {
     dispatch(getMyAds());
-  }, []);
-
-  const myAdsData = useSelector((state) => state.user.ads);
+  }, [myAdsData]);
 
   function handleClickAddAd() {
     navigate('/creer-une-annonce');
