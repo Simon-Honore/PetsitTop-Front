@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createAd } from '../../api/ads';
 import FormAd from '../../components/FormAd/FormAd';
@@ -7,6 +7,13 @@ import './CreateAd.scss';
 function CreateAd() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const {
+    title,
+    content,
+    city,
+    postal_code,
+  } = useSelector((state) => state.ads);
 
   function handleSubmitFormCreateAd() {
     dispatch(createAd());
@@ -20,7 +27,14 @@ function CreateAd() {
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         Quisquam, molestias eligendi! Cumque reprehenderit neque.
       </p>
-      <FormAd onSubmit={handleSubmitFormCreateAd} />
+      <FormAd
+        title={title}
+        content={content}
+        city={city}
+        postal_code={postal_code}
+        btnContent="Poster mon annonce"
+        onSubmit={handleSubmitFormCreateAd}
+      />
     </main>
   );
 }
