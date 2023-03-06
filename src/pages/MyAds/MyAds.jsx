@@ -1,11 +1,26 @@
+import { useEffect } from 'react';
 import { MdAddComment, MdLibraryAdd, MdOutlineAdd } from 'react-icons/md';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { getMyAds } from '../../api/ads';
 import CounterResults from '../../components/CounterResults/CounterResults';
-import myAdsData from '../../data/seed/ads-one-user.json';
 import MyAdCard from './MyAdCard/MyAdCard';
 import './MyAds.scss';
 
 function MyAds() {
-	
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(getMyAds());
+  });
+
+  const myAdsData = useSelector((state) => state.user.ads);
+
+  function handleClickAddAd() {
+    navigate('/creer-une-annonce');
+  }
+
   return (
     <main className="myAds">
       <header className="myAds__header">
@@ -15,7 +30,7 @@ function MyAds() {
           Ajouter une annonce
         </button> */}
         <div className="myAds__header__add">
-          <MdLibraryAdd size="2.3rem" />
+          <MdLibraryAdd size="2.3rem" onClick={handleClickAddAd} />
         </div>
       </header>
 
