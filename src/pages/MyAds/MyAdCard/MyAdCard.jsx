@@ -33,7 +33,6 @@ function MyAdCard({
       city: adCardCity,
       postal_code: adCardPostalCode,
     };
-    console.log('dataToUpdate >> ', dataToUpdate);
     dispatch(saveAdInfos(dataToUpdate));
     setCardUpdateInProgress(true);
   }
@@ -46,7 +45,6 @@ function MyAdCard({
   } = useSelector((state) => state.ads);
 
   function handleSubmitFormUpdateAd() {
-    console.log('submit update form');
     dispatch(updateAd(adCardId));
     setCardUpdateInProgress(false);
   }

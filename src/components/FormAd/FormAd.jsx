@@ -17,7 +17,6 @@ function FormAd({
   const dispatch = useDispatch();
 
   function handleChangeField(value, name) {
-    console.log('value, name >> ', value, name);
     dispatch(changeFieldAd({
       key: name,
       value,
