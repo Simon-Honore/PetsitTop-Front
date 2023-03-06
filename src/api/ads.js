@@ -9,7 +9,9 @@ export const createAd = () => async (dispatch, getState) => {
     content,
     postal_code,
     city,
-  } = state.ad;
+  } = state.ads;
+
+  console.log('title >> ', title);
 
   const { userId } = state.user;
 
