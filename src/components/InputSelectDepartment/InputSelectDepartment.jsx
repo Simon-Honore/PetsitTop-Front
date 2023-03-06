@@ -10,7 +10,7 @@ import './InputSelectDepartment.scss';
 
 function InputSelectDepartment({
   onChange,
-	value,
+  value,
 }) {
   function handleChange(event) {
     onChange(event.target.value);
