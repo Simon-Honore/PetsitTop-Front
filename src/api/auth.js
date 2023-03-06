@@ -14,5 +14,7 @@ export const login = () => async (dispatch, getState) => {
   localStorage.setItem('accessToken', data.accessToken);
   localStorage.setItem('userId', data.userId);
 
+  axiosInstance.defaults.headers.Authorization = `Bearer ${data.accessToken}`;
+
   dispatch(saveUserInfos(data));
 };
