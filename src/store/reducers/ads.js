@@ -11,6 +11,7 @@ export const initialState = {
 export const changeFieldAd = createAction('ads/changeFieldAd');
 export const saveAdInfos = createAction('ads/saveAdInfos');
 export const setAllAdsList = createAction('ads/setAllAdsList');
+export const resetFieldsAd = createAction('ads/resetFieldsAd');
 
 const adReducer = createReducer(initialState, (builder) => {
   builder
@@ -22,6 +23,12 @@ const adReducer = createReducer(initialState, (builder) => {
     })
     .addCase(setAllAdsList, (state, action) => {
       state.allAdsList = action.payload;
+    })
+    .addCase(resetFieldsAd, (state) => {
+      state.title = '';
+      state.content = '';
+      state.postal_code = '';
+      state.city = '';
     });
 });
 

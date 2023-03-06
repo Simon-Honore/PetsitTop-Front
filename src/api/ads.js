@@ -1,5 +1,5 @@
 import { axiosInstance } from './index';
-import { setAllAdsList } from '../store/reducers/ads';
+import { resetFieldsAd, setAllAdsList } from '../store/reducers/ads';
 import { saveUserAds } from '../store/reducers/user';
 
 export const createAd = () => async (dispatch, getState) => {
@@ -11,8 +11,6 @@ export const createAd = () => async (dispatch, getState) => {
     city,
   } = state.ads;
 
-  console.log('title >> ', title);
-
   const { userId } = state.user;
 
   const { data } = await axiosInstance.post(`/user/${userId}/ads`, {
@@ -21,6 +19,8 @@ export const createAd = () => async (dispatch, getState) => {
     postal_code,
     city,
   });
+
+  dispatch(resetFieldsAd());
 };
 
 export const fetchAllAds = () => async (dispatch) => {
@@ -34,11 +34,31 @@ export const getMyAds = () => async (dispatch, getState) => {
 
   const { userId } = state.user;
 
-  const { data } = await axiosInstance.get(`/users/${userId}`);
+  const { data } = await axiosInstance.get(`/user/${userId}/ads`);
 
-  dispatch(saveUserAds(data.ads));
+  dispatch(saveUserAds(data));
 };
 
 export const deleteOneAd = (idAd) => async (dispatch) => {
   await axiosInstance.delete(`/ads/${idAd}`);
+};
+
+export const updateAd = (idAd) => async (dispatch, getState) => {
+  const state = getState();
+
+  const {
+    title,
+    content,
+    postal_code,
+    city,
+  } = state.ads;
+
+  const { data } = await axiosInstance.put(`/ads/${idAd}`, {
+    title,
+    content,
+    postal_code,
+    city,
+  });
+
+  dispatch(resetFieldsAd());
 };

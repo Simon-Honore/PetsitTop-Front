@@ -3,34 +3,51 @@ import { string, number } from 'prop-types';
 import { useState } from 'react';
 
 import './MyAdCard.scss';
-import { useDispatch } from 'react-redux';
-import { deleteOneAd } from '../../../api/ads';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteOneAd, updateAd } from '../../../api/ads';
 import FormAd from '../../../components/FormAd/FormAd';
+import { saveAdInfos } from '../../../store/reducers/ads';
 
 function MyAdCard({
-  id,
-  title,
-  content,
-  city,
-  postal_code,
-  created_at,
+  adCardId,
+  adCardTitle,
+  adCardContent,
+  adCardCity,
+  adCardPostalCode,
+  adCardCreatedAt,
 }) {
   const dispatch = useDispatch();
 
   const [cardUpdateInProgress, setCardUpdateInProgress] = useState(false);
 
-  const date = new Date(created_at);
+  const date = new Date(adCardCreatedAt);
 
   function handleClickDeleteAd() {
-    dispatch(deleteOneAd(id));
+    dispatch(deleteOneAd(adCardId));
   }
 
   function handleClickUpdateAd() {
+    const dataToUpdate = {
+      title: adCardTitle,
+      content: adCardContent,
+      city: adCardCity,
+      postal_code: adCardPostalCode,
+    };
+    console.log('dataToUpdate >> ', dataToUpdate);
+    dispatch(saveAdInfos(dataToUpdate));
     setCardUpdateInProgress(true);
   }
 
+  const {
+    title,
+    content,
+    city,
+    postal_code,
+  } = useSelector((state) => state.ads);
+
   function handleSubmitFormUpdateAd() {
     console.log('submit update form');
+    dispatch(updateAd(adCardId));
     setCardUpdateInProgress(false);
   }
 
@@ -51,10 +68,10 @@ function MyAdCard({
           <>
             <header className="myAdCard__header">
               <section className="myAdCard__header__description">
-                <h3 className="myAdCard__header__description__title">{title}</h3>
+                <h3 className="myAdCard__header__description__title">{adCardTitle}</h3>
                 <p className="myAdCard__header__description__localisation">
                   <MdPlace size="1.5rem" />
-                  {`${city} - ${postal_code}`}
+                  {`${adCardCity} - ${adCardPostalCode}`}
                 </p>
                 <p className="myAdCard__header__description__date">
                   Posté le :
@@ -72,7 +89,7 @@ function MyAdCard({
             </header>
 
             <p className="myAdCard__content">
-              {content}
+              {adCardContent}
             </p>
           </>
         )}
@@ -84,10 +101,10 @@ function MyAdCard({
 export default MyAdCard;
 
 MyAdCard.propTypes = {
-  id: number.isRequired,
-  title: string.isRequired,
-  content: string.isRequired,
-  city: string.isRequired,
-  postal_code: string.isRequired,
-  created_at: string.isRequired,
+  adCardId: number.isRequired,
+  adCardTitle: string.isRequired,
+  adCardContent: string.isRequired,
+  adCardCity: string.isRequired,
+  adCardPostalCode: string.isRequired,
+  adCardCreatedAt: string.isRequired,
 };
