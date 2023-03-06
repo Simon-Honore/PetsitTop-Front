@@ -13,7 +13,7 @@ function MyAds() {
 
   useEffect(() => {
     dispatch(getMyAds());
-  });
+  }, []);
 
   const myAdsData = useSelector((state) => state.user.ads);
 
