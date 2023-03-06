@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { func } from 'prop-types';
 
 import Field from '../Field/Field';
@@ -6,17 +6,18 @@ import FieldArea from '../FieldArea/FieldArea';
 import { changeFieldAd } from '../../store/reducers/ads';
 import './FormAd.scss';
 
-function FormAd({ onSubmit }) {
+function FormAd({
+  onSubmit,
+  title,
+  content,
+  city,
+  btnContent,
+  postal_code,
+}) {
   const dispatch = useDispatch();
 
-  const {
-    title,
-    content,
-    city,
-    postal_code,
-  } = useSelector((state) => state.ads);
-
   function handleChangeField(value, name) {
+    console.log('value, name >> ', value, name);
     dispatch(changeFieldAd({
       key: name,
       value,
@@ -69,7 +70,7 @@ function FormAd({ onSubmit }) {
         value={city}
       />
 
-      <button type="submit" className="formAd__btn">Poster mon annonce</button>
+      <button type="submit" className="formAd__btn">{btnContent}</button>
     </form>
   );
 }

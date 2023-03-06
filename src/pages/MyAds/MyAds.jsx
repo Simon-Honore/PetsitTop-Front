@@ -42,7 +42,12 @@ function MyAds() {
       {myAdsData.map((ad) => (
         <MyAdCard
           key={ad.id}
-          {...ad}
+          adCardTitle={ad.title}
+          adCardContent={ad.content}
+          adCardCity={ad.city}
+          adCardPostalCode={ad.postal_code}
+          adCardCreatedAt={ad.created_at}
+          adCardId={ad.id}
         />
       ))}
     </main>
