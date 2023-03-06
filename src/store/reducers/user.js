@@ -6,11 +6,13 @@ export const initialState = {
   password: '',
   userId: null,
   accessToken: null,
+  ads: [],
 };
 
 export const changeFieldLogin = createAction('user/changeFieldLogin');
 export const saveUserInfos = createAction('user/saveUserInfos');
 export const logout = createAction('user/logout');
+export const saveUserAds = createAction('user/saveUserAds');
 
 const userReducer = createReducer(initialState, (builder) => {
   builder
@@ -26,6 +28,10 @@ const userReducer = createReducer(initialState, (builder) => {
       state.password = '';
       state.userId = null;
       state.accessToken = null;
+      state.ads = [];
+    })
+    .addCase(saveUserAds, (state, action) => {
+      state.ads = action.payload;
     });
 });
 

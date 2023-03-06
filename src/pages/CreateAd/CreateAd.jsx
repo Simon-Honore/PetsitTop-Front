@@ -1,13 +1,16 @@
 import { useDispatch } from 'react-redux';
-import { createAd } from '../../api/ad';
+import { useNavigate } from 'react-router-dom';
+import { createAd } from '../../api/ads';
 import FormAd from '../../components/FormAd/FormAd';
 import './CreateAd.scss';
 
 function CreateAd() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function handleSubmitFormCreateAd() {
     dispatch(createAd());
+    navigate('/mes-annonces');
   }
 
   return (

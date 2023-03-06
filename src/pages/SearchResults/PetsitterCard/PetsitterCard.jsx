@@ -18,7 +18,7 @@ function PetsitterCard({
           {`${ville} - ${codePostal}`}
         </p>
       </div>
-      <p>{description}</p>
+      <p className="petsitter__card__description">{description}</p>
       <ul> Je peux garder vos :</ul>
       {animauxAcceptes.map((animal) => (
         <li key={animal.id}>
