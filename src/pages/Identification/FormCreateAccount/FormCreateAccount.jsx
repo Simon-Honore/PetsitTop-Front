@@ -1,12 +1,13 @@
 /* eslint-disable camelcase */
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import RoleForm from '../../../components/RoleForm/RoleForm';
 import Field from '../../../components/Field/Field';
 import FieldCheckbox from '../../../components/FieldCheckbox/FieldCheckbox';
-import { changeFieldCreateAccount } from '../../../store/reducers/createAccount';
-import './FormCreateAccount.scss';
+import { changeFieldCreateAccount, resetFieldsCreatAccount } from '../../../store/reducers/createAccount';
 import { createAccount } from '../../../api/createAccount';
+import './FormCreateAccount.scss';
 import { schemas } from '../../../validation/user.schemas';
 
 function FormCreateAccount() {
@@ -25,6 +26,8 @@ function FormCreateAccount() {
     availability_details,
     role_petsitter,
     role_petowner,
+    rgpd_consent,
+    cgu_consent,
   } = useSelector((state) => state.createAccount);
 
   const [errors, setErrors] = useState({}); // pour la gestion des erreurs
@@ -42,6 +45,8 @@ function FormCreateAccount() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    dispatch(createAccount());
+    dispatch(resetFieldsCreatAccount());
 
     // Tests de validation avec Joi
     const validationErrors = schemas.validate({
@@ -195,18 +200,23 @@ function FormCreateAccount() {
                 <RoleForm
                   onChange={handleChangeField}
                   availability={availability}
+                  availability_details={availability_details}
                 />
                 )}
 
               <div className="createAccount__policy">
                 <FieldCheckbox
-                  label="mentions RGPD*"
-                  name="rgpd"
+                  label="Mentions RGPD*"
+                  name="rgpd_consent"
+                  value={rgpd_consent}
+                  onChange={handleChangeField}
                 />
 
                 <FieldCheckbox
                   label="J'accepte les CGU*"
-                  name="cgu"
+                  name="cgu_consent"
+                  value={cgu_consent}
+                  onChange={handleChangeField}
                 />
               </div>
 
