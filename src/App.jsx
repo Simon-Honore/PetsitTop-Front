@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
@@ -21,6 +21,11 @@ import './styles/App.scss';
 
 function App() {
   const dispatch = useDispatch();
+	const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     const isLoggedInLocalStorage = !!localStorage.getItem('isLogged');
