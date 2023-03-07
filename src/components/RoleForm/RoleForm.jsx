@@ -1,5 +1,7 @@
 import { FormControlLabel, FormGroup, Switch } from '@mui/material';
 import { useState } from 'react';
+import listPetTypes from '../../data/list-pet-types.json';
+import FieldCheckboxPetType from '../FieldCheckboxPetType/FieldCheckboxPetType';
 import './RoleForm.scss';
 
 function RoleForm({
@@ -29,6 +31,7 @@ function RoleForm({
       { availability
         && (
           <div>
+            {/* // TODO - utiliser le composant fieldArea */}
             <label htmlFor="">Details de ma disponibilité</label>
             <textarea
               name="availability_details"
@@ -42,7 +45,16 @@ function RoleForm({
         )}
       <fieldset className="profile__settings__input">
         <legend className="profile__settings__input__checkbox">J&#39;accepte de garder : *</legend>
-        <div>
+
+        {listPetTypes.map((petType) => (
+          <FieldCheckboxPetType
+            key={petType.value}
+            value={petType.value}
+            name={petType.name}
+          />
+        ))}
+
+        {/* <div>
           <input type="checkbox" name="chien" id="chien" />
           <label htmlFor="chien">Chien</label>
         </div>
@@ -70,7 +82,7 @@ function RoleForm({
         <div>
           <input type="checkbox" name="oiseau" id="oiseau" />
           <label htmlFor="oiseau">Oiseau</label>
-        </div>
+        </div> */}
       </fieldset>
     </div>
   );
