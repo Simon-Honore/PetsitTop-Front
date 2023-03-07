@@ -178,6 +178,7 @@ function FormCreateAccount() {
                   name="role_petowner"
                   value={role_petowner}
                   onChange={handleChangeField}
+                  defaultChecked
                 />
                 {/* {errors.role_petowner && <div className="createAccount__error">{errors.role_petowner}</div>} */}
 

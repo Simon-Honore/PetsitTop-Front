@@ -11,7 +11,7 @@ export const initialState = {
   availability: false,
   availability_details: '',
   role_petsitter: false,
-  role_petowner: false,
+  role_petowner: true,
   pet_type: [],
   cgu_consent: false,
   rgpd_consent: false,

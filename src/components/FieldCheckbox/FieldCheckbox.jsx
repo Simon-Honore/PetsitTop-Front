@@ -8,6 +8,7 @@ function FieldCheckbox({
   name,
   value,
   onChange,
+  defaultChecked,
 }) {
   const inputId = `field-${name}`;
 
@@ -24,6 +25,7 @@ function FieldCheckbox({
         className="field-checkbox__input"
         name={name}
         onChange={handleChange}
+        defaultChecked={defaultChecked}
       />
 
       <label
@@ -41,10 +43,12 @@ FieldCheckbox.propTypes = {
   value: bool,
   name: string.isRequired,
   onChange: func.isRequired,
+  defaultChecked: bool,
 };
 
 FieldCheckbox.defaultProps = {
   value: false,
+  defaultChecked: false,
 };
 
 export default FieldCheckbox;
