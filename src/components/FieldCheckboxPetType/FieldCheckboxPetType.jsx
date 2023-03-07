@@ -25,19 +25,19 @@ function FieldCheckboxPetType({
   }
 
   return (
-    <div className={cn('field-checkbox', { 'field-checkbox--has-content': value.length > 0 })}>
+    <div className={cn('fieldCheckboxPetType', { 'fieldCheckboxPetType--has-content': value.length > 0 })}>
       <input
         value={value}
         id={inputId}
         type="checkbox"
-        className="field-checkbox__input"
+        className="fieldCheckboxPetType__input"
         name={name}
         onChange={handleChange}
       />
 
       <label
         htmlFor={inputId}
-        className="field-checkbox__label"
+        className="fieldCheckboxPetType__label"
       >
         {name}
       </label>

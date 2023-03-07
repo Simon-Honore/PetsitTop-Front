@@ -45,9 +45,6 @@ function FormCreateAccount() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    dispatch(createAccount());
-    dispatch(resetFieldsCreatAccount());
-
     // Tests de validation avec Joi
     const validationErrors = schemas.validate({
       first_name,
@@ -77,6 +74,7 @@ function FormCreateAccount() {
 
       // Si il n'y a pas d'erreurs, on envoie les données pour la création du compte
       dispatch(createAccount());
+      dispatch(resetFieldsCreatAccount());
     }
   }
 

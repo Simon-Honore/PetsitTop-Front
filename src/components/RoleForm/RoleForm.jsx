@@ -20,9 +20,9 @@ function RoleForm({
   }
 
   return (
-    <div className="profile__settings__input conditionnal">
-      <p>Je suis petsitter</p>
-      <FormGroup>
+    <div className="roleForm conditionnal">
+      <p className="roleForm__title">Je suis petsitter</p>
+      <FormGroup className="roleForm__switch">
         <FormControlLabel control={<Switch onChange={handleChange} name="availability" />} label="Je suis disponible" />
       </FormGroup>
       { availability
@@ -38,16 +38,18 @@ function RoleForm({
             limit="200"
           />
         )}
-      <fieldset className="profile__settings__input">
-        <legend className="profile__settings__input__checkbox">J&#39;accepte de garder : *</legend>
+      <fieldset className="roleForm__checkbox">
+        <legend className="roleForm__checkbox__title">J&#39;accepte de garder : *</legend>
 
-        {listPetTypes.map((petType) => (
-          <FieldCheckboxPetType
-            key={petType.value}
-            value={petType.value}
-            name={petType.name}
-          />
-        ))}
+        <div className="roleForm__checkbox__list">
+          {listPetTypes.map((petType) => (
+            <FieldCheckboxPetType
+              key={petType.value}
+              value={petType.value}
+              name={petType.name}
+            />
+          ))}
+        </div>
 
       </fieldset>
     </div>
