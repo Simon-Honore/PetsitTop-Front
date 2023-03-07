@@ -1,5 +1,6 @@
 import { FormControlLabel, FormGroup, Switch } from '@mui/material';
-import { useState } from 'react';
+import { bool, func } from 'prop-types';
+
 import listPetTypes from '../../data/list-pet-types.json';
 import FieldCheckboxPetType from '../FieldCheckboxPetType/FieldCheckboxPetType';
 import './RoleForm.scss';
@@ -54,38 +55,14 @@ function RoleForm({
           />
         ))}
 
-        {/* <div>
-          <input type="checkbox" name="chien" id="chien" />
-          <label htmlFor="chien">Chien</label>
-        </div>
-
-        <div>
-          <input type="checkbox" name="chat" id="chat" />
-          <label htmlFor="chat">Chat</label>
-        </div>
-
-        <div>
-          <input type="checkbox" name="NAC" id="NAC" />
-          <label htmlFor="NAC">NAC</label>
-        </div>
-
-        <div>
-          <input type="checkbox" name="poisson" id="poisson" />
-          <label htmlFor="poisson">Poisson</label>
-        </div>
-
-        <div>
-          <input type="checkbox" name="reptile" id="reptile" />
-          <label htmlFor="reptile">Reptile</label>
-        </div>
-
-        <div>
-          <input type="checkbox" name="oiseau" id="oiseau" />
-          <label htmlFor="oiseau">Oiseau</label>
-        </div> */}
       </fieldset>
     </div>
   );
 }
 
 export default RoleForm;
+
+RoleForm.propTypes = {
+  availability: bool.isRequired,
+  onChange: func.isRequired,
+};

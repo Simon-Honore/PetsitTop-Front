@@ -1,14 +1,14 @@
-import { string, func, bool } from 'prop-types';
+import { string, number } from 'prop-types';
 import cn from 'classnames';
-import './FieldCheckboxPetType.scss';
 import { useDispatch } from 'react-redux';
+
 import { addPetType, removePetType } from '../../store/reducers/createAccount';
+import './FieldCheckboxPetType.scss';
 
 // == Composant
 function FieldCheckboxPetType({
   name,
   value,
-  // onChange,
 }) {
   const dispatch = useDispatch();
 
@@ -16,16 +16,12 @@ function FieldCheckboxPetType({
 
   function handleChange(event) {
     const { value, checked } = event.target;
-    console.log('value, checked  >> ', value, checked);
     if (checked) {
       dispatch(addPetType(value));
     }
     if (!checked) {
       dispatch(removePetType(value));
     }
-    // if (event.target.checked) {
-    //   onChange(event.target.value, name);
-    // }
   }
 
   return (
@@ -50,13 +46,8 @@ function FieldCheckboxPetType({
 }
 
 FieldCheckboxPetType.propTypes = {
-  value: bool,
+  value: number.isRequired,
   name: string.isRequired,
-  // onChange: func.isRequired,
-};
-
-FieldCheckboxPetType.defaultProps = {
-  value: false,
 };
 
 export default FieldCheckboxPetType;

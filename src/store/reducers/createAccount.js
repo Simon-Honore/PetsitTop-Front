@@ -13,6 +13,8 @@ export const initialState = {
   role_petsitter: false,
   role_petowner: false,
   pet_type: [],
+  cgu_consent: false,
+  rgpd_consent: false,
 };
 
 // TODO - add CGU and RGPD
@@ -21,23 +23,37 @@ export const changeFieldCreateAccount = createAction('user/changeFieldCreateAcco
 export const saveAccountInfos = createAction('user/saveAccountInfos');
 export const addPetType = createAction('user/addPetType');
 export const removePetType = createAction('user/removePetType');
+export const resetFieldsCreatAccount = createAction('user/resetFieldsCreatAccount');
 
 const createAccountReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(changeFieldCreateAccount, (state, action) => {
       state[action.payload.key] = action.payload.value;
-      console.log(action.payload.key, state[action.payload.key]);
     })
     .addCase(saveAccountInfos, (state, action) => {
       Object.assign(state, action.payload);
     })
     .addCase(addPetType, (state, action) => {
       state.pet_type = [...state.pet_type, action.payload];
-      console.log('state.pet_type >> ', state.pet_type);
     })
     .addCase(removePetType, (state, action) => {
       state.pet_type = state.pet_type.filter((nb) => nb !== action.payload);
-      console.log('state.pet_type >> ', state.pet_type);
+    })
+    .addCase(resetFieldsCreatAccount, (state) => {
+      state.first_name = '';
+      state.last_name = '';
+      state.email = '';
+      state.password = '';
+      state.confirmPassword = '';
+      state.postal_code = '';
+      state.city = '';
+      state.availability = false;
+      state.availability_details = '';
+      state.role_petsitter = false;
+      state.role_petowner = false;
+      state.pet_type = [];
+      state.cgu_consent = false;
+      state.rgpd_consent = false;
     });
 });
 export default createAccountReducer;
