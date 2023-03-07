@@ -9,6 +9,7 @@ export const initialState = {
 export const changeFieldDepartement = createAction('petsitters/changeFieldDepartement');
 export const changeFieldPetType = createAction('petsitters/changeFieldPetType');
 export const saveResearch = createAction('petsitters/saveResearch');
+export const resetResearchPetsitters = createAction('petsitters/resetResearchPetsitters');
 
 const petsittersReducer = createReducer(initialState, (builder) => {
   builder
@@ -20,6 +21,11 @@ const petsittersReducer = createReducer(initialState, (builder) => {
     })
     .addCase(saveResearch, (state, action) => {
       state.results = action.payload;
+    })
+    .addCase(resetResearchPetsitters, (state) => {
+      state.departement = '';
+      state.petType = '';
+      state.results = [];
     });
 });
 
