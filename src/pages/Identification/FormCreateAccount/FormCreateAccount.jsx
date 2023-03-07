@@ -21,6 +21,7 @@ function FormCreateAccount() {
     postal_code,
     city,
     availability,
+    availability_details,
     role_petsitter,
     role_petowner,
     rgpd_consent,
@@ -154,6 +155,7 @@ function FormCreateAccount() {
                 <RoleForm
                   onChange={handleChangeField}
                   availability={availability}
+                  availability_details={availability_details}
                 />
                 )}
 
