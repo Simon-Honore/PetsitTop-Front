@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -7,6 +8,7 @@ import FieldCheckbox from '../../../components/FieldCheckbox/FieldCheckbox';
 import { changeFieldCreateAccount, resetFieldsCreatAccount } from '../../../store/reducers/createAccount';
 import { createAccount } from '../../../api/createAccount';
 import './FormCreateAccount.scss';
+import { schemas } from '../../../validation/user.schemas';
 
 function FormCreateAccount() {
   const [continueCreating, setContinueCreating] = useState(false);
@@ -28,6 +30,8 @@ function FormCreateAccount() {
     cgu_consent,
   } = useSelector((state) => state.createAccount);
 
+  const [errors, setErrors] = useState({}); // pour la gestion des erreurs
+
   function handleClickContinue() {
     setContinueCreating(true);
   }
@@ -43,6 +47,37 @@ function FormCreateAccount() {
     event.preventDefault();
     dispatch(createAccount());
     dispatch(resetFieldsCreatAccount());
+
+    // Tests de validation avec Joi
+    const validationErrors = schemas.validate({
+      first_name,
+      last_name,
+      email,
+      password,
+      confirmPassword,
+      postal_code,
+      city,
+      availability,
+      availability_details,
+      role_petsitter,
+      role_petowner,
+    }, { abortEarly: false }).error;
+
+    // Affichage des erreurs à l'utilisateur
+    if (validationErrors) {
+      console.log('erreurs de validation', validationErrors);
+      // Si il y a des erreurs, on les stocke dans un objet
+      const newErrors = {};
+      validationErrors.details.forEach((error) => {
+        newErrors[error.path[0]] = error.message;
+      });
+      setErrors(newErrors);
+    } else {
+      console.log('creation du compte');
+
+      // Si il n'y a pas d'erreurs, on envoie les données pour la création du compte
+      dispatch(createAccount());
+    }
   }
 
   return (
@@ -61,6 +96,7 @@ function FormCreateAccount() {
           onChange={handleChangeField}
           value={email}
         />
+        {errors.email && <div className="createAccount__error">{errors.email}</div>}
 
         {/* on click, see the rest of the form  */}
         {!continueCreating
@@ -84,6 +120,7 @@ function FormCreateAccount() {
                 onChange={handleChangeField}
                 value={password}
               />
+              {errors.password && <div className="createAccount__error">{errors.password}</div>}
 
               <Field
                 label="Confirmation mot de passe*"
@@ -94,6 +131,7 @@ function FormCreateAccount() {
                 onChange={handleChangeField}
                 value={confirmPassword}
               />
+              {errors.confirmPassword && <div className="createAccount__error">{errors.confirmPassword}</div>}
 
               <Field
                 label="Prénom*"
@@ -103,6 +141,7 @@ function FormCreateAccount() {
                 onChange={handleChangeField}
                 value={first_name}
               />
+              {errors.first_name && <div className="createAccount__error">{errors.first_name}</div>}
 
               <Field
                 label="Nom*"
@@ -112,6 +151,7 @@ function FormCreateAccount() {
                 onChange={handleChangeField}
                 value={last_name}
               />
+              {errors.last_name && <div className="createAccount__error">{errors.last_name}</div>}
 
               <Field
                 label="Code postal*"
@@ -121,6 +161,7 @@ function FormCreateAccount() {
                 value={postal_code}
                 onChange={handleChangeField}
               />
+              {errors.postal_code && <div className="createAccount__error">{errors.postal_code}</div>}
 
               <Field
                 label="Ville*"
@@ -130,6 +171,7 @@ function FormCreateAccount() {
                 value={city}
                 onChange={handleChangeField}
               />
+              {errors.city && <div className="createAccount__error">{errors.city}</div>}
 
               <fieldset className="createAccount__fieldset">
                 <legend className="createAccount__fieldset__legend">Type(s) de profil(s)*</legend>
@@ -139,6 +181,7 @@ function FormCreateAccount() {
                   value={role_petowner}
                   onChange={handleChangeField}
                 />
+                {/* {errors.role_petowner && <div className="createAccount__error">{errors.role_petowner}</div>} */}
 
                 <p className="createAccount__fieldset__separator">et / ou</p>
 
@@ -148,6 +191,8 @@ function FormCreateAccount() {
                   value={role_petsitter}
                   onChange={handleChangeField}
                 />
+                {/* {errors.role_petsitter && <div className="createAccount__error">{errors.role_petsitter}</div>} */}
+
               </fieldset>
 
               {role_petsitter

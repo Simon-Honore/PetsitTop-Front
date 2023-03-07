@@ -12,6 +12,8 @@ import PublicProfile from './pages/PublicProfile/PublicProfile';
 import Ads from './pages/Ads/Ads';
 import MyAds from './pages/MyAds/MyAds';
 import CreateAd from './pages/CreateAd/CreateAd';
+import LegalNotice from './pages/LegalNotice/LegalNotice';
+import CGU from './pages/CGU/CGU';
 import { changeFieldLogin } from './store/reducers/user';
 import NotFound from './pages/NotFound/NotFound';
 
@@ -47,6 +49,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/identification" element={<Identification />} />
         <Route path="/resultats" element={<SearchResults />} />
+        <Route path="/mentions-legales" element={<LegalNotice />} />
+        <Route path="/cgu" element={<CGU />} />
 
         {isLogged && (
         <>
