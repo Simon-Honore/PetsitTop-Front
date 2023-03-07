@@ -2,7 +2,7 @@ import { string, func, bool } from 'prop-types';
 import cn from 'classnames';
 import './FieldCheckboxPetType.scss';
 import { useDispatch } from 'react-redux';
-import { addPetType } from '../../store/reducers/createAccount';
+import { addPetType, removePetType } from '../../store/reducers/createAccount';
 
 // == Composant
 function FieldCheckboxPetType({
@@ -19,6 +19,9 @@ function FieldCheckboxPetType({
     console.log('value, checked  >> ', value, checked);
     if (checked) {
       dispatch(addPetType(value));
+    }
+    if (!checked) {
+      dispatch(removePetType(value));
     }
     // if (event.target.checked) {
     //   onChange(event.target.value, name);

@@ -20,7 +20,7 @@ export const initialState = {
 export const changeFieldCreateAccount = createAction('user/changeFieldCreateAccount');
 export const saveAccountInfos = createAction('user/saveAccountInfos');
 export const addPetType = createAction('user/addPetType');
-// export const removePetType = createAction('user/removePetType');
+export const removePetType = createAction('user/removePetType');
 
 const createAccountReducer = createReducer(initialState, (builder) => {
   builder
@@ -33,6 +33,10 @@ const createAccountReducer = createReducer(initialState, (builder) => {
     })
     .addCase(addPetType, (state, action) => {
       state.pet_type = [...state.pet_type, action.payload];
+      console.log('state.pet_type >> ', state.pet_type);
+    })
+    .addCase(removePetType, (state, action) => {
+      state.pet_type = state.pet_type.filter((nb) => nb !== action.payload);
       console.log('state.pet_type >> ', state.pet_type);
     });
 });
