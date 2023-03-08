@@ -1,18 +1,34 @@
-import { Link } from 'react-router-dom';
-
+import { Link, useParams } from 'react-router-dom';
 import { MdPlace, MdChildFriendly } from 'react-icons/md';
 import { RiMailFill } from 'react-icons/ri';
 import { FaPaw } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+
 import PetsittingDetails from './PetsittingDetails/PetsittingDetails';
 import PetCard from './PetCard/PetCard';
 import './PublicProfile.scss';
+import { fetchPublicUserInfos } from '../../api/user';
 
-function PublicProfile({
-  nom, prenom, ville, codePostal, description, animauxAcceptes,
-}) {
-  const petsitter = true;
-  const petowner = true;
-  const availability = true;
+function PublicProfile() {
+  const dispatch = useDispatch();
+  const { id } = useParams();
+
+  useEffect(() => {
+    dispatch(fetchPublicUserInfos(id));
+  }, []);
+
+  const publicUser = useSelector((state) => state.user.publicUser);
+  console.log('publicUser >> ', publicUser);
+
+  const publicUserRole = publicUser.roles;
+  let petsitter = false;
+  let petowner = false;
+  if (publicUserRole) {
+    petsitter = !!publicUserRole.filter((role) => role.name === 'petsitter').length;
+    petowner = !!publicUserRole.filter((role) => role.name === 'petownerjj').length;
+  }
+  console.log('petsitter, petowner', petsitter, petowner);
 
   return (
     <div className="PublicProfile">
@@ -22,27 +38,26 @@ function PublicProfile({
             <h1
               className="profile__user__name"
             >
-              Prénom
+              {publicUser.first_name}
               <br />
-              NOM
+              {publicUser.last_name}
             </h1>
             <p className="profile__user__location">
               <MdPlace />
-              {/* {`${ville} - ${codePostal}`} */}
-              Ville - XXXXX
+              {`${publicUser.city} - ${publicUser.postal_code}`}
             </p>
             <p
               className="profile__user__email"
             >
               <RiMailFill />
-              test@gmail.com
+              {publicUser.email}
             </p>
           </div>
 
           <div
             className="profile__user__right"
           >
-            <Link to="mailto:test@gmail.com">
+            <Link to={`mailto:${publicUser.email}`}>
               <button
                 type="button"
                 className="profile__user__right__button"
@@ -55,10 +70,11 @@ function PublicProfile({
             <div className="profile__user__right__tags">
               {petowner && <FaPaw size="40" />}
               {petsitter && <MdChildFriendly size="40" />}
+
             </div>
           </div>
         </div>
-        <p className="profile__user__description">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab omnis laudantium quisquam fugit dignissimos adipisci delectus dolorem repellat? Veritatis alias earum, necessitatibus ex nesciunt molestiae ullam nobis iste totam nam."</p>
+        <p className="profile__user__description">{`"${publicUser.presentation}"`}</p>
       </section>
 
       <hr />
@@ -89,7 +105,7 @@ function PublicProfile({
       </section>
       <hr />
 
-      {petsitter && <PetsittingDetails isAvailable={availability} />}
+      {petsitter && <PetsittingDetails isAvailable={publicUser.availability} />}
 
     </div>
   );

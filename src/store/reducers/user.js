@@ -16,6 +16,7 @@ export const saveUserInfos = createAction('user/saveUserInfos');
 export const logout = createAction('user/logout');
 export const saveUserAds = createAction('user/saveUserAds');
 export const getConnectedUserInfos = createAction('user/getConnectedUserInfos');
+export const getPublicUserInfos = createAction('user/getPublicUserInfos');
 
 const userReducer = createReducer(initialState, (builder) => {
   builder
@@ -38,6 +39,9 @@ const userReducer = createReducer(initialState, (builder) => {
     })
     .addCase(getConnectedUserInfos, (state, action) => {
       state.connectedUser = action.payload;
+    })
+    .addCase(getPublicUserInfos, (state, action) => {
+      state.publicUser = action.payload;
     });
 });
 
