@@ -1,8 +1,33 @@
+import { useSelect } from '@mui/base';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Field from '../../../components/Field/Field';
+import FieldArea from '../../../components/FieldArea/FieldArea';
+import FieldCheckbox from '../../../components/FieldCheckbox/FieldCheckbox';
+import Loader from '../../../components/Loader/Loader';
 import RoleForm from '../../../components/RoleForm/RoleForm';
+import { changeFieldUpdateAccount } from '../../../store/reducers/updateAccount';
 import './UpdateMyProfile.scss';
 
-function UpdateMyProfile() {
+function UpdateMyProfile({
+  firstName, lastName, postalCode, description, role,
+}) {
+  const dispatch = useDispatch();
+
+  const {
+    first_name,
+    last_name,
+    email,
+    postal_code,
+    city,
+    presentation,
+    availability,
+    availability_details,
+    role_petsitter,
+    role_petowner,
+    pet_types,
+  } = useSelector((state) => state.updateAccount);
+
   const [isPetsitter, setIsPetsitter] = useState(false);
 
   const handleChange = () => {
@@ -10,70 +35,116 @@ function UpdateMyProfile() {
     console.log(`box is check : ${isPetsitter}`);
   };
 
+  function handleChangeField(value, name) {
+    dispatch(changeFieldUpdateAccount({
+      key: name,
+      value,
+    }));
+  }
+
+  const test = email.length > 0;
+
   return (
     <div className="profile">
-      <form className="profile__settings">
-        <h1 className="profile__settings__title">Mon profil</h1>
+      {!test
+        ? <Loader />
+        : (
+          <form className="profile__settings">
+            <h1 className="profile__settings__title">Mon profil</h1>
 
-        <div className="profile__settings__input">
-          <label htmlFor="first_name">Prénom : *</label>
-          <input type="text" name="first_name" id="first_name" />
-        </div>
-
-        <div className="profile__settings__input">
-          <label htmlFor="last_name">Nom * :</label>
-          <input type="text" name="last_name" id="last_name" />
-        </div>
-
-        <div className="profile__settings__input">
-          <label htmlFor="email">Adresse email : *</label>
-          <input type="email" name="email" id="email" />
-        </div>
-
-        <div className="profile__settings__input">
-          <label htmlFor="postal_code">Code postal : *</label>
-          <input type="text" name="postal_code" id="postal_code" />
-        </div>
-
-        <div className="profile__settings__input">
-          <label htmlFor="city">Ville : *</label>
-          <input type="text" name="city" id="city" />
-        </div>
-
-        <div className="profile__settings__input">
-          <label htmlFor="presentation">Résumé : </label>
-          <textarea type="" name="presentation" id="presentation" rows="5" placeholder="# Présentez vous en quelques mots" />
-        </div>
-
-        <fieldset className="profile__settings__input">
-          <legend>Type(s) de profil(s)</legend>
-          <div className="profile__settings__input__checkbox">
-            <input type="checkbox" name="petOwner" id="petOwner" />
-            <label htmlFor="petOwner">
-              Petowner : J&#39;ai des animaux à faire garder
-            </label>
-          </div>
-          <p>et / ou</p>
-          <div className="profile__settings__input__checkbox">
-            <input
-              type="checkbox"
-              name="petSitter"
-              id="petSitter"
-              onChange={handleChange}
+            <Field
+              label="Prénom*"
+              name="first_name"
+              placeholder="prénom"
+              form="updateAccount"
+              onChange={handleChangeField}
+              value={first_name}
             />
-            <label htmlFor="petSitter">
-              Petsitter : je souhaite garder des animaux
-            </label>
-          </div>
 
-          {isPetsitter && <RoleForm /> }
+            <Field
+              label="Nom*"
+              name="last_name"
+              placeholder="nom"
+              form="updateAccount"
+              onChange={handleChangeField}
+              value={last_name}
+            />
 
-        </fieldset>
+            <Field
+              label="Adresse email*"
+              type="email"
+              name="email"
+              placeholder="email"
+              form="createAccount"
+              onChange={handleChangeField}
+              value={email}
+            />
 
-        <div className="profile__settings__input">
-          <input type="submit" value="Enregistrer" />
-        </div>
-      </form>
+            <Field
+              label="Code postal*"
+              name="postal_code"
+              placeholder="code postal"
+              form="createAccount"
+              value={postal_code}
+              onChange={handleChangeField}
+            />
+
+            <Field
+              label="Ville*"
+              name="city"
+              placeholder="city"
+              form="createAccount"
+              value={city}
+              onChange={handleChangeField}
+            />
+
+            <FieldArea
+              label="Présentation"
+              name="presentation"
+              placeholder="Présentez-vous en quelques lignes"
+              onChange={handleChangeField}
+              form="createAccount"
+              value={presentation}
+              limit="200"
+            />
+
+            <fieldset className="createAccount__fieldset">
+              <legend className="createAccount__fieldset__legend">Type(s) de profil(s)*</legend>
+              <FieldCheckbox
+                label="Petowner : J'ai des animaux à faire garder"
+                name="role_petowner"
+                value={role_petowner}
+                onChange={handleChangeField}
+                defaultChecked={role_petowner}
+              />
+              <p className="createAccount__fieldset__separator">et / ou</p>
+
+              <FieldCheckbox
+                label="Petsitter : je souhaite garder des animaux"
+                name="role_petsitter"
+                value={role_petsitter}
+                onChange={handleChangeField}
+                defaultChecked={role_petsitter}
+              />
+
+            </fieldset>
+
+            {role_petsitter
+                && (
+                <RoleForm
+                  onChange={handleChangeField}
+                  availability={availability}
+                  availability_details={availability_details}
+                  defaultChecked={availability}
+                  petTypes={pet_types}
+                />
+                )}
+
+            <div className="profile__settings__input">
+              <input type="submit" value="Enregistrer" />
+            </div>
+          </form>
+        )}
     </div>
 
   );

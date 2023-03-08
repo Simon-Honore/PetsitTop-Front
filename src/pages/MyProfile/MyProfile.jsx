@@ -14,16 +14,26 @@ function MyProfile() {
     dispatch(fetchConnectedUserInfos());
   }, []);
 
-  const testUserConnected = useSelector((state) => state.user.connectedUser);
-  console.log('testUserConnected >> ', testUserConnected);
+  const connectedUser = useSelector((state) => state.user.connectedUser);
+  console.log('connectedUser >> ', connectedUser);
   return (
     <div className="MyProfile">
 
-      <UpdateMyProfile />
+      <UpdateMyProfile
+        firstName={connectedUser.first_name}
+        lastName={connectedUser.last_name}
+        email={connectedUser.email}
+        postalCode={connectedUser.postal_code}
+        city={connectedUser.city}
+        description={connectedUser.description}
+        role={connectedUser.role}
+      />
 
       <hr />
 
-      <PetProfile />
+      <PetProfile
+        pets={connectedUser.pets}
+      />
 
       <hr />
 

@@ -26,7 +26,7 @@ function PublicProfile() {
   let petowner = false;
   if (publicUserRole) {
     petsitter = !!publicUserRole.filter((role) => role.name === 'petsitter').length;
-    petowner = !!publicUserRole.filter((role) => role.name === 'petownerjj').length;
+    petowner = !!publicUserRole.filter((role) => role.name === 'petowner').length;
   }
   console.log('petsitter, petowner', petsitter, petowner);
 

@@ -10,20 +10,31 @@ function RoleForm({
   onChange,
   availability,
   availability_details,
+  defaultChecked,
+  petTypes,
 }) {
   function handleChange(event) {
     onChange(event.target.checked, event.target.name);
   }
+  console.log('petTypes >> ', petTypes);
+  console.log('listPetTypes >> ', listPetTypes);
 
   function handleChangeArea(value, name) {
     onChange(value, name);
   }
+  const isPetAccepted = (value) => {
+    const a = petTypes.find((pet) => pet.id === value);
+    return !!a;
+  };
+
+  const test = isPetAccepted(1);
+  console.log('test >> ', test);
 
   return (
     <div className="roleForm conditionnal">
       <p className="roleForm__title">Je suis petsitter</p>
       <FormGroup className="roleForm__switch">
-        <FormControlLabel control={<Switch onChange={handleChange} name="availability" />} label="Je suis disponible" />
+        <FormControlLabel control={<Switch onChange={handleChange} name="availability" defaultChecked={defaultChecked} />} label="Je suis disponible" />
       </FormGroup>
       { availability
         && (
@@ -47,6 +58,7 @@ function RoleForm({
               key={petType.value}
               value={petType.value}
               name={petType.name}
+              defaultChecked={isPetAccepted(petType.value)}
             />
           ))}
         </div>
@@ -62,4 +74,9 @@ RoleForm.propTypes = {
   availability: bool.isRequired,
   onChange: func.isRequired,
   availability_details: string.isRequired,
+  defaultChecked: bool,
+};
+
+RoleForm.defaultProps = {
+  defaultChecked: false,
 };

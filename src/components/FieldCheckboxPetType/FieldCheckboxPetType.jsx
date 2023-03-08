@@ -1,4 +1,4 @@
-import { string, number } from 'prop-types';
+import { string, number, bool } from 'prop-types';
 import cn from 'classnames';
 import { useDispatch } from 'react-redux';
 
@@ -9,6 +9,7 @@ import './FieldCheckboxPetType.scss';
 function FieldCheckboxPetType({
   name,
   value,
+  defaultChecked,
 }) {
   const dispatch = useDispatch();
 
@@ -33,6 +34,7 @@ function FieldCheckboxPetType({
         className="fieldCheckboxPetType__input"
         name={name}
         onChange={handleChange}
+        defaultChecked={defaultChecked}
       />
 
       <label
@@ -48,6 +50,12 @@ function FieldCheckboxPetType({
 FieldCheckboxPetType.propTypes = {
   value: number.isRequired,
   name: string.isRequired,
+  defaultChecked: bool,
+
+};
+
+FieldCheckboxPetType.defaultProps = {
+  defaultChecked: false,
 };
 
 export default FieldCheckboxPetType;
