@@ -1,17 +1,16 @@
 import { useSelect } from '@mui/base';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { updateConnectedUser } from '../../../api/user';
 import Field from '../../../components/Field/Field';
 import FieldArea from '../../../components/FieldArea/FieldArea';
 import FieldCheckbox from '../../../components/FieldCheckbox/FieldCheckbox';
 import Loader from '../../../components/Loader/Loader';
 import RoleForm from '../../../components/RoleForm/RoleForm';
-import { changeFieldUpdateAccount } from '../../../store/reducers/updateAccount';
+import { addPetTypeToUpdate, changeFieldUpdateAccount, removePetTypeToUpdate } from '../../../store/reducers/updateAccount';
 import './UpdateMyProfile.scss';
 
-function UpdateMyProfile({
-  firstName, lastName, postalCode, description, role,
-}) {
+function UpdateMyProfile() {
   const dispatch = useDispatch();
 
   const {
@@ -28,13 +27,6 @@ function UpdateMyProfile({
     pet_types,
   } = useSelector((state) => state.updateAccount);
 
-  const [isPetsitter, setIsPetsitter] = useState(false);
-
-  const handleChange = () => {
-    setIsPetsitter(!isPetsitter);
-    console.log(`box is check : ${isPetsitter}`);
-  };
-
   function handleChangeField(value, name) {
     dispatch(changeFieldUpdateAccount({
       key: name,
@@ -42,6 +34,21 @@ function UpdateMyProfile({
     }));
   }
 
+  function handleChangePetTypes(valueId, isChecked) {
+    if (isChecked) {
+      dispatch(addPetTypeToUpdate(valueId));
+    }
+    if (!isChecked) {
+      dispatch(removePetTypeToUpdate(valueId));
+    }
+  }
+
+  function handleSubmitUpdateAccountForm(event) {
+    event.preventDefault();
+    dispatch(updateConnectedUser());
+  }
+
+  // TODO - change name or search better method
   const test = email.length > 0;
 
   return (
@@ -49,7 +56,7 @@ function UpdateMyProfile({
       {!test
         ? <Loader />
         : (
-          <form className="profile__settings">
+          <form className="profile__settings" onSubmit={handleSubmitUpdateAccountForm}>
             <h1 className="profile__settings__title">Mon profil</h1>
 
             <Field
@@ -137,12 +144,11 @@ function UpdateMyProfile({
                   availability_details={availability_details}
                   defaultChecked={availability}
                   petTypes={pet_types}
+                  onChangePetType={handleChangePetTypes}
                 />
                 )}
 
-            <div className="profile__settings__input">
-              <input type="submit" value="Enregistrer" />
-            </div>
+            <button type="submit" className="createAccount__btn">ENREGISTRER LES MODIFICATIONS</button>
           </form>
         )}
     </div>

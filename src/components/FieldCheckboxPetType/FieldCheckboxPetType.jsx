@@ -10,6 +10,7 @@ function FieldCheckboxPetType({
   name,
   value,
   defaultChecked,
+  onChangePetType,
 }) {
   const dispatch = useDispatch();
 
@@ -17,12 +18,7 @@ function FieldCheckboxPetType({
 
   function handleChange(event) {
     const { value, checked } = event.target;
-    if (checked) {
-      dispatch(addPetType(value));
-    }
-    if (!checked) {
-      dispatch(removePetType(value));
-    }
+    onChangePetType(value, checked);
   }
 
   return (

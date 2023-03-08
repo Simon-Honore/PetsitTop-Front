@@ -5,7 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import RoleForm from '../../../components/RoleForm/RoleForm';
 import Field from '../../../components/Field/Field';
 import FieldCheckbox from '../../../components/FieldCheckbox/FieldCheckbox';
-import { changeFieldCreateAccount, resetFieldsCreatAccount } from '../../../store/reducers/createAccount';
+import {
+  addPetType, changeFieldCreateAccount, removePetType, resetFieldsCreatAccount,
+} from '../../../store/reducers/createAccount';
 import { createAccount } from '../../../api/createAccount';
 import './FormCreateAccount.scss';
 import { schemas } from '../../../validation/user.schemas';
@@ -42,6 +44,16 @@ function FormCreateAccount() {
       value,
     }));
   }
+
+  function handleChangePetTypes(valueId, isChecked) {
+    if (isChecked) {
+      dispatch(addPetType(valueId));
+    }
+    if (!isChecked) {
+      dispatch(removePetType(valueId));
+    }
+  }
+
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -200,6 +212,7 @@ function FormCreateAccount() {
                   onChange={handleChangeField}
                   availability={availability}
                   availability_details={availability_details}
+									onChangePetType={handleChangePetTypes}
                 />
                 )}
 

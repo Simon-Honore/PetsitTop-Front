@@ -20,10 +20,9 @@ export const copyConnectedUserInfos = createAction('updateAccount/saveAccountInf
 export const setPetsitterRole = createAction('updateAccount/setPetsitterRole');
 export const setPetownerRole = createAction('updateAccount/setPetownerRole');
 export const changeFieldUpdateAccount = createAction('updateAccount/changeFieldUpdateAccount');
-// export const setPresentation = createAction('updateAccount/setPresentation');
-// export const addPetType = createAction('updateAccount/addPetType');
-// export const removePetType = createAction('updateAccount/removePetType');
-// export const resetFieldsCreatAccount = createAction('updateAccount/resetFieldsCreatAccount');
+export const addPetTypeToUpdate = createAction('updateAccount/addPetTypeToUpdate');
+export const removePetTypeToUpdate = createAction('updateAccount/removePetTypeToUpdate');
+export const resetFieldsUpdateAccount = createAction('updateAccount/resetFieldsCreatAccount');
 
 const updateAccountReducer = createReducer(initialState, (builder) => {
   builder
@@ -38,29 +37,25 @@ const updateAccountReducer = createReducer(initialState, (builder) => {
     })
     .addCase(changeFieldUpdateAccount, (state, action) => {
       state[action.payload.key] = action.payload.value;
-      console.log(action.payload.key, action.payload.value);
+    })
+    .addCase(addPetTypeToUpdate, (state, action) => {
+      state.pet_types = [...state.pet_types, action.payload];
+    })
+    .addCase(removePetTypeToUpdate, (state, action) => {
+      state.pet_types = state.pet_types.filter((nb) => nb !== action.payload);
+    })
+    .addCase(resetFieldsUpdateAccount, (state) => {
+      state.first_name = '';
+      state.last_name = '';
+      state.email = '';
+      state.postal_code = '';
+      state.city = '';
+      state.presentation = '';
+      state.availability = false;
+      state.availability_details = '';
+      state.role_petsitter = false;
+      state.role_petowner = true;
+      state.pet_types = [];
     });
-  // .addCase(addPetType, (state, action) => {
-  //   state.pet_type = [...state.pet_type, action.payload];
-  // })
-  // .addCase(removePetType, (state, action) => {
-  //   state.pet_type = state.pet_type.filter((nb) => nb !== action.payload);
-  // })
-  // .addCase(resetFieldsCreatAccount, (state) => {
-  //   state.first_name = '';
-  //   state.last_name = '';
-  //   state.email = '';
-  //   state.password = '';
-  //   state.confirmPassword = '';
-  //   state.postal_code = '';
-  //   state.city = '';
-  //   state.availability = false;
-  //   state.availability_details = '';
-  //   state.role_petsitter = false;
-  //   state.role_petowner = false;
-  //   state.pet_type = [];
-  //   state.cgu_consent = false;
-  //   state.rgpd_consent = false;
-  // });
 });
 export default updateAccountReducer;

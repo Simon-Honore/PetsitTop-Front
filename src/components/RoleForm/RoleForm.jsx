@@ -12,23 +12,23 @@ function RoleForm({
   availability_details,
   defaultChecked,
   petTypes,
+  onChangePetType,
 }) {
   function handleChange(event) {
     onChange(event.target.checked, event.target.name);
   }
-  console.log('petTypes >> ', petTypes);
-  console.log('listPetTypes >> ', listPetTypes);
 
   function handleChangeArea(value, name) {
     onChange(value, name);
   }
   const isPetAccepted = (value) => {
-    const a = petTypes.find((pet) => pet.id === value);
-    return !!a;
+    if (petTypes) {
+      // const a = petTypes.find((pet) => pet.id === value);
+      // return !!a;
+      const petTypesChecked = petTypes.find((petType) => petType == value);
+      return !!petTypesChecked;
+    }
   };
-
-  const test = isPetAccepted(1);
-  console.log('test >> ', test);
 
   return (
     <div className="roleForm conditionnal">
@@ -58,6 +58,7 @@ function RoleForm({
               key={petType.value}
               value={petType.value}
               name={petType.name}
+              onChangePetType={onChangePetType}
               defaultChecked={isPetAccepted(petType.value)}
             />
           ))}

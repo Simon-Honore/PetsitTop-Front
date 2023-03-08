@@ -28,10 +28,59 @@ export const fetchConnectedUserInfos = () => async (dispatch) => {
       value: '',
     }));
   }
+
+  // transform data.pet_type into array of number of string type
+  const petTypeInGoodFormat = data.pet_types.map((petType) => petType.id.toString());
+  dispatch(changeFieldUpdateAccount({
+    key: 'pet_types',
+    value: petTypeInGoodFormat,
+  }));
 };
 
 export const fetchPublicUserInfos = (publicUserId) => async (dispatch) => {
   const { data } = await axiosInstance.get(`/users/${publicUserId}`);
 
   dispatch(getPublicUserInfos(data));
+};
+
+export const updateConnectedUser = () => async (dispatch, getState) => {
+  const state = getState();
+
+  const {
+    first_name,
+    last_name,
+    email,
+    presentation,
+    postal_code,
+    city,
+    role_petowner,
+    role_petsitter,
+    availability,
+    availability_details,
+    pet_types,
+  } = state.updateAccount;
+
+  const userId = localStorage.getItem('userId');
+
+  await axiosInstance.put(`/users/${userId}`, {
+    first_name,
+    last_name,
+    email,
+    presentation,
+    postal_code,
+    city,
+    role_petowner,
+    role_petsitter,
+    availability,
+    availability_details,
+    pet_type: pet_types,
+  });
+
+  dispatch(fetchConnectedUserInfos());
+};
+
+export const deleteAccount = () => async (dispatch) => {
+  const userId = localStorage.getItem('userId');
+
+  await axiosInstance.delete(`/users/${userId}`);
 };
