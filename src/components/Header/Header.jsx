@@ -22,7 +22,7 @@ function Header({ isLogged }) {
     <div className="header">
       <div className="header__main">
         <h1 className="header__main__title">
-          <Link to="/"><img src="./src/assets/logo-petsittop-white.svg" width="150" alt="PetsitTop" /></Link>
+          <Link to="/"><img src="/src/assets/logo-petsittop-white.svg" width="150" alt="PetsitTop" /></Link>
         </h1>
         {isLogged
           ? (
