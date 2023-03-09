@@ -1,3 +1,4 @@
+import { arrayOf, shape } from 'prop-types';
 import CounterResults from '../../../components/CounterResults/CounterResults';
 import AdCard from './AdCard/AdCard';
 import './AdsResults.scss';
@@ -20,3 +21,9 @@ function AdsResults({ adsList }) {
 }
 
 export default AdsResults;
+
+AdsResults.propTypes = {
+  adsList: arrayOf(
+    shape().isRequired,
+  ).isRequired,
+};

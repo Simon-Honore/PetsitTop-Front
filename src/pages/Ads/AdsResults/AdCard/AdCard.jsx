@@ -4,6 +4,7 @@ import {
 } from 'prop-types';
 
 import './AdCard.scss';
+import { Link } from 'react-router-dom';
 
 function AdCard({
   id,
@@ -48,12 +49,16 @@ function AdCard({
       </section>
 
       <section className="adCard__btnContainer">
-        <button
-          type="button"
-          className="adCard__btnContainer__btn"
+        <Link
+          to={`/profil/${id}`}
         >
-          Voir le profil
-        </button>
+          <button
+            type="button"
+            className="adCard__btnContainer__btn"
+          >
+            Voir le profil
+          </button>
+        </Link>
 
         <button
           type="button"
