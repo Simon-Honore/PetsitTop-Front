@@ -25,8 +25,9 @@ export const createAd = () => async (dispatch, getState) => {
 
 export const fetchAllAds = () => async (dispatch) => {
   const { data } = await axiosInstance.get('/ads');
+  console.log('data >> ', data.results);
 
-  dispatch(setAllAdsList(data));
+  dispatch(setAllAdsList(data.results));
 };
 
 export const getMyAds = () => async (dispatch, getState) => {
