@@ -2,7 +2,6 @@ import { FaUserCircle } from 'react-icons/fa';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { bool } from 'prop-types';
-import logoPetsitTop from '../../assets/logo-petsittop-white.svg';
 
 // import local
 import Menu from './Menu/Menu';
@@ -23,7 +22,7 @@ function Header({ isLogged }) {
     <div className="header">
       <div className="header__main">
         <h1 className="header__main__title">
-          <Link to="/"><img src={logoPetsitTop} width="150" alt="PetsitTop" /></Link>
+          <Link to="/"><img src="/logo-petsittop-white.svg" width="150" alt="PetsitTop" /></Link>
         </h1>
         {isLogged
           ? (
