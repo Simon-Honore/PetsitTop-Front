@@ -70,11 +70,13 @@ function FormCreateAccount() {
       availability_details,
       role_petsitter,
       role_petowner,
+      rgpd_consent,
+      cgu_consent,
     }, { abortEarly: false }).error;
 
     // Affichage des erreurs à l'utilisateur
     if (validationErrors) {
-      console.log('erreurs de validation', validationErrors);
+      // console.log('erreurs de validation', validationErrors);
       // Si il y a des erreurs, on les stocke dans un objet
       const newErrors = {};
       validationErrors.details.forEach((error) => {
@@ -82,7 +84,7 @@ function FormCreateAccount() {
       });
       setErrors(newErrors);
     } else {
-      console.log('creation du compte');
+      // console.log('creation du compte');
 
       // Si il n'y a pas d'erreurs, on envoie les données pour la création du compte
       dispatch(createAccount());
@@ -192,7 +194,7 @@ function FormCreateAccount() {
                   onChange={handleChangeField}
                   defaultChecked
                 />
-                {/* {errors.role_petowner && <div className="createAccount__error">{errors.role_petowner}</div>} */}
+                {errors.role_petowner && <div className="createAccount__error">{errors.role_petowner}</div>}
 
                 <p className="createAccount__fieldset__separator">et / ou</p>
 
@@ -223,6 +225,7 @@ function FormCreateAccount() {
                   value={rgpd_consent}
                   onChange={handleChangeField}
                 />
+                {errors.role_petowner && <div className="createAccount__error">{errors.rgpd_consent}</div>}
 
                 <FieldCheckbox
                   label="J'accepte les CGU*"
@@ -230,6 +233,7 @@ function FormCreateAccount() {
                   value={cgu_consent}
                   onChange={handleChangeField}
                 />
+                {errors.role_petowner && <div className="createAccount__error">{errors.cgu_consent}</div>}
               </div>
 
               <button type="submit" className="createAccount__btn">JE M&#39;INSCRIS</button>
