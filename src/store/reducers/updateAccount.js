@@ -14,8 +14,6 @@ export const initialState = {
   pet_types: [],
 };
 
-// TODO - add CGU and RGPD
-
 export const copyConnectedUserInfos = createAction('updateAccount/saveAccountInfos');
 export const setPetsitterRole = createAction('updateAccount/setPetsitterRole');
 export const setPetownerRole = createAction('updateAccount/setPetownerRole');

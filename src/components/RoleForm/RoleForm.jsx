@@ -23,8 +23,6 @@ function RoleForm({
   }
   const isPetAccepted = (value) => {
     if (petTypes) {
-      // const a = petTypes.find((pet) => pet.id === value);
-      // return !!a;
       const petTypesChecked = petTypes.find((petType) => petType == value);
       return !!petTypesChecked;
     }
