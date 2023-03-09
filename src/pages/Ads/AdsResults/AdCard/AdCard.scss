@@ -1,26 +1,43 @@
 .adCard {
-	margin: 1rem 0.5rem;
-	padding: 0.5rem;
-	border: 2px solid $color-second;
+	margin: 1rem;
+	padding: 0.8rem;
+	border: 2px solid lighten($color-main, 25%);
+	box-shadow: 0.3rem 0.3rem 0.5rem $color-main;
+	@include desktop {
+		display: flex;
+	}
 
 	&__description {
 		margin-bottom: 1rem;
+		@include desktop {
+			width: 80%;
+		}
 
 		&__header {
 			margin-bottom: 1rem;
-
-			&__title {
-				font-size: 1.2rem;
-				font-weight: bold;
-				margin-bottom: 0.5rem;
-				color: $color-main;
+			@include desktop {
+				display: flex;
+				justify-content: space-between;
 			}
 
-			&__name {
-				font-size: 1.1rem;
-				font-style: italic;
-				margin-bottom: 0.3rem;
-				font-weight: bold;
+			&__main {
+				@include desktop {
+					width: 70%;
+				}
+
+				&__title {
+					font-size: 1.2rem;
+					font-weight: bold;
+					margin-bottom: 0.5rem;
+					color: $color-main;
+				}
+
+				&__name {
+					font-size: 1.1rem;
+					font-style: italic;
+					margin-bottom: 0.3rem;
+					font-weight: bold;
+				}
 			}
 
 			&__info {
@@ -28,6 +45,9 @@
 				justify-content: space-between;
 				align-items: flex-end;
 				margin-bottom: 0.5rem;
+				@include desktop {
+					flex-direction: column;
+				}
 
 				&__localisation {
 					display: flex;
@@ -55,15 +75,17 @@
 	&__btnContainer {
 		display: flex;
 		justify-content: space-around;
+		@include desktop {
+			flex-direction: column;
+			margin: auto;
+			gap: 1rem;
+		}
 
 		&__btn {
 			@include btn;
-			background-color: $color-btn;
-			color: white;
 
 			&--contact {
-				color: $color-btn;
-				background-color: white;
+				@include btn-alt;
 			}
 		}
 	}

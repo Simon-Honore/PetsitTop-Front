@@ -22,8 +22,11 @@ function AdCard({
     <article className="adCard">
       <section className="adCard__description">
         <header className="adCard__description__header">
-          <h3 className="adCard__description__header__title">{title}</h3>
-          <p className="adCard__description__header__name">{name}</p>
+          <div className="adCard__description__header__main">
+            <h3 className="adCard__description__header__main__title">{title}</h3>
+            <p className="adCard__description__header__main__name">{name}</p>
+          </div>
+
           <div className="adCard__description__header__info">
             <p className="adCard__description__header__info__localisation">
               <MdPlace size="1.5rem" />
@@ -54,7 +57,7 @@ function AdCard({
 
         <button
           type="button"
-          className="adCard__btnContainer__btn adCard__btnContainer__btn--contact"
+          className="adCard__btnContainer__btn--contact"
         >
           Contacter
         </button>
