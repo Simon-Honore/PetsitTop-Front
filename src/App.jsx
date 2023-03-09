@@ -14,6 +14,7 @@ import MyAds from './pages/MyAds/MyAds';
 import CreateAd from './pages/CreateAd/CreateAd';
 import LegalNotice from './pages/LegalNotice/LegalNotice';
 import CGU from './pages/CGU/CGU';
+import Team from './pages/Team/Team';
 import { changeFieldLogin } from './store/reducers/user';
 import NotFound from './pages/NotFound/NotFound';
 
@@ -56,6 +57,7 @@ function App() {
         <Route path="/resultats" element={<SearchResults />} />
         <Route path="/mentions-legales" element={<LegalNotice />} />
         <Route path="/cgu" element={<CGU />} />
+        <Route path="/equipe" element={<Team />} />
 
         {isLogged && (
         <>

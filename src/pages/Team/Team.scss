@@ -1,0 +1,64 @@
+.team {
+  padding: 2rem 1rem;
+  background-color: $bgLightGrey;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0 .5rem 0;
+  }
+  h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 1rem 0 .5rem 0;
+  }
+  strong {
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: .5rem;
+  }
+  &__members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+  }
+  &__member {
+    width: 100%;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 1rem;
+    padding: 2rem;
+
+    @media only screen and (min-width : 321px) {
+      width: 290px;
+    }
+
+    & img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+    &__links {
+      display: flex;
+      justify-content: center;
+
+      & a {
+        display: block;
+        @include btn;
+        background-color: $color-btn;
+        color: white;
+        &:hover {
+          background-color: darken($color-btn, 10%);
+        }
+      }
+    }
+  }
+}
