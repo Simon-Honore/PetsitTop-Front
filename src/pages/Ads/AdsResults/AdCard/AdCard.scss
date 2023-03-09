@@ -1,7 +1,7 @@
 .adCard {
 	margin: 1rem 0.5rem;
 	padding: 0.5rem;
-	border: 2px solid #ccc;
+	border: 2px solid $color-second;
 
 	&__description {
 		margin-bottom: 1rem;
@@ -12,13 +12,15 @@
 			&__title {
 				font-size: 1.2rem;
 				font-weight: bold;
-				margin-bottom: 0.3rem;
+				margin-bottom: 0.5rem;
+				color: $color-main;
 			}
 
 			&__name {
 				font-size: 1.1rem;
 				font-style: italic;
 				margin-bottom: 0.3rem;
+				font-weight: bold;
 			}
 
 			&__info {
@@ -35,7 +37,7 @@
 				&__date {
 					font-size: 0.8rem;
 					font-style: italic;
-					color: #a5a5a5;
+					color: $color-date;
 
 					& span {
 						font-size: 0.9rem;

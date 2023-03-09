@@ -52,7 +52,7 @@ function Ads() {
             onChange={handleChangeDepartment}
             value={filterDepartement || ''}
           />
-          <TbFilterOff size="2rem" onClick={handleClickResetFilter} />
+          <TbFilterOff size="2rem" onClick={handleClickResetFilter} className="ads__header__filter__reset" />
         </div>
       </header>
 
