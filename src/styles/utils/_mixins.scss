@@ -3,4 +3,37 @@
 	border: 1px solid $color-btn;
 	border-radius: 0.5rem;
 	width: 10rem;
+	background-color: $color-btn;
+	color: white;
+	font-weight: bold;
+}
+
+@mixin btn-alt {
+	padding: 0.5rem;
+	border: 1px solid $color-btn;
+	border-radius: 0.5rem;
+	width: 10rem;
+	background-color: white;
+	color: $color-btn;
+	font-weight: bold;
+}
+
+@mixin btn-large {
+	padding: 0.5rem;
+	border: 1px solid $color-btn;
+	border-radius: 0.5rem;
+	width: 100%;
+	background-color: $color-btn;
+	color: white;
+	font-weight: bold;
+}
+
+@mixin btn-alt-large {
+	padding: 0.5rem;
+	border: 1px solid $color-btn;
+	border-radius: 0.5rem;
+	width: 100%;
+	background-color: white;
+	color: $color-btn;
+	font-weight: bold;
 }
