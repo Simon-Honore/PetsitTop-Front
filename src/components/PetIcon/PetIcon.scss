@@ -1,0 +1,21 @@
+.peticon {
+    display: flex;
+    flex-direction: column;
+    border-radius: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0.5rem;
+
+}
+
+.peticon:nth-child(3n+0) {
+    background-color: $color-second;
+}
+
+.peticon:nth-child(3n+1) {
+    background-color: $color-btn;
+}
+
+.peticon:nth-child(3n+2) {
+    background-color: $color-main;
+}

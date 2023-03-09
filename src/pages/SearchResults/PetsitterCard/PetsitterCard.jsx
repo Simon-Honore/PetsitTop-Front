@@ -1,6 +1,8 @@
 import { string, number, arrayOf } from 'prop-types';
 import { MdPlace } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+
+import PetIcon from '../../../components/petIcon/PetIcon';
 import './PetsitterCard.scss';
 
 function PetsitterCard({
@@ -19,13 +21,12 @@ function PetsitterCard({
         </p>
       </div>
       <p className="petsitter__card__description">{description}</p>
-      <ul> Je peux garder vos :</ul>
-      {animauxAcceptes.map((animal) => (
-        <li key={animal.id}>
-          {animal}
-        </li>
-      ))}
-
+      <ul> Je peux garder :</ul>
+      <div className="petsitter__card__peticon">
+        {animauxAcceptes.map((animal) => (
+          <PetIcon key={animal} pet={animal} />
+        ))}
+      </div>
       <div className="petsitter__card__buttons">
         <Link
           to={`/profil/${id}`}
