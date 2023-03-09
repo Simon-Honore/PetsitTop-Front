@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Mali:wght@400;700&display=swap');
 body {
-  font-family: 'Nunito', sans-serif;
-  line-height: 1.2;
-  color : $fontcolor-dark;
+	font-family: 'Nunito', sans-serif;
+	line-height: 1.2;
+	color: $fontcolor-dark;
 }
 h1,
 h2,
@@ -10,12 +10,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Mali', cursive;
-  font-weight: 700;
+	font-family: 'Mali', cursive;
+	font-weight: 700;
 }
 h1 {
-  color: $color-main;
+	color: $color-main;
 }
 h2 {
-  color: $color-second;
+	color: $color-second;
 }

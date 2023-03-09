@@ -37,3 +37,9 @@
 	color: $color-btn;
 	font-weight: bold;
 }
+
+@mixin desktop {
+	@media screen and (min-width: 600px) {
+		@content;
+	}
+}
