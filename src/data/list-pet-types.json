@@ -1,0 +1,34 @@
+[
+	{
+		"name": "Chien",
+		"value": 1
+	},
+	{
+		"name": "Chat",
+		"value": 2
+	},
+	{
+		"name": "Lapin",
+		"value": 3
+	},
+	{
+		"name": "Rongeur",
+		"value": 4
+	},
+	{
+		"name": "Oiseau",
+		"value": 5
+	},
+	{
+		"name": "Poisson",
+		"value": 6
+	},
+	{
+		"name": "Reptile",
+		"value": 7
+	},
+	{
+		"name": "Autre",
+		"value": 8
+	}
+]

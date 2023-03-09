@@ -9,7 +9,7 @@ import './SearchResults.scss';
 
 function SearchResults() {
   const dispatch = useDispatch();
-  const [ searchParams, SetSearchParams ] = useSearchParams();
+  const [searchParams, SetSearchParams] = useSearchParams();
 
   const departement = searchParams.get('departement');
   const pet_type = searchParams.get('pet_type');
@@ -20,7 +20,7 @@ function SearchResults() {
     dispatch(searchPetsitters());
   }, [departement, pet_type]);
 
-  const searchData = useSelector((state) => state.petsitters.results);  
+  const searchData = useSelector((state) => state.petsitters.results);
 
   return (
     <main className="main-home">
@@ -28,7 +28,7 @@ function SearchResults() {
       <SearchPetsitters />
 
       <h1 className="search-petsitters__results">
-        {searchData.length > 1 ? `${searchData.length} petsitters trouvés.`: `${searchData.length} petsitter trouvé.`}
+        {searchData.length > 1 ? `${searchData.length} petsitters trouvés.` : `${searchData.length} petsitter trouvé.`}
       </h1>
       {/* génère une carte pour chaque petsitter trouvé */}
       {searchData.map((petsitter) => (

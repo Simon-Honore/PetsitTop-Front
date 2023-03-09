@@ -1,31 +1,60 @@
 .profile {
+	&__pets {
+		padding: 1rem;
+		&__header {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 1rem;
+			&__title {
+				font-size: 1.5rem;
+				font-weight: bold;
+				padding-left: 1rem;
+			}
+		}
 
-    &__pets {
-        padding: 1rem;
-        &__header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-            &__title {
-                font-size: 1.5rem;
-                font-weight: bold;
-                padding-left: 1rem;
-                
-            }
-        }
+		&__item {
+			border: $border-div;
+			padding: 1rem;
 
-        &__item {
-            border: $border-div;
-            padding: 1rem;
+			&__top {
+				display: flex;
+				justify-content: space-between;
+			}
 
-            &__top {
-                display: flex;
-                justify-content: space-between;
-            }
+			&__info {
+				display: flex;
+			}
+		}
+	}
 
-            &__info {
-                display: flex;
-            }
-        }
-    }
+	&__delete {
+		padding: 1rem;
+
+		&__btn {
+			@include btn;
+			width: 100%;
+			color: white;
+			background-color: $color-btn;
+
+			&--confirm {
+				background-color: #f0f;
+				font-weight: bold;
+
+				transition: box-shadow 2s;
+				animation-duration: 1s;
+				animation-name: shadow;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+
+				@keyframes shadow {
+					from {
+						box-shadow: none;
+					}
+					to {
+						box-shadow: 0 0 3rem #f0f;
+					}
+				}
+			}
+		}
+	}
 }

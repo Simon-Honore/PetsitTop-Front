@@ -1,52 +1,57 @@
-import { string, func, bool } from 'prop-types';
+import { string, number, bool } from 'prop-types';
 import cn from 'classnames';
+import { useDispatch } from 'react-redux';
+
+import { addPetType, removePetType } from '../../store/reducers/createAccount';
 import './FieldCheckboxPetType.scss';
 
 // == Composant
 function FieldCheckboxPetType({
-  label,
   name,
   value,
-  onChange,
+  defaultChecked,
+  onChangePetType,
 }) {
+  const dispatch = useDispatch();
+
   const inputId = `field-${name}`;
 
   function handleChange(event) {
-    if (event.target.checked) {
-      onChange(event.target.value, name);
-    }
+    const { value, checked } = event.target;
+    onChangePetType(value, checked);
   }
 
   return (
-    <div className={cn('field-checkbox', { 'field-checkbox--has-content': value.length > 0 })}>
+    <div className={cn('fieldCheckboxPetType', { 'fieldCheckboxPetType--has-content': value.length > 0 })}>
       <input
         value={value}
         id={inputId}
         type="checkbox"
-        className="field-checkbox__input"
+        className="fieldCheckboxPetType__input"
         name={name}
         onChange={handleChange}
+        defaultChecked={defaultChecked}
       />
 
       <label
         htmlFor={inputId}
-        className="field-checkbox__label"
+        className="fieldCheckboxPetType__label"
       >
-        {label}
+        {name}
       </label>
     </div>
   );
 }
 
 FieldCheckboxPetType.propTypes = {
-  label: string.isRequired,
-  value: bool,
+  value: number.isRequired,
   name: string.isRequired,
-  onChange: func.isRequired,
+  defaultChecked: bool,
+
 };
 
 FieldCheckboxPetType.defaultProps = {
-  value: false,
+  defaultChecked: false,
 };
 
 export default FieldCheckboxPetType;

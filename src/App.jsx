@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
@@ -12,6 +12,9 @@ import PublicProfile from './pages/PublicProfile/PublicProfile';
 import Ads from './pages/Ads/Ads';
 import MyAds from './pages/MyAds/MyAds';
 import CreateAd from './pages/CreateAd/CreateAd';
+import LegalNotice from './pages/LegalNotice/LegalNotice';
+import CGU from './pages/CGU/CGU';
+import Team from './pages/Team/Team';
 import { changeFieldLogin } from './store/reducers/user';
 import NotFound from './pages/NotFound/NotFound';
 
@@ -19,6 +22,11 @@ import './styles/App.scss';
 
 function App() {
   const dispatch = useDispatch();
+	const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     const isLoggedInLocalStorage = !!localStorage.getItem('isLogged');
@@ -47,6 +55,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/identification" element={<Identification />} />
         <Route path="/resultats" element={<SearchResults />} />
+        <Route path="/mentions-legales" element={<LegalNotice />} />
+        <Route path="/cgu" element={<CGU />} />
+        <Route path="/equipe" element={<Team />} />
 
         {isLogged && (
         <>

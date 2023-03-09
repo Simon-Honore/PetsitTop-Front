@@ -1,4 +1,4 @@
-import { saveAccountInfos } from '../store/reducers/createAccount';
+import { loginAfterCreateAccount } from './auth';
 import { axiosInstance } from './index';
 
 export const createAccount = () => async (dispatch, getState) => {
@@ -16,9 +16,12 @@ export const createAccount = () => async (dispatch, getState) => {
     availability_details,
     role_petsitter,
     role_petowner,
+    pet_type,
+    cgu_consent,
+    rgpd_consent,
   } = state.createAccount;
 
-  const { data } = await axiosInstance.post('/users', {
+  await axiosInstance.post('/users', {
     first_name,
     last_name,
     email,
@@ -30,8 +33,11 @@ export const createAccount = () => async (dispatch, getState) => {
     availability_details,
     role_petsitter,
     role_petowner,
+    pet_type,
+    cgu_consent,
+    rgpd_consent,
   });
 
-  // for saved response in state
-  dispatch(saveAccountInfos(data));
+  // login function to call api specially made to use email and password quickly
+  dispatch(loginAfterCreateAccount(email, password));
 };

@@ -1,0 +1,27 @@
+.cgu {
+  padding: 2rem 1rem;
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0 .5rem 0;
+  }
+  strong {
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: .5rem;
+  }
+  .list {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    & li {
+      margin-bottom: .5rem;
+    }
+  }
+}

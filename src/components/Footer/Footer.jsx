@@ -12,9 +12,9 @@ function Footer() {
         </ul>
 
         <ul className="footer__nav__list">
-          <Link to="/#" className="footer__nav__item">Mentions légales</Link>
-          <Link to="/#" className="footer__nav__item">CGU</Link>
-          <Link to="/#" className="footer__nav__item">Equipe</Link>
+          <Link to="/mentions-legales" className="footer__nav__item">Mentions légales</Link>
+          <Link to="/cgu" className="footer__nav__item">CGU</Link>
+          <Link to="/equipe" className="footer__nav__item">Equipe</Link>
         </ul>
       </nav>
     </footer>

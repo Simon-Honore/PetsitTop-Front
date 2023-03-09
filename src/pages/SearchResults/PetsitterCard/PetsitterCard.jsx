@@ -28,13 +28,6 @@ function PetsitterCard({
 
       <div className="petsitter__card__buttons">
         <Link
-          key={id}
-          nom={nom}
-          prenom={prenom}
-          ville={ville}
-          code_postal={codePostal}
-          description={description}
-          animaux_acceptes={animauxAcceptes}
           to={`/profil/${id}`}
         >
           <button
@@ -58,6 +51,7 @@ function PetsitterCard({
 export default PetsitterCard;
 
 PetsitterCard.propTypes = {
+  id: number.isRequired,
   nom: string.isRequired,
   prenom: string.isRequired,
   ville: string.isRequired,
