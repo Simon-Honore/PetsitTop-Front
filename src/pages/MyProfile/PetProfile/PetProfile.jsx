@@ -46,8 +46,8 @@ function PetProfile() {
               <FaUserCircle size="2rem" className="" />
             </div>
             <div>
-              <h1>Médor</h1>
-              <h2>Chien</h2>
+              <h2>Médor</h2>
+              <h3>Chien</h3>
             </div>
           </div>
 
@@ -56,7 +56,7 @@ function PetProfile() {
             <FaTrashAlt />
           </div>
         </div>
-        <div>
+        <div className="profile__pets__item__description">
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             Commodi dicta eveniet quos, optio veritatis officia quam tempore pariatur magnam.

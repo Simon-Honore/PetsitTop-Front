@@ -11,7 +11,7 @@
 	&__input {
 		border: 2px solid #ccc;
 		border-radius: 0.2rem;
-		font-size: 1rem;
 		padding: 0.5rem;
+		@include inputplaceholder;
 	}
 }

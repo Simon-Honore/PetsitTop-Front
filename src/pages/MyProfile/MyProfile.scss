@@ -1,15 +1,24 @@
+.MyProfile {
+	& h1 {
+		font-size: 1.5rem;
+    font-weight: 700;
+		margin-bottom: .5rem;
+	}
+}
+
 .profile {
+	@include maxwidth;
 	&__pets {
+		@include maxwidth;
 		padding: 1rem;
 		&__header {
 			display: flex;
 			justify-content: space-between;
 			margin-bottom: 1rem;
-			&__title {
-				font-size: 1.5rem;
-				font-weight: bold;
-				padding-left: 1rem;
-			}
+			// &__title {
+			// 	font-size: 1.5rem;
+			// 	font-weight: bold;
+			// }
 		}
 
 		&__item {
@@ -24,10 +33,35 @@
 			&__info {
 				display: flex;
 			}
+
+			&__description {
+				font-size: .9rem
+			}
 		}
 	}
-
+	
+	&__ads {
+		@include maxwidth;
+		padding: 1rem;
+		& a {
+			display: block;
+		 	&:not(:last-child) {
+				margin-bottom: .5rem;
+			}
+		}
+		&__btn {
+			&--add {
+				@include btn-large;
+			}
+			&--disp {
+				@include btn-alt-large;
+			}
+		}
+		
+	}
+	
 	&__delete {
+		@include maxwidth;
 		padding: 1rem;
 
 		&__btn {

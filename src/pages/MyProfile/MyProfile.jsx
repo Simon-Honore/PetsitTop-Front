@@ -1,12 +1,12 @@
 import { FiPlus } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 
 import UpdateMyProfile from './UpdateMyProfile/UpdateMyProfile';
 import PetProfile from './PetProfile/PetProfile';
 import { deleteAccount, fetchConnectedUserInfos } from '../../api/user';
 import './MyProfile.scss';
-import { useNavigate } from 'react-router-dom';
 import { logout } from '../../store/reducers/user';
 import { resetResearchPetsitters } from '../../store/reducers/petsitters';
 import { resetFieldsUpdateAccount } from '../../store/reducers/updateAccount';
@@ -55,13 +55,17 @@ function MyProfile() {
 
       <div className="profile__ads">
         <h1>Mes annonces</h1>
-        <button type="button">
-          <FiPlus />
-          Ajouter une annonce
-        </button>
-        <button type="button">
-          Afficher/Gérer mes annonces
-        </button>
+        <Link to="/creer-une-annonce">
+          <button type="button" className="profile__ads__btn--add">
+            <FiPlus />
+            Ajouter une annonce
+          </button>
+        </Link>
+        <Link to="/annonces">
+          <button type="button" className="profile__ads__btn--disp">
+            Afficher / Gérer mes annonces
+          </button>
+          </Link>
       </div>
 
       <div className="profile__delete">

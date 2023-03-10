@@ -5,16 +5,16 @@
 	position: relative;
 
 	&__label {
-		font-size: 0.9rem;
 		margin-bottom: 0.2rem;
 	}
 
 	&__input {
 		border: 2px solid #ccc;
 		border-radius: 0.2rem;
-		font-size: 1rem;
 		padding: 0.5rem 0.5rem 1rem 0.5rem;
 		min-height: 16rem;
+		resize: vertical;
+		@include inputplaceholder;
 	}
 
 	&__count {

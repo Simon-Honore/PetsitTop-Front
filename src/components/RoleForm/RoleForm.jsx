@@ -40,7 +40,7 @@ function RoleForm({
             label="Détails de ma disponibilité*"
             name="availability_details"
             placeholder="# Jours et heures de dispo
-							#Zone de mobilité ou uniquement à domicile"
+            &#10;#Zone de mobilité ou uniquement à domicile"
             onChange={handleChangeArea}
             form="createAccount"
             value={availability_details}
