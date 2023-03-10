@@ -167,29 +167,6 @@ Son portfolio : [__catherine-keller.fr__](https://www.catherine-keller.fr)
 Son profil GitHub : [__github.com/Axelle-SKICA__](https://github.com/Axelle-SKICA)  
 Son profil Linkedin: [__linkedin.com/in/axelle-skica__](https://www.linkedin.com/in/axelle-skica) 
 
-<!-- ## Routes API
-
-|ROUTE|METHODE|FONCTIONNALITE|
-|----|:---------:|:---------|
-|/login|POST|connecter un user à son compte|
-||
-|/users?department=&pet_type= |GET|récupérer tous les users "petsitters" disponibles (role=petsitter & availability=true) avec filtre sur "department" (localisation) et "pet_type" (type d'animal à faire garder)|
-|/users|POST|créer un nouvel utilisateur (inscription)|
-|/users/:id|GET|récupérer les infos d'un user|
-|/users/:id|PUT|modifier un user|
-|/users/:id|DELETE|supprimer un user|
-||
-|/user/:id/pets|GET|récupérer tous les animaux ("pets") d'un user|
-|/user/:id/pets|POST|créer un "pet" pour un user|
-|/pets/:id|PUT|modifier un "pet"|
-|/pets/:id|DELETE|supprimer un "pet"|
-||
-|/ads|GET|récupérer les détails de l'ensemble des annonces ("ads") existantes|
-|/user/:id/ads|GET|récupérer toutes les annonces "ads" d'un user|
-|/user/:id/ads|POST|créer une "ad" pour un user|
-|/ads/:id|PUT|modifier une "ad"|
-|/ads/:id|DELETE|supprimer une "ad"| -->
-
 ## Évolutions envisagées 
 
 
