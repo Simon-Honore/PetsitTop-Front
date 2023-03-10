@@ -43,13 +43,13 @@ function PublicProfile() {
               {publicUser.last_name}
             </h1>
             <p className="profile__user__location">
-              <MdPlace />
+              <MdPlace className="profile__user__location__icon"/>
               {`${publicUser.city} - ${publicUser.postal_code}`}
             </p>
             <p
               className="profile__user__email"
             >
-              <RiMailFill />
+              <RiMailFill className="profile__user__email__icon" />
               {publicUser.email}
             </p>
           </div>
@@ -62,7 +62,7 @@ function PublicProfile() {
                 type="button"
                 className="profile__user__right__button"
               >
-                <RiMailFill />
+                <RiMailFill className="profile__user__right__button__icon"/>
                 Contactez-moi
               </button>
             </Link>
@@ -83,18 +83,16 @@ function PublicProfile() {
 
         <h1 className="pets__title">Mes animaux</h1>
 
-        <PetCard
+        {publicUser.pets.map((pet) => (
+          <PetCard
           className="pets__item"
-          name="Médor"
-          pet_type="Chien"
-          description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi dicta eveniet quos, optio veritatis officia quam tempore pariatur magnam. Laudantium sequi quasi eum laboriosam mollitia, eos amet esse dolores accusamus."
+          key={pet.id}
+          name={pet.name}
+          pet_type={pet.pet_type}
+          description={pet.presentation}
         />
-        <PetCard
-          name="Félix"
-          pet_type="Chat"
-          description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi dicta eveniet quos, optio veritatis officia quam tempore pariatur magnam."
-        />
-
+        ))}
+        
       </section>
 
       <hr />
