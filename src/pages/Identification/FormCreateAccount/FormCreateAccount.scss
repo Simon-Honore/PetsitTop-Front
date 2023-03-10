@@ -11,8 +11,17 @@
 		@include btn;
 		background-color: $color-btn;
 		color: white;
-		margin-top: 0.8rem;
 		width: 100%;
+		display: block;
+
+		@include desktop {
+			width: auto;
+			margin: 0 auto;
+			padding-left: 3rem;
+			padding-right: 3rem;
+		}
+
+		margin-top: 1.5rem !important;
 
 		&--continue {
 			background-color: white;

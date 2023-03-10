@@ -10,17 +10,20 @@ import './MyProfile.scss';
 import { logout } from '../../store/reducers/user';
 import { resetResearchPetsitters } from '../../store/reducers/petsitters';
 import { resetFieldsUpdateAccount } from '../../store/reducers/updateAccount';
+import Loader from '../../components/Loader/Loader';
 
 function MyProfile() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+  const connectedUser = useSelector((state) => state.user.connectedUser);
 
   useEffect(() => {
     dispatch(fetchConnectedUserInfos());
+    setIsLoading(false);
   }, []);
 
-  const connectedUser = useSelector((state) => state.user.connectedUser);
-
+  console.log('connectedUser', connectedUser);
   const [confirmDelete, setConfirmDelete] = useState(false);
 
   function handleDeleteAccount() {
@@ -43,29 +46,34 @@ function MyProfile() {
   return (
     <div className="MyProfile">
 
-      <UpdateMyProfile />
-
-      <hr />
-
-      <PetProfile
-        pets={connectedUser.pets}
-      />
-
+      {isLoading
+        ? <Loader />
+        : (
+          <div>
+            <UpdateMyProfile />
+            <hr />
+            <PetProfile
+              pets={connectedUser.pets}
+            />
+          </div>
+        )}
       <hr />
 
       <div className="profile__ads">
         <h1>Mes annonces</h1>
-        <Link to="/creer-une-annonce">
-          <button type="button" className="profile__ads__btn--add">
-            <FiPlus />
-            Ajouter une annonce
-          </button>
-        </Link>
-        <Link to="/annonces">
-          <button type="button" className="profile__ads__btn--disp">
-            Afficher / Gérer mes annonces
-          </button>
+        <div className="profile__ads__btns">
+          <Link to="/creer-une-annonce">
+            <button type="button" className="profile__ads__btn--add">
+              <FiPlus />
+              Ajouter une annonce
+            </button>
           </Link>
+          <Link to="/annonces">
+            <button type="button" className="profile__ads__btn--disp">
+              Afficher / Gérer mes annonces
+            </button>
+          </Link>
+        </div>
       </div>
 
       <div className="profile__delete">

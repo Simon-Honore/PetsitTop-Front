@@ -50,13 +50,13 @@ function UpdateMyProfile() {
   }
 
   // TODO - change name or search better method
-  const test = email.length > 0;
+  // const test = email.length > 0;
 
   return (
     <div className="profile">
-      {!test
+      {/* {!test
         ? <Loader />
-        : (
+        : ( */}
           <form className="profile__settings" onSubmit={handleSubmitUpdateAccountForm}>
             <h1 className="profile__settings__title">Mon profil</h1>
             <div className="profile__settings__container">
@@ -154,7 +154,7 @@ function UpdateMyProfile() {
 
             <button type="submit" className="createAccount__btn">ENREGISTRER LES MODIFICATIONS</button>
           </form>
-        )}
+        {/* )} */}
     </div>
 
   );

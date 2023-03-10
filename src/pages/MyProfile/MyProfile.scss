@@ -4,6 +4,9 @@
     font-weight: 700;
 		margin-bottom: .5rem;
 	}
+	& hr {
+		border: 1px solid lighten($color-main,40%);
+	}
 }
 
 .profile {
@@ -49,12 +52,24 @@
 				margin-bottom: .5rem;
 			}
 		}
+		&__btns {
+			@include desktop {
+				display: flex;
+				gap: .5rem;
+			}
+		}
 		&__btn {
 			&--add {
 				@include btn-large;
 			}
 			&--disp {
 				@include btn-alt-large;
+			}
+			&--add,
+			&--disp {
+				@include desktop {
+					width: auto;
+				}
 			}
 		}
 		

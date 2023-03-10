@@ -4,12 +4,15 @@ import { BsPencilSquare } from 'react-icons/bs';
 import { FiPlus } from 'react-icons/fi';
 import AddPet from './AddPet/AddPet';
 import UpdatePet from './UpdatePet/UpdatePet';
+import PetCard from '../../../components/PetCard/PetCard';
 import './PetProfile.scss';
 
-function PetProfile() {
+function PetProfile({ pets }) {
   const [showUpdatePet, setShowUpdatePet] = useState(false);
 
   const [addPet, setAddPet] = useState(false);
+
+  console.log('pets-profil', pets);
 
   const switchState = (state, setState) => {
     setState(!state);
@@ -39,31 +42,15 @@ function PetProfile() {
         ? (
           <UpdatePet />
         ) : ''}
-      <div className="profile__pets__item">
-        <div className="profile__pets__item__top">
-          <div className="profile__pets__item__info">
-            <div>
-              <FaUserCircle size="2rem" className="" />
-            </div>
-            <div>
-              <h2>Médor</h2>
-              <h3>Chien</h3>
-            </div>
-          </div>
 
-          <div>
-            <BsPencilSquare onClick={openUpdateForm} />
-            <FaTrashAlt />
-          </div>
-        </div>
-        <div className="profile__pets__item__description">
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Commodi dicta eveniet quos, optio veritatis officia quam tempore pariatur magnam.
-            Laudantium sequi quasi eum laboriosam mollitia, eos amet esse dolores accusamus.
-          </p>
-        </div>
-      </div>
+      { pets && pets.map((pet) => (
+        <PetCard
+          key={pet.id}
+          name={pet.name}
+          pet_type={pet.pet_type}
+          presentation={pet.presentation}
+        />
+      ))}
     </div>
   );
 }

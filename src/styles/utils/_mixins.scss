@@ -44,6 +44,12 @@
 	}
 }
 
+@mixin desktop_large {
+	@media screen and (min-width: 1200px) {
+		@content;
+	}
+}
+
 @mixin cards {
 	margin: 1rem;
 	padding: 0.8rem;
