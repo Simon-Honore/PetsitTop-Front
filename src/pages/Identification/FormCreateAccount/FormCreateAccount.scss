@@ -1,23 +1,16 @@
 .createAccount {
-	padding: 0 1rem;
+	padding: 0 1rem 0.5rem;
 
 	&__title {
-		font-size: 1.1rem;
+		font-size: 1.2rem;
 		font-weight: bold;
 		margin-bottom: 0.5rem;
+		color: $color-main;
 	}
 
-	&__btn {
-		@include btn;
-		background-color: $color-btn;
-		color: white;
+	&__btn--continue {
+		@include btn-alt-large;
 		margin-top: 0.8rem;
-		width: 100%;
-
-		&--continue {
-			background-color: white;
-			color: $color-btn;
-		}
 	}
 
 	&__fieldset {
@@ -33,7 +26,7 @@
 		}
 	}
 	&__policy {
-		font-size: 0.8rem;
+		font-size: 0.9rem;
 		line-height: 1.5rem;
 	}
 
@@ -42,5 +35,10 @@
 		font-size: 0.9rem;
 		margin-top: 0.1rem;
 		font-style: italic;
+	}
+
+	&__btn {
+		@include btn-large;
+		margin-top: 1rem;
 	}
 }
