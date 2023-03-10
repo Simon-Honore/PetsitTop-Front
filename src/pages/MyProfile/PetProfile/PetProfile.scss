@@ -1,0 +1,8 @@
+.profile__pets {
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 1rem;
+  }
+}

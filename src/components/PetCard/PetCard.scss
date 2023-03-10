@@ -1,0 +1,43 @@
+.profile__pets__item {
+  border: $border-div-main;
+  border-radius: .5rem;
+  padding: 1rem;
+
+  @include desktop {
+    max-width: 300px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    & h2 {
+      font-size: 1.2rem;
+    }
+    & h3 {
+      font-style: italic;
+    }
+  }
+
+  &__btns > svg {
+    fill: $color-main;
+    width: 1.4rem;
+    height: auto;
+    margin: 0.5rem;
+  }
+
+  &__description {
+    font-size: .9rem
+  }
+
+  & .peticon__title {
+    display: none;
+  }
+}
+
+
+

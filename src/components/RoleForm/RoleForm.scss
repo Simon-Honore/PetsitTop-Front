@@ -2,6 +2,11 @@
 	padding: 1rem;
 	margin-bottom: 0.5rem;
 
+	@include desktop_large {
+		max-width: 85%;
+		margin: 0 auto;
+	}
+
 	&__title {
 		font-size: 1.1rem;
 		font-weight: bold;
