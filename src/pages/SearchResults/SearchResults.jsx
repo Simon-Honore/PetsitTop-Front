@@ -38,7 +38,7 @@ function SearchResults() {
           prenom={petsitter.first_name}
           nom={petsitter.last_name}
           ville={petsitter.city}
-          codePostal={petsitter.postal_code}
+          codePostal={+petsitter.postal_code}
           description={petsitter.presentation}
           animauxAcceptes={petsitter.pet_types}
         />

@@ -1,5 +1,6 @@
 .petsitter__card {
-    border: $border-div;
+    border: 1px solid $color-main;
+    border-radius: 0.5rem;
     margin: 1rem;
     padding: 1rem;
     &__header {
@@ -14,6 +15,20 @@
 
     }
 
+    &__location {
+        display: flex;
+        align-items: flex-end;
+
+        &__city {
+            
+        }
+
+        &__icon {
+            color: $color-second;
+            margin-bottom: 0.1rem;
+        }
+    }
+
     &__description {
         margin-bottom: 1rem;
     }
@@ -24,16 +39,16 @@
         margin-top: 1rem;
         &__details {
             @include btn;
-		    background-color: white;
-		    color:$color-btn ;
-		    width: 9rem;
+		    
         }
 
         &__contact {
-            @include btn;
-		    background-color: $color-btn;
-		    color: white;
-		    width: 9rem;
+            @include btn-alt;
+		    
         }
+    }
+
+    &__peticon {
+        display: flex;
     }
 }
