@@ -17,7 +17,7 @@ function InputSelectDepartment({
   }
 
   return (
-    <FormControl fullWidth sx={{ marginBottom: '.5rem' }}>
+    <FormControl fullWidth sx={{ marginBottom: '.5rem', marginRight: '.5rem', width: '30%' }}>
       <InputLabel id="select-department">Département</InputLabel>
       <Select
         label="Département"
