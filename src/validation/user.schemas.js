@@ -1,15 +1,5 @@
 import * as Joi from 'joi';
-// email
-// password
-// confirmPassword
-// first_name
-// last_name
-// postal_code
-// city
-// availability
-// availability_details
-// role_petowner
-// role_petsitter
+
 export const schemas = Joi.object({
   first_name: Joi
     .string()
@@ -99,21 +89,41 @@ export const schemas = Joi.object({
     }),
   role_petsitter: Joi
     .boolean()
-    .optional()
+    .required()
     .messages({
       'boolean.base': 'Vous devez choisir au moins un rôle',
       'any.required': 'Vous devez choisir au moins un rôle',
     }),
   role_petowner: Joi
     .boolean()
-    .optional()
+    .when('role_petsitter', {
+      is: false,
+      then: Joi.invalid(false),
+    })
     .messages({
-      'boolean.base': 'Vous devez choisir au moins un rôle',
-      'any.required': 'Vous devez choisir au moins un rôle',
+      'boolean.base': 'Vous devez choisir au moins un type de profil',
+      'any.required': 'Vous devez choisir au moins un type de profil',
+      'any.invalid': 'Vous devez choisir au moins un type de profil',
+    }),
+  rgpd_consent: Joi
+    .boolean()
+    .required()
+    .valid(true)
+    .messages({
+      'boolean.base': 'Vous devez accepter les mentions RGPD',
+      'any.required': 'Vous devez accepter les mentions RGPD',
+      'any.only': 'Vous devez accepter les mentions RGPD',
+    }),
+  cgu_consent: Joi
+    .boolean()
+    .required()
+    .valid(true)
+    .messages({
+      'boolean.base': 'Vous devez accepter les conditions d\'utilisation',
+      'any.required': 'Vous devez accepter les conditions d\'utilisation',
+      'any.only': 'Vous devez accepter les conditions d\'utilisation',
     }),
   // pet_type: Joi
   //   .array()
   //   .items(Joi.string()),
 });
-
-//.or('role_petsitter', 'role_petowner').valid(true)

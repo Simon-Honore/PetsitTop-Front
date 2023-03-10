@@ -37,3 +37,16 @@
 	color: $color-btn;
 	font-weight: bold;
 }
+
+@mixin desktop {
+	@media screen and (min-width: 600px) {
+		@content;
+	}
+}
+
+@mixin cards {
+	margin: 1rem;
+	padding: 0.8rem;
+	border: 2px solid lighten($color-main, 25%);
+	box-shadow: 0.3rem 0.3rem 0.5rem $color-main;
+}

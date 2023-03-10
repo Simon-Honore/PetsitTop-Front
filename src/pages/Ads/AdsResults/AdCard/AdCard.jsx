@@ -4,6 +4,7 @@ import {
 } from 'prop-types';
 
 import './AdCard.scss';
+import { Link } from 'react-router-dom';
 
 function AdCard({
   id,
@@ -18,12 +19,16 @@ function AdCard({
 
   const name = `${user[0].first_name} ${user[0].last_name.slice(0, 1)}.`;
 
+  console.log(user[0].email);
   return (
     <article className="adCard">
       <section className="adCard__description">
         <header className="adCard__description__header">
-          <h3 className="adCard__description__header__title">{title}</h3>
-          <p className="adCard__description__header__name">{name}</p>
+          <div className="adCard__description__header__main">
+            <h3 className="adCard__description__header__main__title">{title}</h3>
+            <p className="adCard__description__header__main__name">{name}</p>
+          </div>
+
           <div className="adCard__description__header__info">
             <p className="adCard__description__header__info__localisation">
               <MdPlace size="1.5rem" />
@@ -45,19 +50,27 @@ function AdCard({
       </section>
 
       <section className="adCard__btnContainer">
-        <button
-          type="button"
-          className="adCard__btnContainer__btn"
+        <Link
+          to={`/profil/${id}`}
         >
-          Voir le profil
-        </button>
+          <button
+            type="button"
+            className="adCard__btnContainer__btn"
+          >
+            Voir le profil
+          </button>
+        </Link>
 
-        <button
-          type="button"
-          className="adCard__btnContainer__btn adCard__btnContainer__btn--contact"
+        <Link
+          to={`mailto:${user.email}`}
         >
-          Contacter
-        </button>
+          <button
+            type="button"
+            className="adCard__btnContainer__btn--contact"
+          >
+            Contacter
+          </button>
+        </Link>
       </section>
     </article>
   );

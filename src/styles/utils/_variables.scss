@@ -1,13 +1,14 @@
-$bgHeaderFooter: #408FC3;
+$bgHeaderFooter: #408fc3;
 $bgMedium: lighten($bgHeaderFooter, 10%);
 $bgLight: lighten($bgHeaderFooter, 30%);
 
 $bgLightGrey: #f3f3f3;
 
-$color-btn: #36C2AF;
-$color-main: #408FC3;
-$color-second: #C27453;
+$color-btn: #36c2af;
+$color-main: #408fc3;
+$color-second: #c27453;
+$color-date: #a5a5a5;
 
 $fontcolor-light: rgb(238, 238, 238);
 $fontcolor-dark: rgb(20, 20, 20);
-$border-div : 1px solid black;
+$border-div: 1px solid black;
