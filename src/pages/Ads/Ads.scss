@@ -1,6 +1,5 @@
 .ads {
-	max-width: 1500px;
-	margin: auto;
+	@include with-page-desktop;
 	&__header {
 		margin: 1rem;
 

@@ -1,5 +1,10 @@
 .createAccount {
 	padding: 0 1rem 0.5rem;
+	@include desktop {
+		width: 30%;
+		border-left: $border-main-color;
+		padding-left: 3rem;
+	}
 
 	&__title {
 		font-size: 1.2rem;
