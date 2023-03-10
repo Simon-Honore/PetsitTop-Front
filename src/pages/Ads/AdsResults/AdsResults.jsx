@@ -4,14 +4,13 @@ import AdCard from './AdCard/AdCard';
 import './AdsResults.scss';
 
 function AdsResults({ adsList }) {
-  console.log(adsList);
   return (
     <>
       <CounterResults
         arrayResult={adsList}
         searchType="annonce"
       />
-      {adsList.results.map((ad) => (
+      {adsList.map((ad) => (
         <AdCard
           key={ad.id}
           {...ad}
