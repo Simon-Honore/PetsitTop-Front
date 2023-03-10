@@ -2,7 +2,7 @@ import { string, number, arrayOf } from 'prop-types';
 import { MdPlace } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
-import PetIcon from '../../../components/petIcon/PetIcon';
+import PetIcon from '../../../components/PetIcon/PetIcon';
 import './PetsitterCard.scss';
 
 function PetsitterCard({
