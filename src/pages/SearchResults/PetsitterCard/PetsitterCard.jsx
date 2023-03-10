@@ -15,10 +15,10 @@ function PetsitterCard({
           {/* la fonction array.from permet d'obtenir la lettre à l'index 0 (ex : Dupont -> D.) */ }
           {`${prenom} ${Array.from(nom)[0]}.`}
         </h1>
-        <p className="petsitter__card__location">
-          <MdPlace />
-          {`${ville} - ${codePostal}`}
-        </p>
+        <div className="petsitter__card__location">
+          <MdPlace size="20" className="petsitter__card__location__icon"/>
+          <p className="petsitter__card__location__city">{`${ville} - ${codePostal}`}</p>
+        </div>
       </div>
       <p className="petsitter__card__description">{description}</p>
       <ul> Je peux garder :</ul>
