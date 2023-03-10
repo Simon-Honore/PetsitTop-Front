@@ -15,7 +15,7 @@ function MyAds() {
 
   useEffect(() => {
     dispatch(getMyAds());
-  }, [myAdsData]);
+  }, []);
 
   function handleClickAddAd() {
     navigate('/creer-une-annonce');
@@ -25,31 +25,58 @@ function MyAds() {
     <main className="myAds">
       <header className="myAds__header">
         <h2 className="myAds__header__title">Mes annonces</h2>
-        {/* <button type="button" className="myAds__header__addBtn">
-          <MdOutlineAdd size="1.1rem" />
-          Ajouter une annonce
-        </button> */}
-        <div className="myAds__header__add">
+        <div className="myAds__header__add--mobile">
           <MdLibraryAdd size="2.3rem" onClick={handleClickAddAd} />
+        </div>
+
+        <div className="myAds__header__add--desktop">
+          <button
+            type="button"
+            className="myAds__header__add--desktop__btn"
+            onClick={handleClickAddAd}
+          >
+            <MdLibraryAdd size="1.8rem" />
+            <p>Ajouter une annonce</p>
+          </button>
         </div>
       </header>
 
-      <CounterResults
-        arrayResult={myAdsData}
-        searchType="annonce"
-      />
+      {myAdsData[0]
+        ? (
+          <>
+            <CounterResults
+              arrayResult={myAdsData}
+              searchType="annonce"
+            />
 
-      {myAdsData.map((ad) => (
-        <MyAdCard
-          key={ad.id}
-          adCardTitle={ad.title}
-          adCardContent={ad.content}
-          adCardCity={ad.city}
-          adCardPostalCode={ad.postal_code}
-          adCardCreatedAt={ad.created_at}
-          adCardId={ad.id}
-        />
-      ))}
+            {myAdsData.map((ad) => (
+              <MyAdCard
+                key={ad.id}
+                adCardTitle={ad.title}
+                adCardContent={ad.content}
+                adCardCity={ad.city}
+                adCardPostalCode={ad.postal_code}
+                adCardCreatedAt={ad.created_at}
+                adCardId={ad.id}
+              />
+            ))}
+          </>
+        )
+        : (
+          <div className="myAds__notFound">
+            <p>
+              Vous n&#39;avez pas encore d&#39;annonce.
+            </p>
+
+            <br />
+
+            <p>
+              Vous pouvez en ajouter en cliquant sur le bouton
+              <span><MdLibraryAdd size="2rem" /></span>
+              en haut à droite
+            </p>
+          </div>
+        )}
     </main>
   );
 }

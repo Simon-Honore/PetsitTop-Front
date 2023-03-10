@@ -4,8 +4,7 @@
 		margin: 1rem;
 
 		&__title {
-			font-size: 1.8rem;
-			font-weight: bold;
+			@include page-title;
 		}
 
 		&__filter {

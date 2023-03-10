@@ -1,7 +1,9 @@
 .myAdCard {
-	margin: 1rem 0.5rem;
-	padding: 0.5rem;
-	border: 2px solid #ccc;
+	@include cards;
+	@include desktop {
+		display: flex;
+		flex-direction: column;
+	}
 
 	&__header {
 		margin-bottom: 1rem;
@@ -14,7 +16,8 @@
 			&__title {
 				font-size: 1.2rem;
 				font-weight: bold;
-				margin-bottom: 0.3rem;
+				margin-bottom: 0.5rem;
+				color: $color-main;
 			}
 
 			&__name {
@@ -32,7 +35,7 @@
 			&__date {
 				font-size: 0.8rem;
 				font-style: italic;
-				color: #a5a5a5;
+				color: $color-date;
 
 				& span {
 					font-size: 0.9rem;
@@ -44,11 +47,28 @@
 			display: flex;
 			flex-direction: column;
 			gap: 0.5rem;
+			color: $color-btn;
+
+			&--delete {
+				color: #f0f;
+				width: 2.5rem;
+				height: 2.5rem;
+				border-radius: 50%;
+				text-align: center;
+				transition: box-shadow 2s;
+				animation-duration: 1s;
+				animation-name: shadow;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+			}
 		}
 	}
 
 	&__content {
 		text-align: justify;
 		font-style: oblique;
+		@include desktop {
+			width: 80%;
+		}
 	}
 }
