@@ -19,6 +19,7 @@ function AdCard({
 
   const name = `${user[0].first_name} ${user[0].last_name.slice(0, 1)}.`;
 
+  console.log(user[0].email);
   return (
     <article className="adCard">
       <section className="adCard__description">
@@ -60,12 +61,16 @@ function AdCard({
           </button>
         </Link>
 
-        <button
-          type="button"
-          className="adCard__btnContainer__btn--contact"
+        <Link
+          to={`mailto:${user.email}`}
         >
-          Contacter
-        </button>
+          <button
+            type="button"
+            className="adCard__btnContainer__btn--contact"
+          >
+            Contacter
+          </button>
+        </Link>
       </section>
     </article>
   );
