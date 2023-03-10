@@ -39,6 +39,7 @@ export const fetchConnectedUserInfos = () => async (dispatch) => {
 
 export const fetchPublicUserInfos = (publicUserId) => async (dispatch) => {
   const { data } = await axiosInstance.get(`/users/${publicUserId}`);
+  console.log('data 4 >>', data);
 
   dispatch(getPublicUserInfos(data));
 };
