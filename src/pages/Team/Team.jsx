@@ -21,7 +21,7 @@ function Team() {
         <div className="team__member">
           <img src="https://avatars.githubusercontent.com/u/111069852?v=4" alt="Ines" />
           <h2>Ines Dai</h2>
-          <h3>Srum Master</h3>
+          <h3>Scrum Master</h3>
           <p>Description</p>
           <div className="team__member__links">
             <a href="https://www.linkedin.com/in/ines-a-d/" target="_blank" rel="noreferrer">Linkedin</a>

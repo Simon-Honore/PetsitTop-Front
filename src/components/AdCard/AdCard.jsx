@@ -19,7 +19,6 @@ function AdCard({
 
   const name = `${user[0].first_name} ${user[0].last_name.slice(0, 1)}.`;
 
-  console.log(user[0].email);
   return (
     <article className="adCard">
       <section className="adCard__description">
