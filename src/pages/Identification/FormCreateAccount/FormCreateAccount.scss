@@ -6,6 +6,26 @@
 		padding-left: 3rem;
 	}
 
+	&__form .roleForm {
+		background-color: lighten($color-main, 40%);
+		margin: 0 0.5rem;
+		max-width: 100%;
+		border-radius: 1rem;
+
+		&__switch {
+			width: fit-content;
+			margin: 0 auto 0.5rem;
+		}
+
+		&__checkbox {
+			margin-bottom: 0;
+			&__list {
+				width: 100%;
+				justify-content: space-around;
+			}
+		}
+	}
+
 	&__btn {
 		@include btn;
 		background-color: $color-btn;
@@ -56,6 +76,7 @@
 	&__policy {
 		font-size: 0.9rem;
 		line-height: 1.5rem;
+		margin-top: 1rem;
 	}
 
 	&__error {
