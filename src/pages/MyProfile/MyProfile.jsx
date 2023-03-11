@@ -23,7 +23,6 @@ function MyProfile() {
     setIsLoading(false);
   }, []);
 
-  console.log('connectedUser', connectedUser);
   const [confirmDelete, setConfirmDelete] = useState(false);
 
   function handleDeleteAccount() {

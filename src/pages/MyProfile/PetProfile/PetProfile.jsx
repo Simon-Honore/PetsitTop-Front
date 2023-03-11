@@ -6,14 +6,10 @@ import PetCard from '../../../components/PetCard/PetCard';
 import './PetProfile.scss';
 
 function PetProfile({ pets }) {
-
   const [addPet, setAddPet] = useState(false);
-
-  console.log('pets-profil', pets);
 
   const switchState = (state, setState) => {
     setState(!state);
-    console.log('it works');
   };
 
   return (
