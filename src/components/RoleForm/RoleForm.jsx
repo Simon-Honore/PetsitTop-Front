@@ -30,7 +30,7 @@ function RoleForm({
 
   return (
     <div className="roleForm conditionnal">
-      <p className="roleForm__title">Je suis petsitter</p>
+      <h4 className="roleForm__title">Je suis petsitter</h4>
       <FormGroup className="roleForm__switch">
         <FormControlLabel control={<Switch onChange={handleChange} name="availability" defaultChecked={defaultChecked} />} label="Je suis disponible" />
       </FormGroup>
