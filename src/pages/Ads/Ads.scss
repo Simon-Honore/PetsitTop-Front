@@ -1,5 +1,5 @@
 .ads {
-	@include with-page-desktop;
+	@include width-page-desktop;
 	&__header {
 		margin: 1rem;
 
