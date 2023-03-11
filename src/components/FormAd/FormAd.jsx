@@ -30,44 +30,48 @@ function FormAd({
 
   return (
     <form className="formAd" onSubmit={handleSubmit}>
-      <Field
-        label="Titre*"
-        name="title"
-        placeholder="Titre de l'annonce"
-        onChange={handleChangeField}
-        form="ad"
-        value={title}
-      />
+      <div className="formAd__field">
+        <Field
+          label="Titre*"
+          name="title"
+          placeholder="Titre de l'annonce"
+          onChange={handleChangeField}
+          form="ad"
+          value={title}
+        />
 
-      <FieldArea
-        label="Résumé de votre annonce*"
-        name="content"
-        placeholder="#Résumé de votre annonce
-					#Animal concerné
-					#Date.s souhaitée.s"
-        onChange={handleChangeField}
-        form="ad"
-        value={content}
-        limit="250"
-      />
+        <FieldArea
+          label="Résumé de votre annonce*"
+          name="content"
+          placeholder="#Résumé de votre annonce
 
-      <Field
-        label="Code postal*"
-        name="postal_code"
-        placeholder="Code postal"
-        onChange={handleChangeField}
-        form="ad"
-        value={postal_code}
-      />
+#Animal concerné
 
-      <Field
-        label="Ville*"
-        name="city"
-        placeholder="Ville"
-        onChange={handleChangeField}
-        form="ad"
-        value={city}
-      />
+#Date.s souhaitée.s"
+          onChange={handleChangeField}
+          form="ad"
+          value={content}
+          limit="250"
+        />
+
+        <Field
+          label="Code postal*"
+          name="postal_code"
+          placeholder="Code postal"
+          onChange={handleChangeField}
+          form="ad"
+          value={postal_code}
+        />
+
+        <Field
+          label="Ville*"
+          name="city"
+          placeholder="Ville"
+          onChange={handleChangeField}
+          form="ad"
+          value={city}
+        />
+      </div>
 
       <button type="submit" className="formAd__btn">{btnContent}</button>
     </form>

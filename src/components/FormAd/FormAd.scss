@@ -1,11 +1,36 @@
 .formAd {
 	margin: 1rem 0;
+	width: 100%;
+	@include desktop {
+		display: flex;
+		flex-direction: column;
+
+		&__field {
+			display: flex;
+			flex-direction: column;
+			align-content: center;
+			padding: 1rem;
+			height: 20rem;
+			flex-wrap: wrap;
+			gap: 1rem 3rem;
+		}
+		& .field {
+			width: 30%;
+		}
+
+		& .fieldArea {
+			width: 40%;
+			order: 5;
+		}
+	}
 
 	&__btn {
-		@include btn;
-		background-color: $color-btn;
-		color: white;
-		width: 100%;
+		@include btn-large;
 		margin: 0.5rem 0;
+		@include desktop {
+			// @include btn;
+			width: 20rem;
+			align-self: center;
+		}
 	}
 }
