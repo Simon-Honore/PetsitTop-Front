@@ -1,5 +1,9 @@
 .PublicProfile {
     padding: 1rem;
+    @include desktop {
+        width: 80%;
+        margin: auto;
+    }
 }
 
 .profile {
@@ -21,14 +25,26 @@
         &__name {
             font-size: 1.5rem;
             font-weight: bold;
+            margin-bottom: 0.4rem;
         }
         
         &__location{
+            margin-bottom: 0.2rem;
 
+            &__icon {
+                color: $color-second;
+                margin-right: 0.3rem;
+                margin-bottom: -0.2rem;
+            }
         }
 
         &__email{
-
+            margin-bottom: 0.2rem;
+            &__icon {
+                color: $color-btn;
+                margin-right: 0.3rem;
+                margin-bottom: -0.2rem;
+            }
         }
 
         &__right {
@@ -38,15 +54,23 @@
             justify-content: space-around;
             &__button{
                 @include btn;
-                background: $fontcolor-light;
-                color: $color-btn;
-                font-weight: bold;
+                
+                &__icon {
+                    margin-bottom: -0.1rem;
+                    margin-right: 0.3rem;
+                }
+            }
+
+            &__icons {
+                display: flex;
+                justify-content: space-around;
+
             }
 
             &__tags {
                 display: flex;
-                justify-content: space-around;
-
+                flex-direction: column;
+                align-items: center;
             }
         }
 
@@ -74,5 +98,6 @@
     &__title {
         font-size: 1.5rem;
         font-weight: bold;
+        margin-bottom: 0.5rem;
     }
 }

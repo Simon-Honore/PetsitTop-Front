@@ -1,7 +1,8 @@
 import { arrayOf, shape } from 'prop-types';
+import AdCard from '../../../components/AdCard/AdCard';
 import CounterResults from '../../../components/CounterResults/CounterResults';
-import AdCard from './AdCard/AdCard';
-import './AdsResults.scss';
+
+import '../../../components/AdCard/AdCard.scss';
 
 function AdsResults({ adsList }) {
   return (

@@ -44,9 +44,7 @@ function PetIcon({ pet }) {
         src={petIcon}
         alt={`Icône ${pet}`}
       />
-      <p className="peticon__title">
-        {pet}
-      </p>
+      <p className="peticon__title">{pet}</p>
     </div>
   );
 }

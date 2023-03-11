@@ -10,23 +10,27 @@ function PetsitterCard({
 }) {
   return (
     <div className="petsitter__card">
-      <div className="petsitter__card__header">
-        <h1 className="petsitter__card__title">
-          {/* la fonction array.from permet d'obtenir la lettre à l'index 0 (ex : Dupont -> D.) */ }
-          {`${prenom} ${Array.from(nom)[0]}.`}
-        </h1>
-        <div className="petsitter__card__location">
-          <MdPlace size="20" className="petsitter__card__location__icon"/>
-          <p className="petsitter__card__location__city">{`${ville} - ${codePostal}`}</p>
+      <div className="petsitter__card__main">
+        <div className="petsitter__card__header">
+          <h1 className="petsitter__card__title">
+            {/* la fonction array.from permet d'obtenir la lettre à l'index 0 (ex : Dupont -> D.) */ }
+            {`${prenom} ${Array.from(nom)[0]}.`}
+          </h1>
+          <div className="petsitter__card__location">
+            <MdPlace size="20" className="petsitter__card__location__icon" />
+            <p className="petsitter__card__location__city">{`${ville} - ${codePostal}`}</p>
+          </div>
+        </div>
+        <p className="petsitter__card__description">{description}</p>
+        <ul> Je peux garder :</ul>
+        <div className="petsitter__card__peticon">
+          {animauxAcceptes.map((animal) => (
+              <PetIcon key={animal} pet={animal} />
+          ))}
+
         </div>
       </div>
-      <p className="petsitter__card__description">{description}</p>
-      <ul> Je peux garder :</ul>
-      <div className="petsitter__card__peticon">
-        {animauxAcceptes.map((animal) => (
-          <PetIcon key={animal} pet={animal} />
-        ))}
-      </div>
+
       <div className="petsitter__card__buttons">
         <Link
           to={`/profil/${id}`}

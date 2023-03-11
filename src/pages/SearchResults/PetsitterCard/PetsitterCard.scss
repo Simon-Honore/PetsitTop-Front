@@ -3,6 +3,19 @@
     border-radius: 0.5rem;
     margin: 1rem;
     padding: 1rem;
+    
+    @include desktop {
+		margin: 1rem auto;
+        display: flex;
+    }
+
+    &__main {
+        @include desktop {
+            width: 100%;
+            padding-right: 1rem;
+        }
+    }
+
     &__header {
         display: flex;
         justify-content: space-between;
@@ -37,18 +50,37 @@
         display: flex;
         justify-content: space-around;
         margin-top: 1rem;
+        @include desktop {
+            flex-direction: column;
+            justify-content: center;
+            
+        }
         &__details {
             @include btn;
+            @include desktop {
+                height: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
 		    
         }
 
         &__contact {
             @include btn-alt;
-		    
+		    @include desktop {
+                height: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
         }
     }
 
     &__peticon {
         display: flex;
+        flex-wrap: wrap;
+        
+        &__group{
+            display: flex;
+            flex-direction: column;
+            justify-content: baseline;
+        }
     }
 }
