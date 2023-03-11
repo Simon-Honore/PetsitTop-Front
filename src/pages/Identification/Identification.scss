@@ -1,7 +1,7 @@
 .identification {
 	padding: 2rem 1rem;
 	width: 100%;
-	@include with-page-desktop;
+	@include width-page-desktop;
 	@include desktop {
 		display: flex;
 		gap: 2rem;
