@@ -10,11 +10,14 @@ import PetCard from './PetCard/PetCard';
 import './PublicProfile.scss';
 import { fetchPublicUserInfos } from '../../api/user';
 import Loader from '../../components/Loader/Loader';
+import AdCard from '../../components/AdCard/AdCard';
+import ProfileAdCard from './ProfileAdCard/ProfileAdCard';
 
 function PublicProfile() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const publicUser = useSelector((state) => state.user.publicUser);
+  console.log('publicUser ads >>', publicUser.ads)
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -35,78 +38,90 @@ function PublicProfile() {
       {isLoading
         ? <Loader />
         : (
-          <section className="profile">
-            <div className="profile__user">
-              <div className="profile__user__infos">
-                <h1
-                  className="profile__user__name"
-                >
-                  {publicUser.first_name}
-                  <br />
-                  {publicUser.last_name}
-                </h1>
-                <p className="profile__user__location">
-                  <MdPlace className="profile__user__location__icon" />
-                  {`${publicUser.city} - ${publicUser.postal_code}`}
-                </p>
-                <p
-                  className="profile__user__email"
-                >
-                  <RiMailFill className="profile__user__email__icon" />
-                  {publicUser.email}
-                </p>
-              </div>
-
-              <div
-                className="profile__user__right"
-              >
-                <Link to={`mailto:${publicUser.email}`}>
-                  <button
-                    type="button"
-                    className="profile__user__right__button"
+          <>
+            <section className="profile">
+              <div className="profile__user">
+                <div className="profile__user__infos">
+                  <h1
+                    className="profile__user__name"
                   >
-                    <RiMailFill className="profile__user__right__button__icon" />
-                    Contactez-moi
-                  </button>
-                </Link>
+                    {publicUser.first_name}
+                    <br />
+                    {publicUser.last_name}
+                  </h1>
+                  <p className="profile__user__location">
+                    <MdPlace className="profile__user__location__icon" />
+                    {`${publicUser.city} - ${publicUser.postal_code}`}
+                  </p>
+                  <p
+                    className="profile__user__email"
+                  >
+                    <RiMailFill className="profile__user__email__icon" />
+                    {publicUser.email}
+                  </p>
+                </div>
 
-                <div className="profile__user__right__tags">
-                  {petowner && <FaPaw size="40" />}
-                  {petsitter && <MdChildFriendly size="40" />}
+                <div
+                  className="profile__user__right"
+                >
+                  <Link to={`mailto:${publicUser.email}`}>
+                    <button
+                      type="button"
+                      className="profile__user__right__button"
+                    >
+                      <RiMailFill className="profile__user__right__button__icon" />
+                      Contactez-moi
+                    </button>
+                  </Link>
 
+                  <div className="profile__user__right__tags">
+                    {petowner && <FaPaw size="40" />}
+                    {petsitter && <MdChildFriendly size="40" />}
+
+                  </div>
                 </div>
               </div>
-            </div>
-            <p className="profile__user__description">{`"${publicUser.presentation}"`}</p>
-          </section>
+              <p className="profile__user__description">{`"${publicUser.presentation}"`}</p>
+            </section>
+
+            <hr />
+
+            <section className="pets">
+
+              <h1 className="pets__title">Mes animaux</h1>
+
+              {publicUser.pets && publicUser.pets.map((pet) => (
+                <PetCard
+                  className="pets__item"
+                  key={pet.id}
+                  name={pet.name}
+                  pet_type={pet.pet_type}
+                  description={pet.presentation}
+                />
+              ))}
+
+            </section>
+
+            <hr />
+
+            <section className="ads">
+              <h1 className="ads__title">Je recherche</h1>
+              {publicUser.ads && (publicUser.ads.length === 0 ? (
+                <p>Cet utilisateur n&#39;a pas d&#39;annonce pour le moment.</p>
+              ) : '')}
+              {publicUser.ads && publicUser.ads.map((ad) => (
+                <ProfileAdCard
+                  key={ad.id}
+                  title={ad.title}
+                  content={ad.content}
+                />
+              ))}
+            </section>
+            <hr />
+
+            {petsitter && <PetsittingDetails isAvailable={publicUser.availability} />}
+          </>
         )}
-      <hr />
-
-      <section className="pets">
-
-        <h1 className="pets__title">Mes animaux</h1>
-
-        {publicUser.pets.map((pet) => (
-          <PetCard
-            className="pets__item"
-            key={pet.id}
-            name={pet.name}
-            pet_type={pet.pet_type}
-            description={pet.presentation}
-          />
-        ))}
-
-      </section>
-
-      <hr />
-
-      <section className="ads">
-        <h1 className="ads__title">Je recherche</h1>
-        {/* Mettre composant annonce que Simon aura fait pour la page Toutes les annonces */}
-      </section>
-      <hr />
-
-      {petsitter && <PetsittingDetails isAvailable={publicUser.availability} />}
 
     </div>
   );

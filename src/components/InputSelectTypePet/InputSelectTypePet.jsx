@@ -23,7 +23,7 @@ function InputSelectTypePet({ value, onChange, petTypes }) {
   };
 
   return (
-    <FormControl fullWidth sx={{ marginBottom: '1rem', marginRight: '.5rem', width: '30%' }}>
+    <FormControl fullWidth sx={{ marginBottom: '1rem', marginRight: '.5rem'}}>
       <InputLabel id="select-petType">Type d&#39;animal</InputLabel>
       <Select
         label="Type d'animal"

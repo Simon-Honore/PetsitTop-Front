@@ -17,7 +17,7 @@ function PetsitterCard({
             {`${prenom} ${Array.from(nom)[0]}.`}
           </h1>
           <div className="petsitter__card__location">
-            <MdPlace size="20" className="petsitter__card__location__icon"/>
+            <MdPlace size="20" className="petsitter__card__location__icon" />
             <p className="petsitter__card__location__city">{`${ville} - ${codePostal}`}</p>
           </div>
         </div>
@@ -25,8 +25,9 @@ function PetsitterCard({
         <ul> Je peux garder :</ul>
         <div className="petsitter__card__peticon">
           {animauxAcceptes.map((animal) => (
-            <PetIcon key={animal} pet={animal} />
+              <PetIcon key={animal} pet={animal} />
           ))}
+
         </div>
       </div>
 

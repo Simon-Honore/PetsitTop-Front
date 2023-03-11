@@ -77,5 +77,10 @@
         display: flex;
         flex-wrap: wrap;
         
+        &__group{
+            display: flex;
+            flex-direction: column;
+            justify-content: baseline;
+        }
     }
 }

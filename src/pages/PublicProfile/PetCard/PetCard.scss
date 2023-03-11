@@ -1,18 +1,16 @@
 .card {
-    border: $border-div;
+    border: 1px solid $color-main;
     padding: 1rem;
     margin: 1rem 0;
     border-radius: 0.4rem;
 
         &__header {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             margin-bottom: 1rem;
             &__title {
-                font-size: 1.5rem;
                 font-weight: bold;
-                padding-left: 1rem;
-                
+                padding-top: 1rem;
             }
         }
 
@@ -26,7 +24,12 @@
 
             &__info {
                 display: flex;
+                flex-direction: column;
             }
         }
     
+}
+
+.peticon__title{
+    color: white;
 }
