@@ -6,6 +6,23 @@
 		padding-left: 3rem;
 	}
 
+	&__btn {
+		@include btn;
+		background-color: $color-btn;
+		color: white;
+		width: 100%;
+		display: block;
+
+		.profile & {
+			@include desktop {
+				width: auto !important;
+				margin: 1.5rem auto 0 auto;
+				padding-left: 3rem !important;
+				padding-right: 3rem !important;
+			}
+		}
+	}
+
 	&__title {
 		font-size: 1.2rem;
 		font-weight: bold;
@@ -28,6 +45,7 @@
 
 		&__separator {
 			margin: 0.5rem 0;
+			font-size: .9rem;
 		}
 	}
 	&__policy {

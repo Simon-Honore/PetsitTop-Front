@@ -1,16 +1,40 @@
 .profile {
     &__settings {
         padding: 1rem;
+        &__container {
+            @include desktop {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                flex-direction: row;
+            }
+            @include desktop_large {
+                max-width: 85%;
+                margin: 0 auto;
+            }
+
+        }
+        &__col {
+            @include desktop {
+                width: 50%;
+            }
+        }
         &__title {
             font-size: 1.5rem;
             font-weight: bold;
-            padding-left: 1rem;
+        }
+
+        & .fieldArea__input  { 
+            @include desktop {
+                min-height: 11rem;
+            }
         }
 
         &__input {
             display: block;
             flex-direction: column;
             padding: 0.5rem 1rem;
+
 
             & label {
                 display: block;
@@ -34,5 +58,5 @@
 
 //à changer
 .conditionnal {
-    background-color: $bgMedium;
+    background-color: $bgLight;
 }

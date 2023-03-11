@@ -2,8 +2,13 @@
 	padding: 1rem;
 	margin-bottom: 0.5rem;
 
+	@include desktop_large {
+		max-width: 85%;
+		margin: 0 auto;
+	}
+
 	&__title {
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 		font-weight: bold;
 		margin-bottom: 1rem;
 	}
@@ -11,13 +16,15 @@
 	&__switch {
 		width: fit-content;
 		margin: 0 auto 0.5rem;
+		@include desktop {
+			margin: 0 0 0.5rem;
+		}
 	}
 
 	&__checkbox {
 		margin: 1rem 0;
 
 		&__title {
-			font-size: 1.15rem;
 			margin-bottom: 0.5rem;
 		}
 
@@ -25,6 +32,13 @@
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-around;
+			@include desktop {
+				justify-content: left;
+			}
+			@include desktop_large {
+				width: 50%;
+			}
+				
 		}
 	}
 }
