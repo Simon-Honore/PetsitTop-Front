@@ -37,15 +37,20 @@
 
 	&__fieldset {
 		margin: 1rem 0;
+		border: lighten($color-main, 25%);
+		border-style: double;
+		padding: 0.2rem 0.4rem 0.8rem;
 
 		&__legend {
 			font-weight: bold;
 			margin-bottom: 0.5rem;
+			padding: 0 0.4rem;
 		}
 
 		&__separator {
 			margin: 0.5rem 0;
-			font-size: .9rem;
+			font-size: 0.9rem;
+			color: $fontcolor-medium;
 		}
 	}
 	&__policy {
