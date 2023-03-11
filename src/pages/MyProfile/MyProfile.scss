@@ -1,33 +1,72 @@
+.MyProfile {
+	& h1 {
+		font-size: 1.5rem;
+		font-weight: 700;
+		margin-bottom: 0.5rem;
+	}
+	& hr {
+		border: 1px solid lighten($color-main, 40%);
+	}
+}
+
 .profile {
+	@include width-page-desktop;
 	&__pets {
+		@include width-page-desktop;
 		padding: 1rem;
 		&__header {
 			display: flex;
 			justify-content: space-between;
 			margin-bottom: 1rem;
-			&__title {
-				font-size: 1.5rem;
-				font-weight: bold;
-				padding-left: 1rem;
+			// &__title {
+			// 	font-size: 1.5rem;
+			// 	font-weight: bold;
+			// }
+
+			@include desktop {
+				justify-content: left;
+				gap: 1rem;
+			}
+			&__add {
+				@include btn;
+				width: auto;
 			}
 		}
+	}
 
-		&__item {
-			border: $border-div;
-			padding: 1rem;
-
-			&__top {
-				display: flex;
-				justify-content: space-between;
+	&__ads {
+		@include width-page-desktop;
+		padding: 1rem;
+		& a {
+			display: block;
+			&:not(:last-child) {
+				margin-bottom: 0.5rem;
 			}
-
-			&__info {
+		}
+		&__btns {
+			@include desktop {
 				display: flex;
+				gap: 0.5rem;
+			}
+		}
+		&__btn {
+			&--add {
+				@include btn-large;
+			}
+			&--disp {
+				@include btn-alt-large;
+			}
+			&--add,
+			&--disp {
+				@include desktop {
+					width: auto;
+				}
 			}
 		}
 	}
 
 	&__delete {
+		@include width-page-desktop;
 		padding: 1rem;
 
 		&__btn {

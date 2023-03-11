@@ -51,7 +51,7 @@ function AdCard({
 
       <section className="adCard__btnContainer">
         <Link
-          to={`/profil/${id}`}
+          to={`/profil/${user[0].id}`}
         >
           <button
             type="button"
@@ -62,7 +62,7 @@ function AdCard({
         </Link>
 
         <Link
-          to={`mailto:${user.email}`}
+          to={`mailto:${user[0].email}`}
         >
           <button
             type="button"

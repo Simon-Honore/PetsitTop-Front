@@ -1,10 +1,17 @@
 .NotFound {
-    background-color: #df94b2;
-    height: 100%;
-    width: 100%;
-}
-
-.img {
-    display: flex;
-    justify-content: center;
+	background-color: #df94b2;
+	min-height: calc(100vh - 10rem);
+	width: 100%;
+	padding: 1px;
+	&__img {
+		@include width-page-desktop;
+		min-height: calc(100vh - 10rem);
+		background-image: url('https://www.works-agency.fr/wp-content/uploads/2020/09/404-hero-image-1.png');
+		background-size: 200%;
+		background-repeat: no-repeat;
+		background-position: center;
+		@include desktop {
+			background-size: contain;
+		}
+	}
 }

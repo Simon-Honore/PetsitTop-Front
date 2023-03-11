@@ -7,7 +7,7 @@ export const initialState = {
   userId: null,
   accessToken: null,
   ads: [],
-  connectedUser: [],
+  connectedUser: {},
   publicUser: {},
 };
 

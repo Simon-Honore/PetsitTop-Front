@@ -1,23 +1,38 @@
 .createAccount {
-	padding: 0 1rem;
-
-	&__title {
-		font-size: 1.1rem;
-		font-weight: bold;
-		margin-bottom: 0.5rem;
+	padding: 0 1rem 0.5rem;
+	@include desktop {
+		width: 30%;
+		border-left: $border-main-color;
+		padding-left: 3rem;
 	}
 
 	&__btn {
 		@include btn;
 		background-color: $color-btn;
 		color: white;
-		margin-top: 0.8rem;
 		width: 100%;
+		display: block;
 
-		&--continue {
-			background-color: white;
-			color: $color-btn;
+		.profile & {
+			@include desktop {
+				width: auto !important;
+				margin: 1.5rem auto 0 auto;
+				padding-left: 3rem !important;
+				padding-right: 3rem !important;
+			}
 		}
+	}
+
+	&__title {
+		font-size: 1.2rem;
+		font-weight: bold;
+		margin-bottom: 0.5rem;
+		color: $color-main;
+	}
+
+	&__btn--continue {
+		@include btn-alt-large;
+		margin-top: 0.8rem;
 	}
 
 	&__fieldset {
@@ -30,10 +45,11 @@
 
 		&__separator {
 			margin: 0.5rem 0;
+			font-size: .9rem;
 		}
 	}
 	&__policy {
-		font-size: 0.8rem;
+		font-size: 0.9rem;
 		line-height: 1.5rem;
 	}
 
@@ -42,5 +58,10 @@
 		font-size: 0.9rem;
 		margin-top: 0.1rem;
 		font-style: italic;
+	}
+
+	&__btn {
+		@include btn-large;
+		margin-top: 1rem;
 	}
 }

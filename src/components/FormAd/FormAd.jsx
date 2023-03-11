@@ -48,7 +48,7 @@ function FormAd({
         onChange={handleChangeField}
         form="ad"
         value={content}
-        limit="300"
+        limit="250"
       />
 
       <Field
