@@ -9,7 +9,7 @@
 	}
 
 	&__input {
-		border: 2px solid #ccc;
+		border: $border-main-color;
 		border-radius: 0.2rem;
 		padding: 0.5rem 0.5rem 1rem 0.5rem;
 		min-height: 16rem;
@@ -21,8 +21,7 @@
 		position: absolute;
 		bottom: 0.5rem;
 		right: 0.5rem;
-		color: #7c7c7c;
-		// padding: 0.5rem;
+		color: $fontcolor-medium;
 
 		&--warning span {
 			color: red;
