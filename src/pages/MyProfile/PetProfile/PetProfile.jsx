@@ -35,7 +35,7 @@ function PetProfile({ pets }) {
           <UpdatePet />
         ) : ''} */}
 
-      <div class="profile__pets__items">
+      <div className="profile__pets__items">
         { pets && pets.map((pet) => (
           <PetCard
             key={pet.id}

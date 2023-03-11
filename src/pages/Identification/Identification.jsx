@@ -8,7 +8,9 @@ function Identification() {
     <main className="identification">
       <FormLogin />
 
-      <ChoiceSeparator />
+      <div className="identification__separator">
+        <ChoiceSeparator />
+      </div>
 
       <FormCreateAccount />
     </main>

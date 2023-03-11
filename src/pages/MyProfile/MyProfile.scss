@@ -10,9 +10,9 @@
 }
 
 .profile {
-	@include maxwidth;
+	@include with-page-desktop;
 	&__pets {
-		@include maxwidth;
+		@include with-page-desktop;
 		padding: 1rem;
 		&__header {
 			display: flex;
@@ -35,7 +35,7 @@
 	}
 	
 	&__ads {
-		@include maxwidth;
+		@include with-page-desktop;
 		padding: 1rem;
 		& a {
 			display: block;
@@ -67,7 +67,7 @@
 	}
 	
 	&__delete {
-		@include maxwidth;
+		@include with-page-desktop;
 		padding: 1rem;
 
 		&__btn {
