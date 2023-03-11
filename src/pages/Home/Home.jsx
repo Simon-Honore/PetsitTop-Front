@@ -12,10 +12,15 @@ function Home() {
 
   return (
     <main className="home">
-      <p className="home__description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore autem quisa , natus velit quod optio iure dicta architecto expedita
-      </p>
-
+      <div className="home__description">
+        <div className="home__description__container">
+          <p>
+            Votre solution de petsitting est à portée de clic !
+            <br />
+            <span>Misez sur l'entraide, prenez contact avec d'autres amoureux des animaux et trouvez le Petsitter idéal pour votre animal, près de chez vous.</span>
+          </p>
+        </div>
+      </div>
       <SearchPetsitters />
 
       <div className="home__separator">
