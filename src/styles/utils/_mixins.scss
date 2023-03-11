@@ -61,7 +61,7 @@
 
 @mixin with-page-desktop {
 	max-width: 1500px;
-	margin: auto;
+	margin: 0 auto;
 }
 
 @mixin page-title {

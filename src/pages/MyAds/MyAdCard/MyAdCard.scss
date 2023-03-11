@@ -9,6 +9,7 @@
 		margin-bottom: 1rem;
 		display: flex;
 		gap: 1rem;
+		justify-content: space-between;
 
 		&__description {
 			width: 85%;
@@ -48,6 +49,9 @@
 			flex-direction: column;
 			gap: 0.5rem;
 			color: $color-btn;
+			@include desktop {
+				display: none;
+			}
 
 			&--delete {
 				color: #f0f;
@@ -60,6 +64,31 @@
 				animation-name: shadow;
 				animation-iteration-count: infinite;
 				animation-direction: alternate;
+			}
+
+			&--desktop {
+				display: none;
+				@include desktop {
+					display: flex;
+					flex-direction: column;
+					gap: 1rem;
+					margin-bottom: -2rem;
+				}
+
+				& button {
+					@include btn-with-icon;
+					width: 10rem;
+				}
+
+				&--delete {
+					background-color: #f0f !important;
+					font-weight: bold;
+					transition: box-shadow 2s;
+					animation-duration: 1s;
+					animation-name: shadow;
+					animation-iteration-count: infinite;
+					animation-direction: alternate;
+				}
 			}
 		}
 	}

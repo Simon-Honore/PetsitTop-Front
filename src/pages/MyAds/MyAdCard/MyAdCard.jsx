@@ -100,6 +100,36 @@ function MyAdCard({
                   )
                   : <MdDeleteForever size="2.4rem" onClick={handleConfirmDeleteAd} />}
               </section>
+
+              <section className="myAdCard__header__btns--desktop">
+                <button
+                  type="button"
+                  onClick={handleClickUpdateAd}
+                >
+                  <MdEditNote size="1.8rem" />
+                  <p>Modifier</p>
+                </button>
+                {confirmDelete
+                  ? (
+                    <button
+                      type="button"
+                      className="myAdCard__header__btns--desktop--delete"
+                      onClick={handleClickDeleteAd}
+                    >
+                      <MdDeleteForever size="1.8rem" />
+                      <p>Valider</p>
+                    </button>
+                  )
+                  : (
+                    <button
+                      type="button"
+                      onClick={handleConfirmDeleteAd}
+                    >
+                      <MdDeleteForever size="1.8rem" />
+                      <p>Supprimer</p>
+                    </button>
+                  ) }
+              </section>
             </header>
 
             <p className="myAdCard__content">
