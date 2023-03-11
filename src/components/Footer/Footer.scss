@@ -2,14 +2,26 @@
 	margin-top: auto;
 	background-color: $bgHeaderFooter;
 	padding: 1rem;
+	color: white;
 
 	&__nav {
 		display: flex;
 		justify-content: space-around;
 
+		@include desktop {
+			justify-content: flex-start;
+		}
+
+		&__list {
+			@include desktop {
+				display: flex;
+			}
+		}
+
 		&__item {
 			line-height: 1.5rem;
 			display: block;
+			margin-right: 2rem;
 		}
 	}
 }
