@@ -38,6 +38,14 @@
 	font-weight: bold;
 }
 
+@mixin btn-with-icon {
+	@include btn;
+	width: 13rem;
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+}
+
 @mixin desktop {
 	@media screen and (min-width: 600px) {
 		@content;
@@ -66,5 +74,10 @@
 }
 @mixin with-page-desktop {
 	max-width: 1500px;
-	margin: auto;
+	margin: 0 auto;
+}
+
+@mixin page-title {
+	font-size: 1.8rem;
+	font-weight: bold;
 }

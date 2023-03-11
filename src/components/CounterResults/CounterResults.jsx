@@ -4,7 +4,7 @@ import { string, arrayOf, shape } from 'prop-types';
 function CounterResults({ arrayResult, searchType }) {
   const count = arrayResult.length;
   return (
-    <p className="myAds__count">
+    <p className="counterResults">
       {count > 1
         ? `${count} ${searchType}s diponibles`
         : `${count} ${searchType} diponible` }
