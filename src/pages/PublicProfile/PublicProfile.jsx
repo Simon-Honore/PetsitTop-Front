@@ -17,7 +17,6 @@ function PublicProfile() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const publicUser = useSelector((state) => state.user.publicUser);
-  console.log('publicUser ads >>', publicUser.ads)
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -74,9 +73,19 @@ function PublicProfile() {
                     </button>
                   </Link>
 
-                  <div className="profile__user__right__tags">
-                    {petowner && <FaPaw size="40" />}
-                    {petsitter && <MdChildFriendly size="40" />}
+                  <div className="profile__user__right__icons">
+                    {petowner && (
+                    <div className="profile__user__right__tags">
+                      <FaPaw size="40" color="#c27453" />
+                      <p> Petowner</p>
+                    </div>
+                    )}
+                    {petsitter && (
+                    <div className="profile__user__right__tags">
+                      <MdChildFriendly size="40" color="#c27453" />
+                      <p> Petsitter </p>
+                    </div>
+                    )}
 
                   </div>
                 </div>
@@ -92,7 +101,7 @@ function PublicProfile() {
 
               {publicUser.pets && publicUser.pets.map((pet) => (
                 <PetCard
-                  className="pets__item"
+                  className="pets__item peticon__title--white"
                   key={pet.id}
                   name={pet.name}
                   pet_type={pet.pet_type}
@@ -119,7 +128,13 @@ function PublicProfile() {
             </section>
             <hr />
 
-            {petsitter && <PetsittingDetails isAvailable={publicUser.availability} />}
+            {petsitter && (
+            <PetsittingDetails
+              isAvailable={publicUser.availability}
+              details={publicUser.availability_details}
+              pet_types={publicUser.pet_types}
+            />
+            )}
           </>
         )}
 
