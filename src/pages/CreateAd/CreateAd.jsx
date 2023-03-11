@@ -24,8 +24,9 @@ function CreateAd() {
     <main className="createAd">
       <h2 className="createAd__title">Créer une annonce</h2>
       <p className="createAd__description">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-        Quisquam, molestias eligendi! Cumque reprehenderit neque.
+        Créez ici votre annonce détaillée
+        de recherche d’un Petsitter
+        pour votre animal
       </p>
       <FormAd
         title={title}
