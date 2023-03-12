@@ -1,12 +1,7 @@
 .search-petsitters {
 	text-align: center;
 	padding: 1.5rem;
-
-	@include desktop {
-        width: 100%;
-        // max-width: 800px;
-		margin: auto;
-    }
+	width: 100%;
 
 	&__title {
 		font-size: 1.1rem;
@@ -19,9 +14,9 @@
 		flex-direction: column;
 		align-items: center;
 		@include desktop {
-			width: 80%;
+			// width: 80%;
 			min-width: 450px;
-			height: 3rem;
+			// height: 3rem;
 			flex-direction: row;
 			justify-content: center;
 			align-items:baseline;
@@ -33,9 +28,33 @@
 
 		&__btn__submit {
 			@include btn;
+			background-color: $color-btn;
+			color: white;
+			width: 10rem;
 			@include desktop {
 				height: 3.5rem;
 			}
 		}
+		&__btn__link {
+			@include btn;
+			background-color: $fontcolor-light;
+			color: $color-btn;
+			width: 10rem;
+		}
+
+	}
+	&__results {
+		font-size: 1.1rem;
+		font-weight: bold;
+		margin-bottom: 1rem;	
+		padding-left: 1.5rem;
+		@include desktop {
+			padding-left: 0;
+		}	
+		
+	}
+
+	.home & {
+		@include width-page-desktop;
 	}
 }

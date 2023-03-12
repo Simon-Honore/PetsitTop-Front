@@ -1,3 +1,51 @@
-.conditionnal {
-	background-color: $bgMedium;
+.profile__pets__add {
+	background-color: $bgLightGrey;
+	border: $border-div-main;
+	border-radius: .5rem;
+	padding: 1rem;
+
+	& h2 {
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+	}
+	&--btn {
+		@include btn;
+		width: 100%;
+
+		&-cancel {
+			@include btn-alt;
+			width: 100%;
+		}
+	}
+	&--btns {
+		display: flex;
+		flex-direction: column;
+		gap: .5rem;
+		margin-top: 1rem;
+	}
+
+	@include desktop {
+		&--form-fields {
+			display: flex;
+			flex-direction: column;
+			height: 13.5rem;
+			flex-wrap: wrap;
+    	gap: 1rem 2rem;
+		}
+		& .field__label {
+			margin-bottom: .5rem;
+		}
+		& .fieldArea__input {
+			min-height: 10rem;
+		}
+		&--btns {
+			flex-direction: row;
+		}
+		&--btn,
+		&--btn-cancel {
+			width: auto;
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+		}
+	}
 }

@@ -67,7 +67,7 @@ function MyProfile() {
               Ajouter une annonce
             </button>
           </Link>
-          <Link to="/annonces">
+          <Link to="/mes-annonces">
             <button type="button" className="profile__ads__btn--disp">
               Afficher / Gérer mes annonces
             </button>
