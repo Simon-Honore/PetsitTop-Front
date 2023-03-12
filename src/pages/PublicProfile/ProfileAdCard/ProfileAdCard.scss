@@ -1,7 +1,9 @@
 .profileAdCard {
-    border: 1px solid $color-main;
+    border: $border-div-main;
     padding: 1rem;
     border-radius: 0.4rem;
+    margin-bottom: 1rem;
+
     &__title {
         color: $color-main;
         margin-bottom: 1rem;
@@ -10,4 +12,5 @@
     &__content {
 
     }
+
 }

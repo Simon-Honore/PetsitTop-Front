@@ -1,33 +1,39 @@
-.card {
-    border: 1px solid $color-main;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 0.4rem;
+// .card {
+//     border: 1px solid $color-main;
+//     padding: 1rem;
+//     margin: 1rem 0;
+//     border-radius: 0.4rem;
 
-        &__header {
-            display: flex;
-            justify-content: flex-start;
-            margin-bottom: 1rem;
-            &__title {
-                font-weight: bold;
-                padding-top: 1rem;
-            }
-        }
+//         &__header {
+//             display: flex;
+//             justify-content: flex-start;
+//             margin-bottom: 1rem;
+//             &__title {
+//                 font-weight: bold;
+//                 padding-top: 1rem;
+//             }
+//         }
 
-        &__item {
+//         &__item {
             
 
-            &__top {
-                display: flex;
-                justify-content: space-between;
-            }
+//             &__top {
+//                 display: flex;
+//                 justify-content: space-between;
+//             }
 
-            &__info {
-                display: flex;
-                flex-direction: column;
-            }
-        }
+//             &__info {
+//                 display: flex;
+//                 flex-direction: column;
+//             }
+//         }
     
+// }
+
+.pets {
+    & .profile__pets__items {
+        margin: 1rem 0;
+    }
 }
 
 .peticon__title--white p{

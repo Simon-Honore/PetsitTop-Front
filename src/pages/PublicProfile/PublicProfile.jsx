@@ -98,17 +98,20 @@ function PublicProfile() {
             <section className="pets">
 
               <h1 className="pets__title">Mes animaux</h1>
-
-              {publicUser.pets && publicUser.pets.map((pet) => (
-                <PetCard
-                  className="pets__item peticon__title--white"
-                  key={pet.id}
-                  name={pet.name}
-                  pet_type={pet.pet_type}
-                  description={pet.presentation}
-                />
-              ))}
-
+              <div className="profile__pets__items">
+                {publicUser.pets && (publicUser.pets.length === 0 ? (
+                  <p>Cet utilisateur n&#39;a pas d&#39;animaux pour le moment.</p>
+                ) : '')}
+                {publicUser.pets && publicUser.pets.map((pet) => (
+                  <PetCard
+                    className="pets__item peticon__title--white"
+                    key={pet.id}
+                    name={pet.name}
+                    pet_type={pet.pet_type}
+                    description={pet.presentation}
+                  />
+                ))}
+              </div>
             </section>
 
             <hr />

@@ -40,15 +40,18 @@
 			&__info {
 				display: flex;
 				justify-content: space-between;
-				align-items: flex-end;
+				flex-direction: column;
 				margin-bottom: 0.5rem;
-				@include desktop {
-					flex-direction: column;
-				}
 
+				@include desktop {
+					align-items: flex-end;
+				}
+				
 				&__localisation {
 					display: flex;
-					align-items: flex-end;
+					@include desktop {
+						align-items: flex-end;
+					}
 				}
 
 				&__date {
