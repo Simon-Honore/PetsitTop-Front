@@ -1,86 +1,86 @@
 .petsitter__card {
-    border: 1px solid $color-main;
-    border-radius: 0.5rem;
-    margin: 1rem;
-    padding: 1rem;
-    
-    @include desktop {
+	border: 1px solid $color-main;
+	border-radius: 0.5rem;
+	margin: 1rem;
+	padding: 1rem;
+
+	@include desktop {
 		margin: 1rem auto;
-        display: flex;
-    }
+		display: flex;
+	}
 
-    &__main {
-        @include desktop {
-            width: 100%;
-            padding-right: 1rem;
-        }
-    }
+	&__main {
+		@include desktop {
+			width: 100%;
+			padding-right: 1rem;
+		}
+	}
 
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-    }
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 1rem;
+	}
 
-    &__title {
-        font-size: 1.2rem;
-        font-weight: bold;
+	&__title {
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
 
-    }
+	&__location {
+		display: flex;
+		align-items: flex-end;
 
-    &__location {
-        display: flex;
-        align-items: flex-end;
+		&__city {
+		}
 
-        &__city {
-            
-        }
+		&__icon {
+			color: $color-second;
+			margin-bottom: 0.1rem;
+		}
+	}
 
-        &__icon {
-            color: $color-second;
-            margin-bottom: 0.1rem;
-        }
-    }
+	&__description {
+		margin-bottom: 1rem;
+	}
 
-    &__description {
-        margin-bottom: 1rem;
-    }
+	&__buttons {
+		display: flex;
+		justify-content: space-around;
+		margin-top: 1rem;
+		@include desktop {
+			flex-direction: column;
+			justify-content: center;
+		}
+		&__details {
+			@include btn;
+			width: 9rem;
+			@include desktop {
+				height: 2.5rem;
+				margin-bottom: 0.5rem;
+				width: 10rem;
+			}
+		}
 
-    &__buttons {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 1rem;
-        @include desktop {
-            flex-direction: column;
-            justify-content: center;
-            
-        }
-        &__details {
-            @include btn;
-            @include desktop {
-                height: 2.5rem;
-                margin-bottom: 0.5rem;
-            }
-		    
-        }
+		&__contact {
+			@include btn-alt;
+			width: 9rem;
+			@include desktop {
+				height: 2.5rem;
+				margin-bottom: 0.5rem;
+				width: 10rem;
+			}
+		}
+	}
 
-        &__contact {
-            @include btn-alt;
-		    @include desktop {
-                height: 2.5rem;
-                margin-bottom: 0.5rem;
-            }
-        }
-    }
+	&__peticon {
+		display: flex;
+		flex-wrap: wrap;
 
-    &__peticon {
-        display: flex;
-        flex-wrap: wrap;
-        
-        &__group{
-            display: flex;
-            flex-direction: column;
-            justify-content: baseline;
-        }
-    }
+		&__group {
+			display: flex;
+			flex-direction: column;
+			justify-content: baseline;
+		}
+	}
 }
