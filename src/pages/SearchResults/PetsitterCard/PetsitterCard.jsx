@@ -6,8 +6,10 @@ import PetIcon from '../../../components/PetIcon/PetIcon';
 import './PetsitterCard.scss';
 
 function PetsitterCard({
-  id, nom, prenom, ville, codePostal, description, animauxAcceptes,
+  id, nom, prenom, ville, codePostal, description, animauxAcceptes, email,
 }) {
+  const isLogged = localStorage.getItem('isLogged');
+  console.log('isLogged >> ', isLogged);
   return (
     <div className="petsitter__card">
       <div className="petsitter__card__main">
@@ -25,30 +27,61 @@ function PetsitterCard({
         <ul> Je peux garder :</ul>
         <div className="petsitter__card__peticon">
           {animauxAcceptes.map((animal) => (
-              <PetIcon key={animal} pet={animal} />
+            <PetIcon key={animal} pet={animal} />
           ))}
 
         </div>
       </div>
 
-      <div className="petsitter__card__buttons">
-        <Link
-          to={`/profil/${id}`}
-        >
-          <button
-            type="button"
-            className="petsitter__card__buttons__details"
-          >
-            voir le profil
-          </button>
-        </Link>
-        <button
-          type="button"
-          className="petsitter__card__buttons__contact"
-        >
-          contacter
-        </button>
-      </div>
+      {isLogged
+        ? (
+          <div className="petsitter__card__buttons">
+            <Link
+              to={`/profil/${id}`}
+            >
+              <button
+                type="button"
+                className="petsitter__card__buttons__details"
+              >
+                voir le profil
+              </button>
+            </Link>
+            <Link
+              to={`mailto:${email}`}
+            >
+              <button
+                type="button"
+                className="petsitter__card__buttons__contact"
+              >
+                contacter
+              </button>
+            </Link>
+          </div>
+        )
+        : (
+          <div className="petsitter__card__buttons">
+            <Link
+              to="/identification"
+            >
+              <button
+                type="button"
+                className="petsitter__card__buttons__details"
+              >
+                voir le profil
+              </button>
+            </Link>
+            <Link
+              to="/identification"
+            >
+              <button
+                type="button"
+                className="petsitter__card__buttons__contact"
+              >
+                contacter
+              </button>
+            </Link>
+          </div>
+        )}
     </div>
   );
 }
@@ -63,4 +96,5 @@ PetsitterCard.propTypes = {
   codePostal: number.isRequired,
   description: string.isRequired,
   animauxAcceptes: arrayOf(string).isRequired,
+  email: string.isRequired,
 };

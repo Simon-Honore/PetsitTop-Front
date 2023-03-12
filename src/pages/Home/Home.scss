@@ -2,7 +2,13 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-  min-height: calc(100vh - 70px - 56px);
+	min-height: calc(100vh - 70px - 56px);
+
+	& .search-petsitters__form {
+		@include desktop {
+			width: 80%;
+		}
+	}
 
 	&__description {
 		background: url('../../assets/pets-banner.png') no-repeat bottom;
@@ -24,7 +30,7 @@
 				display: block;
 			}
 		}
-		
+
 		&__container {
 			@include width-page-desktop;
 		}

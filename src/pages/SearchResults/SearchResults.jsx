@@ -41,6 +41,7 @@ function SearchResults() {
           codePostal={+petsitter.postal_code}
           description={petsitter.presentation}
           animauxAcceptes={petsitter.pet_types}
+          email={petsitter.email}
         />
       ))}
 

@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import './MyAdCard.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteOneAd, updateAd } from '../../../api/ads';
+import { deleteOneAd, getMyAds, updateAd } from '../../../api/ads';
 import FormAd from '../../../components/FormAd/FormAd';
 import { saveAdInfos } from '../../../store/reducers/ads';
 
@@ -34,6 +34,7 @@ function MyAdCard({
 
   function handleClickDeleteAd() {
     dispatch(deleteOneAd(adCardId));
+    dispatch(getMyAds());
   }
 
   function handleClickUpdateAd() {
@@ -56,6 +57,7 @@ function MyAdCard({
 
   function handleSubmitFormUpdateAd() {
     dispatch(updateAd(adCardId));
+    dispatch(getMyAds());
     setCardUpdateInProgress(false);
   }
 
