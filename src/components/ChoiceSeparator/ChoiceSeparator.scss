@@ -2,6 +2,12 @@
 	margin: 1rem 0;
 	position: relative;
 
+	& hr {
+		height: 1px;
+		background-color: lighten($bgHeaderFooter, 20%);
+		border: none;
+	}
+
 	&__content {
 		position: absolute;
 		top: -0.5rem;
@@ -9,5 +15,6 @@
 		left: calc(50% - 1.5rem);
 		padding: 0 1rem;
 		background-color: white;
+		color: $fontcolor-medium;
 	}
 }
