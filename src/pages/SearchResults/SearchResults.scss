@@ -1,4 +1,6 @@
 .main-home {
+	width: 100%;
+	padding: 1.5rem;
 	&__description {
 		font-size: 1.2rem;
 		font-weight: bold;
@@ -7,52 +9,6 @@
 		background-color: #eee;
 	}
 	@include desktop {
-		max-width: 80%;
-		margin: auto;
+		@include width-page-desktop;
 	}	
-}
-
-.search-petsitters {
-	@include width-page-desktop;
-
-	text-align: center;
-	padding: 1.5rem;
-
-	&__title {
-		font-size: 1.1rem;
-		font-weight: bold;
-		margin-bottom: 1rem;
-	}
-
-	&__form {
-		&__separator {
-			margin-block: 1rem;
-		}
-
-		&__btn__submit {
-			@include btn;
-			background-color: $color-btn;
-			color: white;
-			width: 10rem;
-		}
-
-		&__btn__link {
-			@include btn;
-			background-color: $fontcolor-light;
-			color: $color-btn;
-			width: 10rem;
-		}
-	}
-
-	&__results {
-		font-size: 1.1rem;
-		font-weight: bold;
-		margin-bottom: 1rem;	
-		padding-left: 1.5rem;
-		@include desktop {
-			padding-left: 0;
-		}	
-		
-	}
-
 }
