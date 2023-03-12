@@ -7,6 +7,9 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 1rem;
+		@include desktop {
+			padding: 1rem 2rem;
+		}
 
 		&__title {
 			font-size: 1.3rem;
@@ -15,17 +18,37 @@
 		}
 
 		&__icon {
-			color: #ccc;
+			color: $bgLightGrey;
 		}
 	}
 
-	&__button--petsitter {
-		@include btn;
-		margin-right: 0.5rem;
-		display: none;
+	&__logged {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+
+		&--btn {
+			@include btn-alt;
+			width: 15rem;
+		}
 	}
 
-	&__button--login {
-		@include btn;
+	&__button {
+		display: flex;
+		gap: 1rem;
+		&--petsitter {
+			@include btn-alt;
+			display: none;
+			@include desktop {
+				display: block;
+			}
+		}
+
+		&--login {
+			@include btn;
+			@include desktop {
+				margin-right: 2rem;
+			}
+		}
 	}
 }
