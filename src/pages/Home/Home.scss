@@ -1,6 +1,8 @@
 .home {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+  min-height: calc(100vh - 70px - 56px);
 
 	&__description {
 		background: url('../../assets/pets-banner.png') no-repeat bottom;

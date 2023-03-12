@@ -15,6 +15,7 @@ function FormLogin() {
   const email = useSelector((state) => state.user.email);
   const password = useSelector((state) => state.user.password);
   const isLogged = useSelector((state) => state.user.logged);
+  const error = useSelector((state) => state.error.error);
 
   function handleChangeField(value, name) {
     dispatch(changeFieldLogin({
@@ -61,6 +62,12 @@ function FormLogin() {
           value={password}
           onChange={handleChangeField}
         />
+
+        {error.length > 0 && (
+          <p className="login__error">
+            {error}
+          </p>
+        )}
 
         <button
           className="login__btn"

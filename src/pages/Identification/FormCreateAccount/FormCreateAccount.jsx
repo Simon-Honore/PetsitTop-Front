@@ -94,7 +94,7 @@ function FormCreateAccount() {
   return (
     <section className="createAccount">
       <h3 className="createAccount__title">
-        Je créer mon compte
+        Je crée mon compte
       </h3>
 
       <form className="createAccount__form" onSubmit={handleSubmit}>

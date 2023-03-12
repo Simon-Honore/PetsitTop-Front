@@ -15,4 +15,11 @@
 		@include btn-large;
 		margin-top: 0.8rem;
 	}
+
+	&__error {
+		color: red;
+		font-size: 0.9rem;
+		margin-top: 0.1rem;
+		font-style: italic;
+	}
 }

@@ -11,15 +11,21 @@
     &__user {
         display: flex;
         justify-content: space-between;
-        align-items: baseline;
-        height: 7rem;
+        align-items: baseline; 
+
+        @include desktop {
+            height: 7rem;
+        }
 
         &__infos {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             height: 100%;
-            padding-bottom: 1rem;    
+            @include desktop {
+                padding-bottom: 1rem;
+            }
+                
         }
 
         &__name {
@@ -98,6 +104,6 @@
     &__title {
         font-size: 1.5rem;
         font-weight: bold;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
     }
 }
