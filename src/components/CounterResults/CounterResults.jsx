@@ -4,11 +4,11 @@ import { string, arrayOf, shape } from 'prop-types';
 function CounterResults({ arrayResult, searchType }) {
   const count = arrayResult.length;
   return (
-    <p className="counterResults">
+    <h3 className="counterResults">
       {count > 1
         ? `${count} ${searchType}s diponibles`
         : `${count} ${searchType} diponible` }
-    </p>
+    </h3>
   );
 }
 
