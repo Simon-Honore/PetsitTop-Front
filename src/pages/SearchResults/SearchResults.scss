@@ -1,6 +1,13 @@
 .main-home {
 	width: 100%;
 	padding: 1.5rem;
+
+	& .search-petsitters__form {
+		@include desktop {
+			width: 80%;
+		}
+	}
+
 	&__description {
 		font-size: 1.2rem;
 		font-weight: bold;
@@ -10,5 +17,5 @@
 	}
 	@include desktop {
 		@include width-page-desktop;
-	}	
+	}
 }
