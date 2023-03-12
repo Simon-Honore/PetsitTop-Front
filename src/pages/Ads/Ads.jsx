@@ -18,7 +18,6 @@ function Ads() {
 
   // to fetch results of api call
   const allAdsList = useSelector((state) => state.ads.allAdsList);
-  console.log('all ads list', allAdsList);
 
   // filter of department on search url
   const [searchParams, SetSearchParams] = useSearchParams();

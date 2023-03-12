@@ -1,12 +1,11 @@
 .ads {
-	max-width: 1500px;
-	margin: auto;
+	@include width-page-desktop;
+	width: 100%;
 	&__header {
 		margin: 1rem;
 
 		&__title {
-			font-size: 1.8rem;
-			font-weight: bold;
+			@include page-title;
 		}
 
 		&__filter {

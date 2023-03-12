@@ -3,11 +3,29 @@
 	flex-direction: column;
 
 	&__description {
-		font-size: 1.2rem;
+		background: url('../../assets/pets-banner.png') no-repeat bottom;
+		background-size: contain;
 		font-weight: bold;
-		padding: 2rem 2rem 3rem;
+		padding: 1rem 3rem;
 		text-align: center;
 		background-color: #eee;
+		color: $color-main;
+		font-size: 1.2rem;
+		& span {
+			display: none;
+		}
+
+		@include desktop {
+			background-size: 70%;
+			padding: 2rem 3rem;
+			& span {
+				display: block;
+			}
+		}
+		
+		&__container {
+			@include width-page-desktop;
+		}
 	}
 
 	&__separator {

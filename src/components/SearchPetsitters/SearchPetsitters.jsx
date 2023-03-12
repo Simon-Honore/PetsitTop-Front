@@ -40,9 +40,8 @@ function SearchPetsitters() {
   return (
     <section className="search-petsitters">
       <h3 className="search-petsitters__title">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, obcaecati.
+        Rechercher un petsitter disponible
       </h3>
-
       <form className="search-petsitters__form" onSubmit={handleSubmitSearch}>
         <InputSelectDepartment
           onChange={handleChangeDepartement}
@@ -57,11 +56,12 @@ function SearchPetsitters() {
         />
 
         {/* <Link to="/resultats?departement=48&animal=chien"> */}
-        <button type="submit" className="search-petsitters__form__btn__submit">
-          Rechercher
-        </button>
+        <div>
+          <button type="submit" className="search-petsitters__form__btn__submit">
+            Rechercher
+          </button>
+        </div>
         {/* </Link> */}
-
       </form>
     </section>
 

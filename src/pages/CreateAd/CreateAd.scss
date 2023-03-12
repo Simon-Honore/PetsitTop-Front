@@ -1,9 +1,10 @@
 .createAd {
-	margin: 1rem;
+	@include width-page-desktop;
+	padding: 1rem;
+	width: 100%;
 
 	&__title {
-		font-size: 1.8rem;
-		font-weight: bold;
+		@include page-title;
 	}
 
 	&__description {

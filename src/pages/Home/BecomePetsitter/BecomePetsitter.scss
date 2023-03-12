@@ -4,14 +4,29 @@
 	flex-direction: column;
 	justify-content: space-around;
 	height: 15rem;
-	background-image: url('../../assets/chien-basenji-intelligent-sympathique-donnant-sa-patte-close-up-isolated-on-white.jpg');
+	background-image: url('../../../assets/chien.png');
+	background-repeat: no-repeat;
+	background-color: #dfd9d2;
 	background-size: cover;
 	background-position: center;
+
+	@include desktop {
+		background-size: contain;
+	}
+	@include desktop_large {
+		background-size: 30%;
+	}
+
+	&__container {
+		@include width-page-desktop;
+		width: 100%;
+	}
 
 	&__title {
 		font-size: 1.1rem;
 		font-weight: bold;
 		width: 50%;
+		margin-bottom: 1.5rem;
 	}
 
 	&__btn {
@@ -19,5 +34,10 @@
 		background-color: $color-btn;
 		color: white;
 		width: 10rem;
+		@include desktop {
+			width: auto;
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+		}
 	}
 }

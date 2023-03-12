@@ -8,9 +8,19 @@
 
     &__status {
         display: flex;
+        align-items:center;
 
         &__icon {
             margin-right: 0.5rem;
+        }
+    }
+
+    &__details {
+        margin: 1rem 0;
+
+        &__pets {
+            display: flex;
+            flex-wrap: wrap;
         }
     }
 }

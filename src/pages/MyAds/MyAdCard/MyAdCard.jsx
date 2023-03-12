@@ -22,6 +22,16 @@ function MyAdCard({
 
   const date = new Date(adCardCreatedAt);
 
+  const [confirmDelete, setConfirmDelete] = useState(false);
+
+  function handleConfirmDeleteAd() {
+    setConfirmDelete(true);
+    const timer = setTimeout(() => {
+      setConfirmDelete(false);
+    }, 6000);
+    return () => clearTimeout(timer);
+  }
+
   function handleClickDeleteAd() {
     dispatch(deleteOneAd(adCardId));
   }
@@ -82,7 +92,43 @@ function MyAdCard({
 
               <section className="myAdCard__header__btns">
                 <MdEditNote size="2.3rem" onClick={handleClickUpdateAd} />
-                <MdDeleteForever size="2.4rem" onClick={handleClickDeleteAd} />
+                {confirmDelete
+                  ? (
+                    <div className="myAdCard__header__btns--delete">
+                      <MdDeleteForever size="2.4rem" onClick={handleClickDeleteAd} />
+                    </div>
+                  )
+                  : <MdDeleteForever size="2.4rem" onClick={handleConfirmDeleteAd} />}
+              </section>
+
+              <section className="myAdCard__header__btns--desktop">
+                <button
+                  type="button"
+                  onClick={handleClickUpdateAd}
+                >
+                  <MdEditNote size="1.8rem" />
+                  <p>Modifier</p>
+                </button>
+                {confirmDelete
+                  ? (
+                    <button
+                      type="button"
+                      className="myAdCard__header__btns--desktop--delete"
+                      onClick={handleClickDeleteAd}
+                    >
+                      <MdDeleteForever size="1.8rem" />
+                      <p>Valider</p>
+                    </button>
+                  )
+                  : (
+                    <button
+                      type="button"
+                      onClick={handleConfirmDeleteAd}
+                    >
+                      <MdDeleteForever size="1.8rem" />
+                      <p>Supprimer</p>
+                    </button>
+                  ) }
               </section>
             </header>
 

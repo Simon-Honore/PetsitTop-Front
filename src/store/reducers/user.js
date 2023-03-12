@@ -7,8 +7,8 @@ export const initialState = {
   userId: null,
   accessToken: null,
   ads: [],
-  connectedUser: [],
-  publicUser: [],
+  connectedUser: {},
+  publicUser: {},
 };
 
 export const changeFieldLogin = createAction('user/changeFieldLogin');

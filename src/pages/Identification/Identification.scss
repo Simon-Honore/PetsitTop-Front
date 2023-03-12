@@ -1,3 +1,16 @@
 .identification {
 	padding: 2rem 1rem;
+	width: 100%;
+	@include width-page-desktop;
+	@include desktop {
+		display: flex;
+		gap: 2rem;
+		justify-content: center;
+	}
+
+	&__separator {
+		@include desktop {
+			display: none;
+		}
+	}
 }

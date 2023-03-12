@@ -6,9 +6,15 @@
 		text-align: center;
 		background-color: #eee;
 	}
+	@include desktop {
+		max-width: 80%;
+		margin: auto;
+	}	
 }
 
 .search-petsitters {
+	@include width-page-desktop;
+
 	text-align: center;
 	padding: 1.5rem;
 
@@ -42,31 +48,11 @@
 		font-size: 1.1rem;
 		font-weight: bold;
 		margin-bottom: 1rem;	
-		padding-left: 1.5rem;	
+		padding-left: 1.5rem;
+		@include desktop {
+			padding-left: 0;
+		}	
+		
 	}
 
-}
-
-.become-petsitter {
-	padding: 1.5rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	height: 15rem;
-	background-image: url('../../assets/chien-basenji-intelligent-sympathique-donnant-sa-patte-close-up-isolated-on-white.jpg');
-	background-size: cover;
-	background-position: center;
-
-	&__title {
-		font-size: 1.1rem;
-		font-weight: bold;
-		width: 50%;
-	}
-
-	&__btn {
-		@include btn;
-		background-color: $color-btn;
-		color: white;
-		width: 10rem;
-	}
 }

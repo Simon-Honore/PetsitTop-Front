@@ -1,9 +1,10 @@
 .fieldCheckboxPetType {
 	width: 40%;
 	margin-bottom: 0.2rem;
+	display: flex;
+	align-items: center;
 
-	&__label {
-		font-size: 1.1rem;
-		margin-left: 0.3rem;
+	&__input {
+		margin-right: 0.4rem;
 	}
 }

@@ -30,7 +30,7 @@ function RoleForm({
 
   return (
     <div className="roleForm conditionnal">
-      <p className="roleForm__title">Je suis petsitter</p>
+      <h4 className="roleForm__title">Je suis petsitter</h4>
       <FormGroup className="roleForm__switch">
         <FormControlLabel control={<Switch onChange={handleChange} name="availability" defaultChecked={defaultChecked} />} label="Je suis disponible" />
       </FormGroup>
@@ -40,7 +40,7 @@ function RoleForm({
             label="Détails de ma disponibilité*"
             name="availability_details"
             placeholder="# Jours et heures de dispo
-							#Zone de mobilité ou uniquement à domicile"
+            &#10;#Zone de mobilité ou uniquement à domicile"
             onChange={handleChangeArea}
             form="createAccount"
             value={availability_details}

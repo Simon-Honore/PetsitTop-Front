@@ -1,5 +1,5 @@
 .team {
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
   background-color: $bgLightGrey;
 
   h1 {
@@ -23,12 +23,16 @@
   p {
     margin-bottom: .5rem;
   }
+  &__header {
+    margin-bottom: 2rem;
+  }
   &__members {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     column-gap: 1.5rem;
     row-gap: 1.5rem;
+    
   }
   &__member {
     width: 100%;
@@ -36,9 +40,10 @@
     border: 1px solid white;
     border-radius: 1rem;
     padding: 2rem;
+    background-color: $bgLight;
 
     @media only screen and (min-width : 321px) {
-      width: 290px;
+      max-width: 290px;
     }
 
     & img {

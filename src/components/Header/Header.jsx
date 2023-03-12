@@ -26,11 +26,19 @@ function Header({ isLogged }) {
         </h1>
         {isLogged
           ? (
-            <FaUserCircle size="2rem" className="header__main__icon" onClick={handleClick} />
+            <div className="header__logged">
+              <Link to="/annonces">
+                <button type="button" className="header__logged--btn">Voir toutes les annonces</button>
+              </Link>
+              <FaUserCircle size="2.3rem" className="header__main__icon" onClick={handleClick} />
+            </div>
           )
           : (
             <div className="header__button">
-              <button type="button" className="header__button--petsitter">Devenir Petsitter</button>
+              <Link to="/identification">
+                <button type="button" className="header__button--petsitter">Devenir Petsitter</button>
+              </Link>
+
               <Link to="/identification">
                 <button type="button" className="header__button--login">se connecter</button>
               </Link>

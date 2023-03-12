@@ -54,7 +54,6 @@ function FormCreateAccount() {
     }
   }
 
-
   function handleSubmit(event) {
     event.preventDefault();
     // Tests de validation avec Joi
@@ -115,14 +114,14 @@ function FormCreateAccount() {
           ? (
             <button
               type="button"
-              className="createAccount__btn createAccount__btn--continue"
+              className="createAccount__btn--continue"
               onClick={handleClickContinue}
             >
               CONTINUER
             </button>
           )
           : (
-            <div>
+            <>
               <Field
                 label="Mot de passe*"
                 type="password"
@@ -214,7 +213,7 @@ function FormCreateAccount() {
                   onChange={handleChangeField}
                   availability={availability}
                   availability_details={availability_details}
-									onChangePetType={handleChangePetTypes}
+                  onChangePetType={handleChangePetTypes}
                 />
                 )}
 
@@ -237,7 +236,7 @@ function FormCreateAccount() {
               </div>
 
               <button type="submit" className="createAccount__btn">JE M&#39;INSCRIS</button>
-            </div>
+            </>
           )}
       </form>
     </section>
