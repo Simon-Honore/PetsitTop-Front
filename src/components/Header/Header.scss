@@ -30,6 +30,10 @@
 		&--btn {
 			@include btn-alt;
 			width: 15rem;
+			display: none;
+			@include desktop {
+				display: block;
+			}
 		}
 	}
 
