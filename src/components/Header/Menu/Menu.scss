@@ -1,4 +1,11 @@
 .nav {
+	@include desktop {
+		width: 17rem;
+		position: absolute;
+		right: 0;
+		z-index: 3;
+		height: 1px;
+	}
 	&__link {
 		line-height: 2.5rem;
 		padding-left: 2rem;
@@ -7,9 +14,18 @@
 		border-top: 1px solid $fontcolor-light;
 		background-color: $bgMedium;
 		display: block;
+		@include desktop {
+			transition: 500ms;
+			&:last-child {
+				border-radius: 0 0 0 0.5rem;
+			}
+			&:hover {
+				color: darken($bgHeaderFooter, 15%);
+			}
+		}
 
 		&--active {
-			color: $bgHeaderFooter;
+			color: darken($bgHeaderFooter, 15%);
 		}
 	}
 }
