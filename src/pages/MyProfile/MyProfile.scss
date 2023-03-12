@@ -7,6 +7,12 @@
 	& hr {
 		border: 1px solid lighten($color-main, 40%);
 	}
+
+	& .createAccount__msg {
+		color: $color-btn;
+		margin-top: 1rem;
+		font-weight: bold;
+	}
 }
 
 .profile {
