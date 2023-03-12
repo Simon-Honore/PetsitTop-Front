@@ -1,109 +1,107 @@
 .PublicProfile {
-    padding: 1rem;
-    @include desktop {
-        width: 80%;
-        margin: auto;
-    }
+	padding: 1rem;
+	@include desktop {
+		width: 80%;
+		margin: auto;
+	}
 }
 
 .profile {
-    
-    &__user {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline; 
+	&__user {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		max-width: 100%;
 
-        @include desktop {
-            height: 7rem;
-        }
+		@include desktop {
+			height: 7rem;
+		}
 
-        &__infos {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-            @include desktop {
-                padding-bottom: 1rem;
-            }
-                
-        }
+		&__infos {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100%;
+			width: 50%;
+			@include desktop {
+				padding-bottom: 1rem;
+			}
+		}
 
-        &__name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.4rem;
-        }
-        
-        &__location{
-            margin-bottom: 0.2rem;
+		&__name {
+			font-size: 1.5rem;
+			font-weight: bold;
+			margin-bottom: 0.4rem;
+		}
 
-            &__icon {
-                color: $color-second;
-                margin-right: 0.3rem;
-                margin-bottom: -0.2rem;
-            }
-        }
+		&__location {
+			margin-bottom: 0.2rem;
 
-        &__email{
-            margin-bottom: 0.2rem;
-            &__icon {
-                color: $color-btn;
-                margin-right: 0.3rem;
-                margin-bottom: -0.2rem;
-            }
-        }
+			&__icon {
+				color: $color-second;
+				margin-right: 0.3rem;
+				margin-bottom: -0.2rem;
+			}
+		}
 
-        &__right {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            &__button{
-                @include btn;
-                
-                &__icon {
-                    margin-bottom: -0.1rem;
-                    margin-right: 0.3rem;
-                }
-            }
+		&__email {
+			margin-bottom: 0.2rem;
+			overflow-wrap: break-word;
+			&__icon {
+				color: $color-btn;
+				margin-right: 0.3rem;
+				margin-bottom: -0.2rem;
+			}
+		}
 
-            &__icons {
-                display: flex;
-                justify-content: space-around;
+		&__right {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			&__button {
+				@include btn;
 
-            }
+				&__icon {
+					margin-bottom: -0.1rem;
+					margin-right: 0.3rem;
+				}
+			}
 
-            &__tags {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-        }
+			&__icons {
+				display: flex;
+				justify-content: space-around;
+			}
 
-        &__description {
-            margin: 1rem 0;
-            font-style: italic;
-        }
-    }
+			&__tags {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+
+		&__description {
+			margin: 1rem 0;
+			font-style: italic;
+		}
+	}
 }
 
 .pets {
+	&__title {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
 
-    &__title {
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-
-    &__item{
-        margin-bottom: 1rem;
-    }
+	&__item {
+		margin-bottom: 1rem;
+	}
 }
 
 .ads {
-
-    &__title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-    }
+	&__title {
+		font-size: 1.5rem;
+		font-weight: bold;
+		margin-bottom: 1rem;
+	}
 }
