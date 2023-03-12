@@ -4,6 +4,7 @@ import createAccountReducer from './reducers/createAccount';
 import petsittersReducer from './reducers/petsitters';
 import updateAccountReducer from './reducers/updateAccount';
 import userReducer from './reducers/user';
+import errorReducer from './reducers/error';
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     createAccount: createAccountReducer,
     ads: adReducer,
     updateAccount: updateAccountReducer,
+    error: errorReducer,
   },
 });
 
