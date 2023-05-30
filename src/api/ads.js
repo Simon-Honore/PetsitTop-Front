@@ -39,7 +39,10 @@ export const getMyAds = () => async (dispatch, getState) => {
   dispatch(saveUserAds(data));
 };
 
-export const deleteOneAd = (idAd) => async (dispatch) => {
+export const function handleClickDeleteAd() {
+	dispatch(deleteOneAd(adCardId));
+	dispatch(getMyAds());
+}deleteOneAd = (idAd) => async (dispatch) => {
   await axiosInstance.delete(`/ads/${idAd}`);
 };
 

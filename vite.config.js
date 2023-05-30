@@ -10,8 +10,9 @@ export default defineConfig({
         additionalData: `
 					@import "./src/styles/utils/variables.scss";
 					@import "./src/styles/utils/mixins.scss";
-				`
+				`,
       },
     },
   },
+  appType: 'spa',
 });

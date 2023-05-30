@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { MdAddComment, MdLibraryAdd, MdOutlineAdd } from 'react-icons/md';
+import { MdLibraryAdd } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getMyAds } from '../../api/ads';
