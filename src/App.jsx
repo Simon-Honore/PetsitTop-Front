@@ -1,4 +1,6 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import {
+  Routes, Route, useLocation, Switch,
+} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
@@ -22,7 +24,7 @@ import './styles/App.scss';
 
 function App() {
   const dispatch = useDispatch();
-	const { pathname } = useLocation();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -52,24 +54,26 @@ function App() {
     <div className="App">
       <Header isLogged={isLogged} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/identification" element={<Identification />} />
-        <Route path="/resultats" element={<SearchResults />} />
-        <Route path="/mentions-legales" element={<LegalNotice />} />
-        <Route path="/cgu" element={<CGU />} />
-        <Route path="/equipe" element={<Team />} />
+        <Switch>
+          <Route path="/" element={<Home />} />
+          <Route path="/identification" element={<Identification />} />
+          <Route path="/resultats" element={<SearchResults />} />
+          <Route path="/mentions-legales" element={<LegalNotice />} />
+          <Route path="/cgu" element={<CGU />} />
+          <Route path="/equipe" element={<Team />} />
 
-        {isLogged && (
-        <>
-          <Route path="/mon_profil" element={<MyProfile />} />
-          <Route path="/profil/:id" element={<PublicProfile />} />
-          <Route path="/annonces" element={<Ads />} />
-          <Route path="/mes-annonces" element={<MyAds />} />
-          <Route path="/creer-une-annonce" element={<CreateAd />} />
-        </>
-        )}
+          {isLogged && (
+          <>
+            <Route path="/mon_profil" element={<MyProfile />} />
+            <Route path="/profil/:id" element={<PublicProfile />} />
+            <Route path="/annonces" element={<Ads />} />
+            <Route path="/mes-annonces" element={<MyAds />} />
+            <Route path="/creer-une-annonce" element={<CreateAd />} />
+          </>
+          )}
 
-        <Route path="/*" element={<NotFound />} />
+          <Route path="/*" element={<NotFound />} />
+        </Switch>
       </Routes>
       <Footer />
     </div>
