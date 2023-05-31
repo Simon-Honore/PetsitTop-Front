@@ -1,5 +1,5 @@
 import {
-  Routes, Route, useLocation, Switch,
+  Routes, Route, useLocation,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -54,15 +54,14 @@ function App() {
     <div className="App">
       <Header isLogged={isLogged} />
       <Routes>
-        <Switch>
-          <Route path="/" element={<Home />} />
-          <Route path="/identification" element={<Identification />} />
-          <Route path="/resultats" element={<SearchResults />} />
-          <Route path="/mentions-legales" element={<LegalNotice />} />
-          <Route path="/cgu" element={<CGU />} />
-          <Route path="/equipe" element={<Team />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/identification" element={<Identification />} />
+        <Route path="/resultats" element={<SearchResults />} />
+        <Route path="/mentions-legales" element={<LegalNotice />} />
+        <Route path="/cgu" element={<CGU />} />
+        <Route path="/equipe" element={<Team />} />
 
-          {isLogged && (
+        {isLogged && (
           <>
             <Route path="/mon_profil" element={<MyProfile />} />
             <Route path="/profil/:id" element={<PublicProfile />} />
@@ -70,10 +69,9 @@ function App() {
             <Route path="/mes-annonces" element={<MyAds />} />
             <Route path="/creer-une-annonce" element={<CreateAd />} />
           </>
-          )}
+        )}
 
-          <Route path="/*" element={<NotFound />} />
-        </Switch>
+        <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
